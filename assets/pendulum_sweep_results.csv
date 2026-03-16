@@ -1,0 +1,19 @@
+Strategy,Chains,Dropout,Energy MSE,Status
+importance,2,0.0,219.260189,Success
+importance,2,0.05,528.40318,Success
+importance,2,0.1,658.631959,Success
+importance,4,0.0,517.4329,Success
+importance,4,0.05,489.163483,Success
+importance,4,0.1,673.10728,Success
+importance,6,0.0,222.16359,Success
+importance,6,0.05,109.543551,Success
+importance,6,0.1,781.549853,Success
+random,2,0.0,23.751351,Success
+random,2,0.05,662.234439,Success
+random,2,0.1,190.895301,Success
+random,4,0.0,41.195209,Success
+random,4,0.05,341.401883,Success
+random,4,0.1,634.550811,Success
+random,6,0.0,179335561519.64603,Success
+random,6,0.05,483.866357,Success
+random,6,0.1,673.959233,Success
