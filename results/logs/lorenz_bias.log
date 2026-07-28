@@ -1,0 +1,74 @@
+############ train_score=best ############
+====================================================================================
+ TUNED RE-RUN -- lorenz | MLP depth=3 width=8 | 5 seeds
+ train=2700 val=900 test=900
+====================================================================================
+[seed 0] mlp-best-act    test=1.1152e-03 params=203 picked=tanh (best of 4x5)
+[seed 0] search-greedy   test=1.6828e-03 params=203 epochs=17950 ['gaussian', 'tanh', 'identity']
+[seed 0] search-exhaust  test=8.4372e-04 params=203 epochs=36950 ['identity', 'tanh', 'square']
+[seed 1] mlp-best-act    test=1.1925e-03 params=203 picked=tanh (best of 4x5)
+[seed 1] search-greedy   test=3.3146e-03 params=203 epochs=10500 ['relu', 'tanh', 'sin']
+[seed 1] search-exhaust  test=1.3302e-06 params=203 epochs=36950 ['identity', 'square', 'identity']
+[seed 2] mlp-best-act    test=1.2696e-03 params=203 picked=tanh (best of 4x5)
+[seed 2] search-greedy   test=2.6837e-03 params=203 epochs=17950 ['tanh', 'gaussian', 'square']
+[seed 2] search-exhaust  test=5.8972e-04 params=203 epochs=36950 ['sin', 'square', 'identity']
+[seed 3] mlp-best-act    test=9.2927e-04 params=203 picked=tanh (best of 4x5)
+[seed 3] search-greedy   test=2.2621e-03 params=203 epochs=17950 ['square', 'identity', 'square']
+[seed 3] search-exhaust  test=3.0529e-06 params=203 epochs=36950 ['identity', 'square', 'identity']
+[seed 4] mlp-best-act    test=1.2515e-03 params=203 picked=tanh (best of 4x5)
+[seed 4] search-greedy   test=1.4204e-03 params=203 epochs=17950 ['square', 'identity', 'tanh']
+[seed 4] search-exhaust  test=6.8891e-04 params=203 epochs=36950 ['identity', 'tanh', 'square']
+
+arm               params   median test         best        worst    epochs
+----------------------------------------------------------------------------
+mlp-best-act         203    1.1925e-03   9.2927e-04   1.2696e-03     16000
+search-greedy        203    2.2621e-03   1.4204e-03   3.3146e-03     16460
+search-exhaust       203    5.8972e-04   1.3302e-06   8.4372e-04     36950
+
+  vs the plain-MLP baseline (1.1925e-03):
+    search-greedy     0.53x  (worse)
+    search-exhaust    2.02x  (BETTER)
+
+  structural agreement across seeds (modulo equivalence):
+    search-greedy    agreement=0.13 chance=0.17  -- at or near chance
+    search-exhaust   agreement=0.47 chance=0.25  -- above chance
+    search-greedy    per-slot: (0,0)=quadratic(2/5), (0,1)=saturating(2/5), (0,2)=quadratic(2/5)
+    search-exhaust   per-slot: (0,0)=identity(4/5), (0,1)=quadratic(3/5), (0,2)=identity(3/5)
+
+############ train_score=final ############
+====================================================================================
+ TUNED RE-RUN -- lorenz | MLP depth=3 width=8 | 5 seeds
+ train=2700 val=900 test=900
+====================================================================================
+[seed 0] mlp-best-act    test=1.1152e-03 params=203 picked=tanh (best of 4x5)
+[seed 0] search-greedy   test=1.6828e-03 params=203 epochs=17950 ['gaussian', 'tanh', 'identity']
+[seed 0] search-exhaust  test=8.4372e-04 params=203 epochs=36950 ['identity', 'tanh', 'square']
+[seed 1] mlp-best-act    test=1.1925e-03 params=203 picked=tanh (best of 4x5)
+[seed 1] search-greedy   test=3.3146e-03 params=203 epochs=10500 ['relu', 'tanh', 'sin']
+[seed 1] search-exhaust  test=1.3302e-06 params=203 epochs=36950 ['identity', 'square', 'identity']
+[seed 2] mlp-best-act    test=1.2696e-03 params=203 picked=tanh (best of 4x5)
+[seed 2] search-greedy   test=2.6837e-03 params=203 epochs=17950 ['tanh', 'gaussian', 'square']
+[seed 2] search-exhaust  test=5.8972e-04 params=203 epochs=36950 ['sin', 'square', 'identity']
+[seed 3] mlp-best-act    test=9.2927e-04 params=203 picked=tanh (best of 4x5)
+[seed 3] search-greedy   test=2.2621e-03 params=203 epochs=17950 ['square', 'identity', 'square']
+[seed 3] search-exhaust  test=3.0529e-06 params=203 epochs=36950 ['identity', 'square', 'identity']
+[seed 4] mlp-best-act    test=1.2515e-03 params=203 picked=tanh (best of 4x5)
+[seed 4] search-greedy   test=1.4204e-03 params=203 epochs=17950 ['square', 'identity', 'tanh']
+[seed 4] search-exhaust  test=6.8891e-04 params=203 epochs=36950 ['identity', 'tanh', 'square']
+
+arm               params   median test         best        worst    epochs
+----------------------------------------------------------------------------
+mlp-best-act         203    1.1925e-03   9.2927e-04   1.2696e-03     16000
+search-greedy        203    2.2621e-03   1.4204e-03   3.3146e-03     16460
+search-exhaust       203    5.8972e-04   1.3302e-06   8.4372e-04     36950
+
+  vs the plain-MLP baseline (1.1925e-03):
+    search-greedy     0.53x  (worse)
+    search-exhaust    2.02x  (BETTER)
+
+  structural agreement across seeds (modulo equivalence):
+    search-greedy    agreement=0.13 chance=0.17  -- at or near chance
+    search-exhaust   agreement=0.47 chance=0.25  -- above chance
+    search-greedy    per-slot: (0,0)=quadratic(2/5), (0,1)=saturating(2/5), (0,2)=quadratic(2/5)
+    search-exhaust   per-slot: (0,0)=identity(4/5), (0,1)=quadratic(3/5), (0,2)=identity(3/5)
+

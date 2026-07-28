@@ -6,7 +6,7 @@ that answers "sometimes" — and says precisely when.**
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-ee4c2c.svg)](https://pytorch.org/get-started/locally/)
-[![Tests](https://img.shields.io/badge/invariants-62%20passing-brightgreen.svg)](tests/test_invariants.py)
+[![Tests](https://img.shields.io/badge/invariants-71%20passing-brightgreen.svg)](tests/test_invariants.py)
 
 ---
 
@@ -22,7 +22,7 @@ that answers "sometimes" — and says precisely when.**
 >
 > | | verdict |
 > |---|---|
-> | **Exhaustive per-layer search** | **Works, narrowly.** 2.02x over a parameter-matched MLP on Lorenz derivatives, with complete seed separation, recovering the mathematically correct structure. Loses ~3x where no operator structure exists. |
+> | **Exhaustive per-layer search** | **Works, narrowly.** 2.02x over a parameter-matched MLP on Lorenz derivatives, with complete seed separation, recovering the mathematically correct structure. Reproduced at 5 seeds; survives an adversarial re-test for ranking bias. Loses ~3x where no operator structure exists, and uses 2.3x the training epochs. |
 > | **Simulated-annealing mutation loop** | **Does not work.** Operator selection is statistically indistinguishable from random assignment — five measurements across three independent experiments, every one a null. |
 > | **The ceiling** | **100%.** Given the correct operators, the same budget recovers the exact symbolic structure at machine precision on 28/28 seeds. Selection is the entire bottleneck. |
 >
@@ -39,7 +39,7 @@ pip install -r requirements.txt
 python tests/test_invariants.py
 ```
 
-62 invariants covering operator semantics, symbolic-export fidelity
+71 invariants covering operator semantics, symbolic-export fidelity
 (torch vs SymPy agree to 1e-9), function-preserving topology growth, and the
 optimiser's accept/revert contract.
 
@@ -70,7 +70,9 @@ with a scoped claim.** It beats a tuned, parameter-matched MLP by **2.02x** on
 Lorenz derivatives with complete seed separation, and recovers
 `identity -> quadratic -> identity`, which is the mathematically correct answer
 for a polynomial system. It loses by ~3x where the target has no operator
-structure to find. *Caveat: 3 seeds. See "Known costs".*
+structure to find. Reproduced independently at 5 seeds, and it survives the
+ranking-bias objection (below). Its one open caveat is that the arms are matched
+on restarts, not on training epochs.
 
 **`training/trainer.py` — the `GAIOptimizer` mutation loop (simulated annealing,
 importance-guided). Does not work.** Its operator selection is statistically
@@ -131,27 +133,28 @@ So the scope of the claim is:
 > tuned MLP by ~2x on systems whose structure matches the operator basis, and
 > loses by ~3x where no such structure exists.
 
-**Two caveats on that 2x, both found by re-examining it rather than by a
-reviewer.**
+**It reproduces.** An independent 5-seed rerun gives median 5.8972e-04 against
+the MLP's 1.1925e-03 — the same 2.02x — with seed separation intact
+(exhaustive's worst, 8.44e-04, still beats the MLP's best, 9.29e-04). Seed 1
+recovers `identity -> square -> identity` at 1.3302e-06.
 
-*It is not epoch-matched.* Arms are matched on RESTARTS, not on training
-epochs: the exhaustive search consumes **36,950** epochs against the MLP
-baseline's **16,000**. So the honest reading is "2x better for 2.3x the
-compute", which is a weaker claim than the table looks. An epoch-matched
-rerun is the fair comparison and has not been done.
+**It survives the ranking-bias objection.** The exhaustive search sorts
+candidates by the MINIMUM validation loss over the screening budget — a
+min-over-N estimator that flatters high-variance operators, which is the same
+bias this repo already documents for restarts. On Lorenz the correct answer is
+`square`, among the highest-variance operators in the basis, so the estimator
+could have been picking the right answer for the wrong reason. Re-running the
+whole comparison with `SearchConfig.train_score='final'` (end-of-budget loss,
+unbiased with respect to variance) gives **byte-identical results** on every
+arm. A separate test confirms the flag genuinely changes `_train`'s output, so
+this is a real null and not a wiring failure. **`square` wins its ranking by a
+wide enough margin that the statistic does not matter.**
 
-*The ranking statistic is biased toward the operator that happens to be
-correct here.* The exhaustive search sorts candidate assignments by the
-MINIMUM validation loss over the screening budget — a min-over-N estimator
-that flatters high-variance operators, which is the same bias this repo
-already documents for restarts. On Lorenz the right answer is `square`, one
-of the highest-variance operators in the basis. `SearchConfig.train_score`
-now selects `'best'` (original) or `'final'` (unbiased); re-running with
-`'final'` tests whether the win is the method or the estimator.
-
-The 2.02x itself reproduces cleanly — an independent 5-seed rerun gives
-median 5.8972e-04 against 1.1925e-03, and seed separation still holds. The
-question is what it is measuring, not whether it repeats.
+**One caveat stands: it is not epoch-matched.** Arms are matched on RESTARTS,
+not on training epochs — the exhaustive search consumes **36,950** epochs
+against the baseline's **16,000**. The honest reading is "2x better for 2.3x
+the compute". An epoch-matched rerun is the fair comparison and has not been
+done.
 
 ### Three findings that decide whether it works
 
@@ -425,7 +428,7 @@ training/          structure_search.py (exhaustive search), trainer.py (GAIOptim
 experiments/       every measurement quoted above
 results/logs/      raw stdout of every run behind those numbers
 theory/            what the method does and where it breaks
-tests/             62 correctness invariants
+tests/             71 correctness invariants
 legacy/            written against a deleted API; does not run (see legacy/README.md)
 ```
 
@@ -454,7 +457,7 @@ you intend to compare**, or pass `seed_everything(seed, threads=N)`.
 ## Status
 
 Working and measured: `models/`, `training/`, `tests/`, and the `experiments/`
-scripts referenced above. `python tests/test_invariants.py` — **62 invariants**,
+scripts referenced above. `python tests/test_invariants.py` — **71 invariants**,
 all passing.
 
 **One experiment is incomplete.** `experiments/scaling_regime.py` finished 5 of

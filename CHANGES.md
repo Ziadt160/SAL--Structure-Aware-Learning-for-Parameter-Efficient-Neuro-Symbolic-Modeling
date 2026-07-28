@@ -642,10 +642,34 @@ paths that look active and are not.
   be the estimator rather than the method.
 
   Now selectable via `SearchConfig.train_score` (`'best'` = original, `'final'`
-  = end-of-budget, unbiased w.r.t. variance). Default unchanged, because
-  flipping it silently would invalidate every number already measured. The test
-  that matters: re-run Lorenz with `train_score='final'`. If the win survives it
-  is real; if it vanishes, it was the bias.
+  = end-of-budget, unbiased w.r.t. variance).
+
+  **RESOLVED — the win is not the estimator.** Re-running the full Lorenz
+  comparison at 5 seeds under both settings gives byte-identical results on
+  every arm:
+
+  | arm | `train_score='best'` | `train_score='final'` |
+  |---|---|---|
+  | mlp-best-act | 1.1925e-03 | 1.1925e-03 |
+  | search-greedy | 2.2621e-03 | 2.2621e-03 |
+  | search-exhaust | 5.8972e-04 | 5.8972e-04 |
+
+  A null result is only interpretable if the knob works, so that was checked
+  separately: on an oscillating run `'best'` returns 4.350743e-01 where
+  `'final'` returns 4.812836e-01, i.e. the flag genuinely changes what `_train`
+  reports (pinned by `test_train_score_selects_the_ranking_statistic`). So the
+  bias is real but inert here — **`square` wins its ranking by a margin wide
+  enough that the statistic does not change the pick.** The 2.02x stands.
+
+  The run also reproduces the original numbers independently at 5 seeds rather
+  than 3: median 5.8972e-04 against the MLP's 1.1925e-03, seed separation
+  intact, and seed 1 recovering `identity -> square -> identity` at 1.3302e-06 —
+  the same structure and value the README already quoted.
+
+  **What does NOT survive scrutiny is the budget matching.** The arms are
+  matched on restarts, not epochs: exhaustive spends 36,950 training epochs
+  against the baseline's 16,000. "2x better for 2.3x the compute" is the honest
+  phrasing, and an epoch-matched rerun has not been done.
 
 - **Importance-guided selection searches half the network.** Measured over 36
   evolution events on a 6-node model: importance is not degenerate (max/min

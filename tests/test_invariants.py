@@ -557,6 +557,45 @@ def test_optimizer_owns_the_models_real_tensors():
               moved == len(before), f'{moved}/{len(before)} tensors changed')
 
 
+def test_train_score_selects_the_ranking_statistic():
+    """`train_score` must actually change what _train returns.
+
+    This exists because a null result from flipping it is only interpretable if
+    the flag works. When the Lorenz rerun produced byte-identical results under
+    'best' and 'final', the two candidate explanations were "the ranking bias
+    does not change the pick on this task" (informative) and "the flag is not
+    wired through" (a bug that would have made the whole comparison vacuous).
+    A high learning rate is used so the val loss oscillates and the minimum is
+    guaranteed to differ from the final value.
+    """
+    print("\ntrain_score selects the ranking statistic")
+    from training.structure_search import SearchConfig, StructureSearch
+    X = np.random.uniform(-2, 2, (240, 2)).astype(np.float32)
+    Y = (np.sin(math.pi * X[:, :1]) + X[:, 1:] ** 2).astype(np.float32)
+    a, b = 140, 190
+    data = (X[:a], Y[:a], X[a:b], Y[a:b], X[b:], Y[b:])
+
+    got = {}
+    for ts in ('best', 'final'):
+        seed_everything(0)
+        m = MatrixGGLEN(input_dim=2, output_dim=1, hidden_dim=4, num_chains=1,
+                        chain_depth=2, rng=random.Random(0))
+        s = StructureSearch(m, *data,
+                            config=SearchConfig(seed=0, train_score=ts,
+                                                verbose=False))
+        got[ts] = (s._train(s.model, epochs=30, lr=0.5), s.val_loss())
+
+    check("'final' returns the end-of-budget loss",
+          abs(got['final'][0] - got['final'][1]) < 1e-12,
+          f"{got['final'][0]:.6e} vs {got['final'][1]:.6e}")
+    check("'best' returns a MINIMUM, not the final loss",
+          got['best'][0] <= got['best'][1],
+          f"{got['best'][0]:.6e} <= {got['best'][1]:.6e}")
+    check('the two settings actually differ on an oscillating run',
+          got['best'][0] != got['final'][0],
+          f"best {got['best'][0]:.6e} vs final {got['final'][0]:.6e}")
+
+
 def test_optimizer_honours_lr():
     """GAIOptimizer must not silently reset lr to 0.001 after a mutation."""
     print("\nGAIOptimizer learning rate")
@@ -595,6 +634,7 @@ def main():
                test_mutation_log_epoch_contract,
                test_validation_is_measured_in_eval_mode,
                test_optimizer_owns_the_models_real_tensors,
+               test_train_score_selects_the_ranking_statistic,
                test_fit_with_restarts_splits_budget_and_keeps_best,
                test_optimizer_honours_lr):
         try:

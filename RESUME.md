@@ -27,7 +27,7 @@ that directory, not in `/tmp`.
 ## State of the code
 
 All committed changes are in the working tree (nothing is staged or committed —
-`git status` will show them). **62 invariants pass**:
+`git status` will show them). **71 invariants pass**:
 
 ```bash
 python tests/test_invariants.py

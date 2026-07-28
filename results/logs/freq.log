@@ -1,0 +1,608 @@
+============================================================================================================
+ LEARNABLE FREQUENCY/DIRECTION  vs  ENUMERATED LIBRARY
+ target: y = sin(pi*f1*(a.x)) + 0.5*sin(pi*f2*(b.x)), a,b random unit directions
+ integer f=(3,11): the dense grid contains these.   irrational f=(2.7,7.3): it does not.
+ NMSE (1.0 = predicting the mean). Every neural arm reports median-over-seeds / best-of-seeds.
+============================================================================================================
+  d regime       terms  SINDy-gen SINDy-rich SINDy-dense |        MLP med/best    GAI-small med/best     GAI-best med/best   winner(median)
+------------------------------------------------------------------------------------------------------------
+[gai] Epoch 0: Val Loss 0.56535 | Temp 0.5000
+[gai] Epoch 500: Val Loss 0.09872 | Temp 0.4375
+[gai] Epoch 1000: Val Loss 0.04424 | Temp 0.3750
+[gai] Epoch 1500: Val Loss 0.03842 | Temp 0.3125
+[gai] Epoch 2000: Val Loss 0.03059 | Temp 0.2500
+[gai] Epoch 2500: Val Loss 0.02285 | Temp 0.1875
+[gai] Epoch 3000: Val Loss 0.01620 | Temp 0.1250
+[gai] Epoch 3500: Val Loss 0.01002 | Temp 0.0625
+[gai] Restoring Best Ever State (Score: -0.0053)
+[gai] Epoch 0: Val Loss 0.63499 | Temp 0.5000
+[gai] Epoch 500: Val Loss 0.04414 | Temp 0.4375
+[gai] Epoch 1000: Val Loss 0.01151 | Temp 0.3750
+[gai] Epoch 1500: Val Loss 0.00735 | Temp 0.3125
+[gai] Epoch 2000: Val Loss 0.00445 | Temp 0.2500
+[gai] Epoch 2500: Val Loss 0.00358 | Temp 0.1875
+[gai] Epoch 3000: Val Loss 0.00288 | Temp 0.1250
+[gai] Epoch 3500: Val Loss 0.00245 | Temp 0.0625
+[gai] Restoring Best Ever State (Score: -0.0022)
+[gai] Epoch 0: Val Loss 0.62452 | Temp 0.5000
+[gai] Epoch 500: Val Loss 0.12252 | Temp 0.4375
+[gai] Epoch 1000: Val Loss 0.09451 | Temp 0.3750
+[gai] Epoch 1500: Val Loss 0.08818 | Temp 0.3125
+[gai] Epoch 2000: Val Loss 0.08177 | Temp 0.2500
+[gai] Epoch 2500: Val Loss 0.07989 | Temp 0.1875
+[gai] Epoch 3000: Val Loss 0.07838 | Temp 0.1250
+[gai] Epoch 3500: Val Loss 0.07569 | Temp 0.0625
+[gai] Restoring Best Ever State (Score: -0.0700)
+[gai] Epoch 0: Val Loss 0.62957 | Temp 0.5000
+[gai] Epoch 500: Val Loss 0.00234 | Temp 0.4375
+[gai] Epoch 1000: Val Loss 0.00200 | Temp 0.3750
+[gai] Epoch 1500: Val Loss 0.00181 | Temp 0.3125
+[gai] Epoch 2000: Val Loss 0.00167 | Temp 0.2500
+[gai] Epoch 2500: Val Loss 0.00160 | Temp 0.1875
+[gai] Epoch 3000: Val Loss 0.00157 | Temp 0.1250
+[gai] Epoch 3500: Val Loss 0.00156 | Temp 0.0625
+[gai] Restoring Best Ever State (Score: -0.0015)
+[gai] Epoch 0: Val Loss 1.04389 | Temp 0.5000
+[gai] Epoch 500: Val Loss 0.10859 | Temp 0.4375
+[gai] Epoch 1000: Val Loss 0.10363 | Temp 0.3750
+[gai] Epoch 1500: Val Loss 0.06697 | Temp 0.3125
+[gai] Epoch 2000: Val Loss 0.06288 | Temp 0.2500
+[gai] Epoch 2500: Val Loss 0.06125 | Temp 0.1875
+[gai] Epoch 3000: Val Loss 0.05316 | Temp 0.1250
+
+[gai] --- Stagnation at Score -0.0526 ---
+  [gai] [Evolution] Targeting Chain 1 Layer 0 (Random)...
+    [gai] -> Mutating: TANH ===> SIN
+  [gai] [Result] 'SIN' ACCEPTED. Score: -0.0528 (Delta: 0.0000)
+[gai] Epoch 3500: Val Loss 0.01970 | Temp 0.0625
+[gai] Restoring Best Ever State (Score: -0.0027)
+[gai] Epoch 0: Val Loss 0.75144 | Temp 0.5000
+[gai] Epoch 500: Val Loss 0.12154 | Temp 0.4375
+[gai] Epoch 1000: Val Loss 0.03116 | Temp 0.3750
+[gai] Epoch 1500: Val Loss 0.00112 | Temp 0.3125
+[gai] Epoch 2000: Val Loss 0.00053 | Temp 0.2500
+[gai] Epoch 2500: Val Loss 0.00020 | Temp 0.1875
+[gai] Epoch 3000: Val Loss 0.00009 | Temp 0.1250
+[gai] Epoch 3500: Val Loss 0.00005 | Temp 0.0625
+[gai] Restoring Best Ever State (Score: -0.0000)
+[gai] Epoch 0: Val Loss 0.57938 | Temp 0.5000
+[gai] Epoch 500: Val Loss 0.03664 | Temp 0.4375
+[gai] Epoch 1000: Val Loss 0.00813 | Temp 0.3750
+[gai] Epoch 1500: Val Loss 0.00327 | Temp 0.3125
+[gai] Epoch 2000: Val Loss 0.00123 | Temp 0.2500
+[gai] Epoch 2500: Val Loss 0.00106 | Temp 0.1875
+[gai] Epoch 3000: Val Loss 0.00167 | Temp 0.1250
+[gai] Epoch 3500: Val Loss 0.00287 | Temp 0.0625
+[gai] Restoring Best Ever State (Score: -0.0008)
+[gai] Epoch 0: Val Loss 0.58667 | Temp 0.5000
+[gai] Epoch 500: Val Loss 0.09044 | Temp 0.4375
+[gai] Epoch 1000: Val Loss 0.06613 | Temp 0.3750
+[gai] Epoch 1500: Val Loss 0.05138 | Temp 0.3125
+[gai] Epoch 2000: Val Loss 0.03870 | Temp 0.2500
+[gai] Epoch 2500: Val Loss 0.02989 | Temp 0.1875
+[gai] Epoch 3000: Val Loss 0.02420 | Temp 0.1250
+[gai] Epoch 3500: Val Loss 0.02250 | Temp 0.0625
+[gai] Restoring Best Ever State (Score: -0.0208)
+[gai] Epoch 0: Val Loss 1.33712 | Temp 0.5000
+[gai] Epoch 500: Val Loss 0.00011 | Temp 0.4375
+[gai] Epoch 1000: Val Loss 0.00004 | Temp 0.3750
+[gai] Epoch 1500: Val Loss 0.00002 | Temp 0.3125
+
+[gai] --- Stagnation at Score -0.0000 ---
+  [gai] [Evolution] Targeting Chain 0 Layer 0 (Imp: 7.702e-07)...
+    [gai] -> Mutating: GAUSSIAN ===> SQUARE
+  [gai] [Result] 'SQUARE' ACCEPTED. Score: -0.0001 (Delta: 0.0002)
+
+[gai] --- Stagnation at Score -0.0000 ---
+  [gai] [Evolution] Targeting Chain 0 Layer 0 (Imp: 7.066e-07)...
+    [gai] -> Mutating: SQUARE ===> SIN
+  [gai] [Result] 'SIN' ACCEPTED. Score: -0.0001 (Delta: 0.0000)
+
+[gai] --- Stagnation at Score -0.0000 ---
+  [gai] [Evolution] Targeting Chain 0 Layer 0 (Imp: 6.479e-07)...
+    [gai] -> Mutating: SIN ===> GAUSSIAN
+[gai] Epoch 2000: Val Loss 0.00021 | Temp 0.2500
+  [gai] [Result] 'GAUSSIAN' ACCEPTED. Score: -0.0000 (Delta: 0.0000)
+
+[gai] --- Stagnation at Score -0.0000 ---
+  [gai] [Evolution] Targeting Chain 0 Layer 0 (Imp: 5.982e-07)...
+    [gai] -> Mutating: GAUSSIAN ===> SIN
+  [gai] [Result] 'SIN' ACCEPTED. Score: -0.0000 (Delta: 0.0000)
+[gai] Epoch 2500: Val Loss 0.00001 | Temp 0.1875
+
+[gai] --- Stagnation at Score -0.0000 ---
+  [gai] [Evolution] Targeting Chain 0 Layer 0 (Imp: 4.774e-07)...
+    [gai] -> Mutating: SIN ===> TANH
+  [gai] [Result] 'TANH' ACCEPTED. Score: -0.0000 (Delta: 0.0001)
+[gai] Epoch 3000: Val Loss 0.00001 | Temp 0.1250
+
+[gai] --- Stagnation at Score -0.0000 ---
+  [gai] [Evolution] Targeting Chain 0 Layer 0 (Imp: 4.072e-07)...
+    [gai] -> Mutating: TANH ===> SIN
+  [gai] [Result] 'SIN' ACCEPTED. Score: -0.0000 (Delta: 0.0000)
+[gai] Epoch 3500: Val Loss 0.00001 | Temp 0.0625
+[gai] Restoring Best Ever State (Score: -0.0000)
+
+[gai] --- Starting Efficiency Optimization ---
+  [gai] Testing size H=24 (Params: 2521)...
+    -> Score: -0.5609 (Baseline: -0.0000)
+    -> REJECTED (Too much degradation).
+  [gai] Testing size H=16 (Params: 1169)...
+    -> Score: -0.5880 (Baseline: -0.0000)
+    -> REJECTED (Too much degradation).
+  [gai] Testing size H=12 (Params: 685)...
+    -> Score: -0.5645 (Baseline: -0.0000)
+    -> REJECTED (Too much degradation).
+  [gai] Testing size H=8 (Params: 329)...
+    -> Score: -0.5157 (Baseline: -0.0000)
+    -> REJECTED (Too much degradation).
+[gai] Epoch 0: Val Loss 1.13703 | Temp 0.5000
+[gai] Epoch 500: Val Loss 0.08518 | Temp 0.4375
+[gai] Epoch 1000: Val Loss 0.00277 | Temp 0.3750
+[gai] Epoch 1500: Val Loss 0.00051 | Temp 0.3125
+
+[gai] --- Stagnation at Score -0.0005 ---
+  [gai] [Evolution] Targeting Chain 1 Layer 1 (Imp: 3.616e-06)...
+    [gai] -> Mutating: GAUSSIAN ===> RELU
+  [gai] [Result] 'RELU' ACCEPTED. Score: -0.0012 (Delta: 0.0000)
+
+[gai] --- Stagnation at Score -0.0005 ---
+  [gai] [Evolution] Targeting Chain 1 Layer 1 (Imp: 4.157e-06)...
+    [gai] -> Mutating: RELU ===> TANH
+  [gai] [Result] 'TANH' ACCEPTED. Score: -0.0561 (Delta: 0.0001)
+[gai] Epoch 2000: Val Loss 0.01858 | Temp 0.2500
+
+[gai] --- Stagnation at Score -0.0005 ---
+  [gai] [Evolution] Targeting Chain 1 Layer 2 (Imp: 6.053e-06)...
+    [gai] -> Mutating: GAUSSIAN ===> IDENTITY
+  [gai] [Result] 'IDENTITY' ACCEPTED. Score: -0.0173 (Delta: 0.0002)
+
+[gai] --- Stagnation at Score -0.0005 ---
+  [gai] [Evolution] Targeting Chain 0 Layer 1 (Imp: 8.504e-06)...
+    [gai] -> Mutating: TANH ===> RELU
+  [gai] [Result] 'RELU' ACCEPTED. Score: -0.0375 (Delta: 0.0003)
+
+[gai] --- Stagnation at Score -0.0005 ---
+  [gai] [Evolution] Targeting Chain 0 Layer 1 (Imp: 8.424e-06)...
+    [gai] -> Mutating: RELU ===> GAUSSIAN
+  [gai] [Result] 'GAUSSIAN' ACCEPTED. Score: -0.0136 (Delta: 0.0001)
+[gai] Epoch 2500: Val Loss 0.00900 | Temp 0.1875
+
+[gai] --- Stagnation at Score -0.0005 ---
+  [gai] [Evolution] Targeting Chain 1 Layer 0 (Imp: 1.017e-05)...
+    [gai] -> Mutating: TANH ===> SIN
+  [gai] [Result] 'SIN' ACCEPTED. Score: -0.0060 (Delta: 0.0001)
+
+[gai] --- Stagnation at Score -0.0005 ---
+  [gai] [Evolution] Targeting Chain 0 Layer 2 (Imp: 1.027e-05)...
+    [gai] -> Mutating: SIN ===> SQUARE
+  [gai] [Result] 'SQUARE' ACCEPTED. Score: -0.0016 (Delta: 0.0000)
+
+[gai] --- Stagnation at Score -0.0005 ---
+  [gai] [Evolution] Targeting Chain 0 Layer 0 (Imp: 1.056e-05)...
+    [gai] -> Mutating: RELU ===> SQUARE
+  [gai] [Result] 'SQUARE' ACCEPTED. Score: -0.0029 (Delta: 0.0000)
+[gai] Epoch 3000: Val Loss 0.00158 | Temp 0.1250
+
+[gai] --- Stagnation at Score -0.0005 ---
+  [gai] [Evolution] Targeting Chain 0 Layer 0 (Imp: 1.001e-05)...
+    [gai] -> Mutating: SQUARE ===> SIN
+  [gai] [Result] 'SIN' ACCEPTED. Score: -0.0012 (Delta: 0.0000)
+[gai] Epoch 3500: Val Loss 0.00028 | Temp 0.0625
+[gai] Restoring Best Ever State (Score: -0.0002)
+
+[gai] --- Starting Efficiency Optimization ---
+  [gai] Testing size H=24 (Params: 2521)...
+    -> Score: -0.5663 (Baseline: -0.0002)
+    -> REJECTED (Too much degradation).
+  [gai] Testing size H=16 (Params: 1169)...
+    -> Score: -0.5388 (Baseline: -0.0002)
+    -> REJECTED (Too much degradation).
+  [gai] Testing size H=12 (Params: 685)...
+    -> Score: -0.5253 (Baseline: -0.0002)
+    -> REJECTED (Too much degradation).
+  [gai] Testing size H=8 (Params: 329)...
+    -> Score: -0.5495 (Baseline: -0.0002)
+    -> REJECTED (Too much degradation).
+[gai] Epoch 0: Val Loss 0.84427 | Temp 0.5000
+[gai] Epoch 500: Val Loss 0.07480 | Temp 0.4375
+[gai] Epoch 1000: Val Loss 0.02128 | Temp 0.3750
+
+[gai] --- Stagnation at Score -0.0163 ---
+  [gai] [Evolution] Targeting Chain 0 Layer 1 (Imp: 5.061e-07)...
+    [gai] -> Mutating: TANH ===> GAUSSIAN
+  [gai] [Result] 'GAUSSIAN' ACCEPTED. Score: -0.0240 (Delta: 0.0005)
+
+[gai] --- Stagnation at Score -0.0163 ---
+  [gai] [Evolution] Targeting Chain 0 Layer 0 (Imp: 5.440e-07)...
+    [gai] -> Mutating: TANH ===> GAUSSIAN
+  [gai] [Result] 'GAUSSIAN' ACCEPTED. Score: -0.0203 (Delta: 0.0005)
+[gai] Epoch 1500: Val Loss 0.01688 | Temp 0.3125
+[gai] Epoch 2000: Val Loss 0.00125 | Temp 0.2500
+
+[gai] --- Stagnation at Score -0.0003 ---
+  [gai] [Evolution] Targeting Chain 0 Layer 0 (Imp: 3.997e-07)...
+    [gai] -> Mutating: GAUSSIAN ===> IDENTITY
+  [gai] [Result] 'IDENTITY' ACCEPTED. Score: -0.0004 (Delta: 0.0000)
+[gai] Epoch 2500: Val Loss 0.00370 | Temp 0.1875
+[gai] Epoch 3000: Val Loss 0.00039 | Temp 0.1250
+
+[gai] --- Stagnation at Score -0.0002 ---
+  [gai] [Evolution] Targeting Chain 0 Layer 0 (Imp: 3.394e-07)...
+    [gai] -> Mutating: IDENTITY ===> SIN
+  [gai] [Result] 'SIN' REJECTED. Score: -0.0002 (Delta: 0.0000)
+  [gai] Instant Retry: Triggering evolution again...
+
+[gai] --- Stagnation at Score -0.0001 ---
+  [gai] [Evolution] Targeting Chain 0 Layer 0 (Imp: 3.183e-07)...
+    [gai] -> Mutating: IDENTITY ===> RELU
+  [gai] [Result] 'RELU' ACCEPTED. Score: -0.0040 (Delta: 0.0233)
+[gai] Epoch 3500: Val Loss 0.00032 | Temp 0.0625
+
+[gai] --- Stagnation at Score -0.0001 ---
+  [gai] [Evolution] Targeting Chain 0 Layer 0 (Imp: 3.057e-07)...
+    [gai] -> Mutating: RELU ===> SQUARE
+  [gai] [Result] 'SQUARE' ACCEPTED. Score: -0.0002 (Delta: 0.0000)
+
+[gai] --- Stagnation at Score -0.0001 ---
+  [gai] [Evolution] Targeting Chain 0 Layer 0 (Imp: 2.914e-07)...
+    [gai] -> Mutating: SQUARE ===> RELU
+  [gai] [Result] 'RELU' ACCEPTED. Score: -0.0002 (Delta: 0.0000)
+
+[gai] --- Stagnation at Score -0.0001 ---
+  [gai] [Evolution] Targeting Chain 0 Layer 0 (Imp: 2.795e-07)...
+    [gai] -> Mutating: RELU ===> IDENTITY
+  [gai] [Result] 'IDENTITY' ACCEPTED. Score: -0.0002 (Delta: 0.0005)
+[gai] Restoring Best Ever State (Score: -0.0001)
+
+[gai] --- Starting Efficiency Optimization ---
+  [gai] Testing size H=24 (Params: 2521)...
+    -> Score: -0.3385 (Baseline: -0.0001)
+    -> REJECTED (Too much degradation).
+  [gai] Testing size H=16 (Params: 1169)...
+    -> Score: -0.4775 (Baseline: -0.0001)
+    -> REJECTED (Too much degradation).
+  [gai] Testing size H=12 (Params: 685)...
+    -> Score: -0.4513 (Baseline: -0.0001)
+    -> REJECTED (Too much degradation).
+  [gai] Testing size H=8 (Params: 329)...
+    -> Score: -0.5074 (Baseline: -0.0001)
+    -> REJECTED (Too much degradation).
+[gai] Epoch 0: Val Loss 1.26753 | Temp 0.5000
+[gai] Epoch 500: Val Loss 0.06105 | Temp 0.4375
+[gai] Epoch 1000: Val Loss 0.03531 | Temp 0.3750
+[gai] Epoch 1500: Val Loss 0.02886 | Temp 0.3125
+[gai] Epoch 2000: Val Loss 0.02652 | Temp 0.2500
+[gai] Epoch 2500: Val Loss 0.02624 | Temp 0.1875
+
+[gai] --- Stagnation at Score -0.0262 ---
+  [gai] [Evolution] Targeting Chain 1 Layer 0 (Imp: 7.469e-07)...
+    [gai] -> Mutating: GAUSSIAN ===> RELU
+  [gai] [Result] 'RELU' ACCEPTED. Score: -0.0263 (Delta: 0.0007)
+[gai] Epoch 3000: Val Loss 0.00546 | Temp 0.1250
+[gai] Epoch 3500: Val Loss 0.00051 | Temp 0.0625
+[gai] Restoring Best Ever State (Score: -0.0003)
+
+[gai] --- Starting Efficiency Optimization ---
+  [gai] Testing size H=24 (Params: 2521)...
+    -> Score: -0.5552 (Baseline: -0.0003)
+    -> REJECTED (Too much degradation).
+  [gai] Testing size H=16 (Params: 1169)...
+    -> Score: -0.5412 (Baseline: -0.0003)
+    -> REJECTED (Too much degradation).
+  [gai] Testing size H=12 (Params: 685)...
+    -> Score: -0.5438 (Baseline: -0.0003)
+    -> REJECTED (Too much degradation).
+  [gai] Testing size H=8 (Params: 329)...
+    -> Score: -0.5579 (Baseline: -0.0003)
+    -> REJECTED (Too much degradation).
+[gai] Epoch 0: Val Loss 1.23643 | Temp 0.5000
+[gai] Epoch 500: Val Loss 0.07751 | Temp 0.4375
+[gai] Epoch 1000: Val Loss 0.00980 | Temp 0.3750
+[gai] Epoch 1500: Val Loss 0.00060 | Temp 0.3125
+[gai] Epoch 2000: Val Loss 0.00025 | Temp 0.2500
+[gai] Epoch 2500: Val Loss 0.00090 | Temp 0.1875
+
+[gai] --- Stagnation at Score -0.0002 ---
+  [gai] [Evolution] Targeting Chain 1 Layer 1 (Imp: 2.933e-07)...
+    [gai] -> Mutating: GAUSSIAN ===> RELU
+  [gai] [Result] 'RELU' ACCEPTED. Score: -0.0002 (Delta: 0.0000)
+
+[gai] --- Stagnation at Score -0.0002 ---
+  [gai] [Evolution] Targeting Chain 1 Layer 1 (Imp: 2.975e-07)...
+    [gai] -> Mutating: RELU ===> SIN
+  [gai] [Result] 'SIN' ACCEPTED. Score: -0.0002 (Delta: 0.0000)
+
+[gai] --- Stagnation at Score -0.0002 ---
+  [gai] [Evolution] Targeting Chain 1 Layer 1 (Imp: 8.834e-07)...
+    [gai] -> Mutating: SIN ===> GAUSSIAN
+[gai] Epoch 3000: Val Loss 0.00753 | Temp 0.1250
+  [gai] [Result] 'GAUSSIAN' ACCEPTED. Score: -0.0018 (Delta: 0.0000)
+
+[gai] --- Stagnation at Score -0.0002 ---
+  [gai] [Evolution] Targeting Chain 1 Layer 1 (Imp: 8.949e-07)...
+    [gai] -> Mutating: GAUSSIAN ===> SQUARE
+  [gai] [Result] 'SQUARE' ACCEPTED. Score: -0.0084 (Delta: 0.0001)
+
+[gai] --- Stagnation at Score -0.0002 ---
+  [gai] [Evolution] Targeting Chain 0 Layer 1 (Imp: 1.462e-05)...
+    [gai] -> Mutating: SIN ===> SQUARE
+  [gai] [Result] 'SQUARE' ACCEPTED. Score: -0.0364 (Delta: 0.0003)
+[gai] Epoch 3500: Val Loss 0.14677 | Temp 0.0625
+
+[gai] --- Stagnation at Score -0.0002 ---
+  [gai] [Evolution] Targeting Chain 0 Layer 1 (Imp: 1.602e-05)...
+    [gai] -> Mutating: SQUARE ===> IDENTITY
+  [gai] [Result] 'IDENTITY' ACCEPTED. Score: -0.1400 (Delta: 0.0003)
+
+[gai] --- Stagnation at Score -0.0002 ---
+  [gai] [Evolution] Targeting Chain 0 Layer 1 (Imp: 1.664e-05)...
+    [gai] -> Mutating: IDENTITY ===> GAUSSIAN
+  [gai] [Result] 'GAUSSIAN' ACCEPTED. Score: -0.1930 (Delta: 0.0004)
+
+[gai] --- Stagnation at Score -0.0002 ---
+  [gai] [Evolution] Targeting Chain 0 Layer 1 (Imp: 1.812e-05)...
+    [gai] -> Mutating: GAUSSIAN ===> IDENTITY
+  [gai] [Result] 'IDENTITY' ACCEPTED. Score: -0.1786 (Delta: 0.0003)
+[gai] Restoring Best Ever State (Score: -0.0002)
+
+[gai] --- Starting Efficiency Optimization ---
+  [gai] Testing size H=24 (Params: 2521)...
+    -> Score: -0.5568 (Baseline: -0.0002)
+    -> REJECTED (Too much degradation).
+  [gai] Testing size H=16 (Params: 1169)...
+    -> Score: -0.5620 (Baseline: -0.0002)
+    -> REJECTED (Too much degradation).
+  [gai] Testing size H=12 (Params: 685)...
+    -> Score: -0.5406 (Baseline: -0.0002)
+    -> REJECTED (Too much degradation).
+  [gai] Testing size H=8 (Params: 329)...
+    -> Score: -0.5726 (Baseline: -0.0002)
+    -> REJECTED (Too much degradation).
+[gai] Epoch 0: Val Loss 1.22877 | Temp 0.5000
+[gai] Epoch 500: Val Loss 0.00958 | Temp 0.4375
+[gai] Epoch 1000: Val Loss 0.00064 | Temp 0.3750
+
+[gai] --- Stagnation at Score -0.0002 ---
+  [gai] [Evolution] Targeting Chain 1 Layer 1 (Imp: 4.530e-07)...
+    [gai] -> Mutating: RELU ===> TANH
+[gai] Epoch 1500: Val Loss 0.19865 | Temp 0.3125
+  [gai] [Result] 'TANH' ACCEPTED. Score: -0.0002 (Delta: 0.0000)
+
+[gai] --- Stagnation at Score -0.0002 ---
+  [gai] [Evolution] Targeting Chain 1 Layer 1 (Imp: 1.399e-06)...
+    [gai] -> Mutating: TANH ===> RELU
+  [gai] [Result] 'RELU' ACCEPTED. Score: -0.0208 (Delta: 0.0034)
+
+[gai] --- Stagnation at Score -0.0002 ---
+  [gai] [Evolution] Targeting Chain 1 Layer 1 (Imp: 1.468e-06)...
+    [gai] -> Mutating: RELU ===> SIN
+  [gai] [Result] 'SIN' ACCEPTED. Score: -0.0054 (Delta: 0.0014)
+[gai] Epoch 2000: Val Loss 0.00614 | Temp 0.2500
+
+[gai] --- Stagnation at Score -0.0002 ---
+  [gai] [Evolution] Targeting Chain 1 Layer 1 (Imp: 2.814e-06)...
+    [gai] -> Mutating: SIN ===> TANH
+  [gai] [Result] 'TANH' ACCEPTED. Score: -0.0055 (Delta: 0.0001)
+
+[gai] --- Stagnation at Score -0.0002 ---
+  [gai] [Evolution] Targeting Chain 1 Layer 1 (Imp: 3.376e-06)...
+    [gai] -> Mutating: TANH ===> GAUSSIAN
+  [gai] [Result] 'GAUSSIAN' ACCEPTED. Score: -0.0054 (Delta: 0.0009)
+
+[gai] --- Stagnation at Score -0.0002 ---
+  [gai] [Evolution] Targeting Chain 1 Layer 1 (Imp: 3.202e-06)...
+    [gai] -> Mutating: GAUSSIAN ===> SQUARE
+  [gai] [Result] 'SQUARE' ACCEPTED. Score: -0.0011 (Delta: 0.0000)
+[gai] Epoch 2500: Val Loss 0.00507 | Temp 0.1875
+
+[gai] --- Stagnation at Score -0.0002 ---
+  [gai] [Evolution] Targeting Chain 1 Layer 1 (Imp: 3.017e-06)...
+    [gai] -> Mutating: SQUARE ===> IDENTITY
+  [gai] [Result] 'IDENTITY' ACCEPTED. Score: -0.0030 (Delta: 0.0005)
+
+[gai] --- Stagnation at Score -0.0002 ---
+  [gai] [Evolution] Targeting Chain 1 Layer 1 (Imp: 3.102e-06)...
+    [gai] -> Mutating: IDENTITY ===> GAUSSIAN
+  [gai] [Result] 'GAUSSIAN' ACCEPTED. Score: -0.0012 (Delta: 0.0001)
+
+[gai] --- Stagnation at Score -0.0002 ---
+  [gai] [Evolution] Targeting Chain 1 Layer 1 (Imp: 2.952e-06)...
+    [gai] -> Mutating: GAUSSIAN ===> RELU
+  [gai] [Result] 'RELU' ACCEPTED. Score: -0.0007 (Delta: 0.0000)
+[gai] Epoch 3000: Val Loss 0.00624 | Temp 0.1250
+
+[gai] --- Stagnation at Score -0.0002 ---
+  [gai] [Evolution] Targeting Chain 1 Layer 1 (Imp: 3.107e-06)...
+    [gai] -> Mutating: RELU ===> GAUSSIAN
+  [gai] [Result] 'GAUSSIAN' REJECTED. Score: -0.0033 (Delta: 0.0000)
+  [gai] Instant Retry: Triggering evolution again...
+[gai] Epoch 3500: Val Loss 0.00162 | Temp 0.0625
+
+[gai] --- Stagnation at Score -0.0001 ---
+  [gai] [Evolution] Targeting Chain 1 Layer 1 (Imp: 2.467e-06)...
+    [gai] -> Mutating: RELU ===> SQUARE
+  [gai] [Result] 'SQUARE' REJECTED. Score: -0.0010 (Delta: 0.0000)
+  [gai] Instant Retry: Triggering evolution again...
+[gai] Restoring Best Ever State (Score: -0.0001)
+
+[gai] --- Starting Efficiency Optimization ---
+  [gai] Testing size H=24 (Params: 2521)...
+    -> Score: -0.5054 (Baseline: -0.0001)
+    -> REJECTED (Too much degradation).
+  [gai] Testing size H=16 (Params: 1169)...
+    -> Score: -0.4667 (Baseline: -0.0001)
+    -> REJECTED (Too much degradation).
+  [gai] Testing size H=12 (Params: 685)...
+    -> Score: -0.5167 (Baseline: -0.0001)
+    -> REJECTED (Too much degradation).
+  [gai] Testing size H=8 (Params: 329)...
+    -> Score: -0.5204 (Baseline: -0.0001)
+    -> REJECTED (Too much degradation).
+[gai] Epoch 0: Val Loss 2.26098 | Temp 0.5000
+[gai] Epoch 500: Val Loss 0.06445 | Temp 0.4375
+[gai] Epoch 1000: Val Loss 0.01545 | Temp 0.3750
+[gai] Epoch 1500: Val Loss 0.00069 | Temp 0.3125
+[gai] Epoch 2000: Val Loss 0.00104 | Temp 0.2500
+
+[gai] --- Stagnation at Score -0.0003 ---
+  [gai] [Evolution] Targeting Chain 1 Layer 0 (Imp: 4.689e-06)...
+    [gai] -> Mutating: TANH ===> SQUARE
+  [gai] [Result] 'SQUARE' ACCEPTED. Score: -0.0005 (Delta: 0.0001)
+
+[gai] --- Stagnation at Score -0.0003 ---
+  [gai] [Evolution] Targeting Chain 1 Layer 0 (Imp: 4.688e-06)...
+    [gai] -> Mutating: SQUARE ===> GAUSSIAN
+[gai] Epoch 2500: Val Loss 0.00489 | Temp 0.1875
+  [gai] [Result] 'GAUSSIAN' ACCEPTED. Score: -0.0010 (Delta: 0.0000)
+
+[gai] --- Stagnation at Score -0.0003 ---
+  [gai] [Evolution] Targeting Chain 1 Layer 0 (Imp: 4.909e-06)...
+    [gai] -> Mutating: GAUSSIAN ===> SQUARE
+  [gai] [Result] 'SQUARE' ACCEPTED. Score: -0.0007 (Delta: 0.0000)
+
+[gai] --- Stagnation at Score -0.0003 ---
+  [gai] [Evolution] Targeting Chain 1 Layer 0 (Imp: 4.676e-06)...
+    [gai] -> Mutating: SQUARE ===> RELU
+  [gai] [Result] 'RELU' ACCEPTED. Score: -0.0004 (Delta: 0.0000)
+[gai] Epoch 3000: Val Loss 0.00028 | Temp 0.1250
+[gai] Epoch 3500: Val Loss 0.00756 | Temp 0.0625
+[gai] Restoring Best Ever State (Score: -0.0001)
+
+[gai] --- Starting Efficiency Optimization ---
+  [gai] Testing size H=24 (Params: 2521)...
+    -> Score: -0.5524 (Baseline: -0.0001)
+    -> REJECTED (Too much degradation).
+  [gai] Testing size H=16 (Params: 1169)...
+    -> Score: -0.5594 (Baseline: -0.0001)
+    -> REJECTED (Too much degradation).
+  [gai] Testing size H=12 (Params: 685)...
+    -> Score: -0.5931 (Baseline: -0.0001)
+    -> REJECTED (Too much degradation).
+  [gai] Testing size H=8 (Params: 329)...
+    -> Score: -0.5721 (Baseline: -0.0001)
+    -> REJECTED (Too much degradation).
+[gai] Epoch 0: Val Loss 0.67714 | Temp 0.5000
+[gai] Epoch 500: Val Loss 0.00408 | Temp 0.4375
+[gai] Epoch 1000: Val Loss 0.00520 | Temp 0.3750
+[gai] Epoch 1500: Val Loss 0.00557 | Temp 0.3125
+[gai] Epoch 2000: Val Loss 0.00124 | Temp 0.2500
+
+[gai] --- Stagnation at Score -0.0011 ---
+  [gai] [Evolution] Targeting Chain 0 Layer 2 (Imp: 1.636e-06)...
+    [gai] -> Mutating: GAUSSIAN ===> SIN
+[gai] Epoch 2500: Val Loss 0.93832 | Temp 0.1875
+  [gai] [Result] 'SIN' ACCEPTED. Score: -0.0025 (Delta: 0.0006)
+
+[gai] --- Stagnation at Score -0.0011 ---
+  [gai] [Evolution] Targeting Chain 1 Layer 0 (Imp: 1.919e-06)...
+    [gai] -> Mutating: TANH ===> IDENTITY
+  [gai] [Result] 'IDENTITY' ACCEPTED. Score: -0.0765 (Delta: 0.0431)
+
+[gai] --- Stagnation at Score -0.0011 ---
+  [gai] [Evolution] Targeting Chain 1 Layer 0 (Imp: 2.097e-06)...
+    [gai] -> Mutating: IDENTITY ===> SQUARE
+  [gai] [Result] 'SQUARE' ACCEPTED. Score: -0.0349 (Delta: 0.0145)
+[gai] Epoch 3000: Val Loss 0.01863 | Temp 0.1250
+
+[gai] --- Stagnation at Score -0.0011 ---
+  [gai] [Evolution] Targeting Chain 1 Layer 0 (Imp: 2.369e-06)...
+    [gai] -> Mutating: SQUARE ===> GAUSSIAN
+  [gai] [Result] 'GAUSSIAN' ACCEPTED. Score: -0.0171 (Delta: 0.0015)
+
+[gai] --- Stagnation at Score -0.0011 ---
+  [gai] [Evolution] Targeting Chain 1 Layer 1 (Imp: 3.165e-06)...
+    [gai] -> Mutating: TANH ===> GAUSSIAN
+  [gai] [Result] 'GAUSSIAN' REJECTED. Score: -0.0210 (Delta: 0.0000)
+  [gai] Instant Retry: Triggering evolution again...
+[gai] Epoch 3500: Val Loss 0.02418 | Temp 0.0625
+[gai] Restoring Best Ever State (Score: -0.0011)
+
+[gai] --- Starting Efficiency Optimization ---
+  [gai] Testing size H=24 (Params: 2521)...
+    -> Score: -0.5593 (Baseline: -0.0011)
+    -> REJECTED (Too much degradation).
+  [gai] Testing size H=16 (Params: 1169)...
+    -> Score: -0.5526 (Baseline: -0.0011)
+    -> REJECTED (Too much degradation).
+  [gai] Testing size H=12 (Params: 685)...
+    -> Score: -0.5690 (Baseline: -0.0011)
+    -> REJECTED (Too much degradation).
+  [gai] Testing size H=8 (Params: 329)...
+    -> Score: -0.5535 (Baseline: -0.0011)
+    -> REJECTED (Too much degradation).
+  1 integer         34     0.8737     0.1919      0.0000 |    0.0001/0.0000        0.0042/0.0000         0.0002/0.0000       SINDy-dense
+      params: MLP(sin)=193  GAI-small=185  GAI-best=4385  SINDy-dense terms=34
+[gai] Epoch 0: Val Loss 0.57511 | Temp 0.5000
+[gai] Epoch 500: Val Loss 0.02197 | Temp 0.4375
+[gai] Epoch 1000: Val Loss 0.00231 | Temp 0.3750
+[gai] Epoch 1500: Val Loss 0.00180 | Temp 0.3125
+[gai] Epoch 2000: Val Loss 0.00038 | Temp 0.2500
+[gai] Epoch 2500: Val Loss 0.00018 | Temp 0.1875
+[gai] Epoch 3000: Val Loss 0.00011 | Temp 0.1250
+[gai] Epoch 3500: Val Loss 0.00006 | Temp 0.0625
+[gai] Restoring Best Ever State (Score: -0.0001)
+[gai] Epoch 0: Val Loss 0.64051 | Temp 0.5000
+[gai] Epoch 500: Val Loss 0.00298 | Temp 0.4375
+[gai] Epoch 1000: Val Loss 0.00055 | Temp 0.3750
+[gai] Epoch 1500: Val Loss 0.00041 | Temp 0.3125
+[gai] Epoch 2000: Val Loss 0.00027 | Temp 0.2500
+[gai] Epoch 2500: Val Loss 0.00023 | Temp 0.1875
+[gai] Epoch 3000: Val Loss 0.00020 | Temp 0.1250
+[gai] Epoch 3500: Val Loss 0.00017 | Temp 0.0625
+[gai] Restoring Best Ever State (Score: -0.0001)
+[gai] Epoch 0: Val Loss 0.67005 | Temp 0.5000
+[gai] Epoch 500: Val Loss 0.11770 | Temp 0.4375
+[gai] Epoch 1000: Val Loss 0.10725 | Temp 0.3750
+[gai] Epoch 1500: Val Loss 0.10108 | Temp 0.3125
+[gai] Epoch 2000: Val Loss 0.09174 | Temp 0.2500
+[gai] Epoch 2500: Val Loss 0.05917 | Temp 0.1875
+[gai] Epoch 3000: Val Loss 0.05241 | Temp 0.1250
+[gai] Epoch 3500: Val Loss 0.04937 | Temp 0.0625
+[gai] Restoring Best Ever State (Score: -0.0468)
+[gai] Epoch 0: Val Loss 0.60302 | Temp 0.5000
+[gai] Epoch 500: Val Loss 0.00063 | Temp 0.4375
+[gai] Epoch 1000: Val Loss 0.00038 | Temp 0.3750
+[gai] Epoch 1500: Val Loss 0.00006 | Temp 0.3125
+[gai] Epoch 2000: Val Loss 0.00004 | Temp 0.2500
+[gai] Epoch 2500: Val Loss 0.00003 | Temp 0.1875
+[gai] Epoch 3000: Val Loss 0.00002 | Temp 0.1250
+[gai] Epoch 3500: Val Loss 0.00002 | Temp 0.0625
+[gai] Restoring Best Ever State (Score: -0.0000)
+[gai] Epoch 0: Val Loss 0.99863 | Temp 0.5000
+[gai] Epoch 500: Val Loss 0.06064 | Temp 0.4375
+[gai] Epoch 1000: Val Loss 0.03807 | Temp 0.3750
+[gai] Epoch 1500: Val Loss 0.00394 | Temp 0.3125
+[gai] Epoch 2000: Val Loss 0.00103 | Temp 0.2500
+[gai] Epoch 2500: Val Loss 0.00033 | Temp 0.1875
+[gai] Epoch 3000: Val Loss 0.00028 | Temp 0.1250
+[gai] Epoch 3500: Val Loss 0.00026 | Temp 0.0625
+[gai] Restoring Best Ever State (Score: -0.0002)
+[gai] Epoch 0: Val Loss 0.73368 | Temp 0.5000
+[gai] Epoch 500: Val Loss 0.01310 | Temp 0.4375
+[gai] Epoch 1000: Val Loss 0.00394 | Temp 0.3750
+[gai] Epoch 1500: Val Loss 0.00162 | Temp 0.3125
+[gai] Epoch 2000: Val Loss 0.00105 | Temp 0.2500
+[gai] Epoch 2500: Val Loss 0.00088 | Temp 0.1875
+[gai] Epoch 3000: Val Loss 0.00069 | Temp 0.1250
+[gai] Epoch 3500: Val Loss 0.00058 | Temp 0.0625
+[gai] Restoring Best Ever State (Score: -0.0005)
+[gai] Epoch 0: Val Loss 0.57428 | Temp 0.5000
+[gai] Epoch 500: Val Loss 0.00058 | Temp 0.4375
+[gai] Epoch 1000: Val Loss 0.00012 | Temp 0.3750
+[gai] Epoch 1500: Val Loss 0.00010 | Temp 0.3125
+[gai] Epoch 2000: Val Loss 0.00008 | Temp 0.2500
+[gai] Epoch 2500: Val Loss 0.00008 | Temp 0.1875
+[gai] Epoch 3000: Val Loss 0.00005 | Temp 0.1250
+[gai] Epoch 3500: Val Loss 0.00009 | Temp 0.0625
+[gai] Restoring Best Ever State (Score: -0.0000)
+[gai] Epoch 0: Val Loss 0.58750 | Temp 0.5000
+[gai] Epoch 500: Val Loss 0.05481 | Temp 0.4375
+[gai] Epoch 1000: Val Loss 0.00937 | Temp 0.3750
+[gai] Epoch 1500: Val Loss 0.00195 | Temp 0.3125
+[gai] Epoch 2000: Val Loss 0.00177 | Temp 0.2500
+[gai] Epoch 2500: Val Loss 0.00170 | Temp 0.1875
+
+[gai] --- Stagnation at Score -0.0017 ---
+  [gai] [Evolution] Targeting Chain 1 Layer 1 (Random)...
+    [gai] -> Mutating: TANH ===> GAUSSIAN
