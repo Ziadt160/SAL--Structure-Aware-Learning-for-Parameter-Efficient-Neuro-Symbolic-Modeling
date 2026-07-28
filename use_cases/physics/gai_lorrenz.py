@@ -18,8 +18,12 @@ from models.activations import ACTIVATIONS
 # End Import Fix
 
 # --- CONFIGURATION ---
+# `random` drives every structural mutation and the annealing coin flip, so
+# seeding only torch and numpy left the architecture search unseeded -- the one
+# stochastic process that most needs pinning down.
 torch.manual_seed(42)
 np.random.seed(42)
+random.seed(42)
 HIDDEN_DIM = 32 # Wider to capture interactions
 
 # --- 1. DATA: THE LORENZ ATTRACTOR (CHAOS) ---
@@ -137,8 +141,11 @@ def train_chaos_gglen():
             backup_chains = copy.deepcopy(model.chains)
             prev_loss_at_mutation = curr_loss
             
-            # Use Core Evolve Structure
-            c_id, l_id = model.evolve_structure(mutation_history)
+            # Use Core Evolve Structure.
+            # evolve_structure returns (chain, layer, old_op) -- unpacking it
+            # as a 2-tuple raised ValueError at the first stagnation event,
+            # i.e. the moment evolution actually began.
+            c_id, l_id, _old_op = model.evolve_structure(mutation_history)
             if c_id is not None:
                 active_node = (c_id, l_id)
                 active_op = model.chains[c_id].layers[l_id].op_name

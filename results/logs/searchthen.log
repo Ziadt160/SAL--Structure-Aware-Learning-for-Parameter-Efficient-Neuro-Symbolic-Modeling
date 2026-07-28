@@ -1,0 +1,2305 @@
+============================================================================================
+ IS THE SEARCH BEATING RANDOM RESTARTS?  y = sin(pi*x1) + x2^2
+ budget-matched: gai = 1 x 6000 epochs; restart = 8 x 750 epochs, best-of-K
+ recovery = test loss < 1e-08;  28 seeds
+============================================================================================
+arm             recovery    median test     best test  note                        
+--------------------------------------------------------------------------------------------
+[searchThen/s0] Epoch 0: Val Loss 1.61939 | Temp 0.5000
+[searchThen/s0] Epoch 500: Val Loss 0.14362 | Temp 0.4583
+
+[searchThen/s0] --- Stagnation at Score -0.1425 ---
+  [searchThen/s0] [Evolution] Targeting Chain 0 Layer 0 (Imp: 2.774e-04)...
+    [searchThen/s0] -> Mutating: GAUSSIAN ===> SQUARE
+  [searchThen/s0] [Result] 'SQUARE' REJECTED. Score: -0.1883 (Delta: -0.0457)
+  [searchThen/s0] Instant Retry: Triggering evolution again...
+
+[searchThen/s0] --- Stagnation at Score -0.1425 ---
+  [searchThen/s0] [Evolution] Targeting Chain 0 Layer 0 (Imp: 2.774e-04)...
+    [searchThen/s0] -> Mutating: GAUSSIAN ===> TANH
+  [searchThen/s0] [Result] 'TANH' REJECTED. Score: -0.1897 (Delta: -0.0015)
+  [searchThen/s0] Instant Retry: Triggering evolution again...
+
+[searchThen/s0] --- Stagnation at Score -0.1425 ---
+  [searchThen/s0] [Evolution] Targeting Chain 0 Layer 0 (Imp: 2.774e-04)...
+    [searchThen/s0] -> Mutating: GAUSSIAN ===> IDENTITY
+  [searchThen/s0] [Result] 'IDENTITY' REJECTED. Score: -0.1903 (Delta: -0.0006)
+  [searchThen/s0] Instant Retry: Triggering evolution again...
+
+[searchThen/s0] --- Stagnation at Score -0.1425 ---
+  [searchThen/s0] [Evolution] Targeting Chain 0 Layer 0 (Imp: 2.774e-04)...
+    [searchThen/s0] -> Mutating: GAUSSIAN ===> SIN
+[searchThen/s0] Epoch 1000: Val Loss 0.21767 | Temp 0.4167
+  [searchThen/s0] [Result] 'SIN' REJECTED. Score: -0.1922 (Delta: -0.0019)
+  [searchThen/s0] Instant Retry: Triggering evolution again...
+
+[searchThen/s0] --- Stagnation at Score -0.1425 ---
+  [searchThen/s0] [Evolution] Targeting Chain 0 Layer 0 (Imp: 2.774e-04)...
+    [searchThen/s0] -> Mutating: GAUSSIAN ===> RELU
+  [searchThen/s0] [Result] 'RELU' ACCEPTED. Score: -0.1866 (Delta: 0.0056)
+
+[searchThen/s0] --- Stagnation at Score -0.1425 ---
+  [searchThen/s0] [Evolution] Targeting Chain 0 Layer 0 (Imp: 2.100e-04)...
+    [searchThen/s0] -> Mutating: RELU ===> GAUSSIAN
+  [searchThen/s0] [Result] 'GAUSSIAN' REJECTED. Score: -0.3759 (Delta: -0.2328)
+  [searchThen/s0] Instant Retry: Triggering evolution again...
+
+[searchThen/s0] --- Stagnation at Score -0.1425 ---
+  [searchThen/s0] [Evolution] Targeting Chain 0 Layer 0 (Imp: 2.100e-04)...
+  [searchThen/s0] [Evolution] Targeting Chain 1 Layer 0 (Imp: 5.415e-04)...
+    [searchThen/s0] -> Mutating: GAUSSIAN ===> SIN
+  [searchThen/s0] [Result] 'SIN' ACCEPTED. Score: -0.2967 (Delta: 0.0792)
+
+[searchThen/s0] --- Stagnation at Score -0.1425 ---
+  [searchThen/s0] [Evolution] Targeting Chain 1 Layer 0 (Imp: 4.690e-04)...
+    [searchThen/s0] -> Mutating: SIN ===> SQUARE
+  [searchThen/s0] [Result] 'SQUARE' ACCEPTED. Score: -0.2789 (Delta: 0.0022)
+[searchThen/s0] Epoch 1500: Val Loss 0.27785 | Temp 0.3750
+
+[searchThen/s0] --- Stagnation at Score -0.1425 ---
+  [searchThen/s0] [Evolution] Targeting Chain 1 Layer 0 (Imp: 2.141e-05)...
+    [searchThen/s0] -> Mutating: SQUARE ===> RELU
+  [searchThen/s0] [Result] 'RELU' ACCEPTED. Score: -0.2759 (Delta: 0.0012)
+
+[searchThen/s0] --- Stagnation at Score -0.1425 ---
+  [searchThen/s0] [Evolution] Targeting Chain 1 Layer 0 (Imp: 3.485e-04)...
+    [searchThen/s0] -> Mutating: RELU ===> TANH
+  [searchThen/s0] [Result] 'TANH' REJECTED. Score: -0.3049 (Delta: -0.0416)
+  [searchThen/s0] Instant Retry: Triggering evolution again...
+
+[searchThen/s0] --- Stagnation at Score -0.1425 ---
+  [searchThen/s0] [Evolution] Targeting Chain 1 Layer 0 (Imp: 3.485e-04)...
+    [searchThen/s0] -> Mutating: RELU ===> IDENTITY
+  [searchThen/s0] [Result] 'IDENTITY' REJECTED. Score: -0.3055 (Delta: -0.0006)
+  [searchThen/s0] Instant Retry: Triggering evolution again...
+
+[searchThen/s0] --- Stagnation at Score -0.1425 ---
+  [searchThen/s0] [Evolution] Targeting Chain 1 Layer 0 (Imp: 3.485e-04)...
+    [searchThen/s0] -> Mutating: RELU ===> SQUARE
+  [searchThen/s0] [Result] 'SQUARE' REJECTED. Score: -0.3378 (Delta: -0.0322)
+  [searchThen/s0] Instant Retry: Triggering evolution again...
+
+[searchThen/s0] --- Stagnation at Score -0.1425 ---
+  [searchThen/s0] [Evolution] Targeting Chain 1 Layer 0 (Imp: 3.485e-04)...
+    [searchThen/s0] -> Mutating: RELU ===> GAUSSIAN
+  [searchThen/s0] [Result] 'GAUSSIAN' ACCEPTED. Score: -0.3350 (Delta: 0.0028)
+[searchThen/s0] Epoch 2000: Val Loss 0.18646 | Temp 0.3333
+
+[searchThen/s0] --- Stagnation at Score -0.1425 ---
+  [searchThen/s0] [Evolution] Targeting Chain 0 Layer 0 (Imp: 1.241e-03)...
+  [searchThen/s0] [Evolution] Targeting Chain 1 Layer 0 (Imp: 2.406e-03)...
+    [searchThen/s0] -> Mutating: GAUSSIAN ===> SIN
+  [searchThen/s0] [Result] 'SIN' REJECTED. Score: -0.3210 (Delta: -0.1348)
+  [searchThen/s0] Instant Retry: Triggering evolution again...
+
+[searchThen/s0] --- Stagnation at Score -0.1425 ---
+  [searchThen/s0] [Evolution] Targeting Chain 0 Layer 0 (Imp: 1.241e-03)...
+  [searchThen/s0] [Evolution] Targeting Chain 1 Layer 0 (Imp: 2.406e-03)...
+    [searchThen/s0] -> Mutating: GAUSSIAN ===> RELU
+  [searchThen/s0] [Result] 'RELU' ACCEPTED. Score: -0.3108 (Delta: 0.0102)
+
+[searchThen/s0] --- Stagnation at Score -0.1425 ---
+  [searchThen/s0] [Evolution] Targeting Chain 1 Layer 0 (Imp: 7.243e-04)...
+    [searchThen/s0] -> Mutating: RELU ===> GAUSSIAN
+  [searchThen/s0] [Result] 'GAUSSIAN' REJECTED. Score: -0.2951 (Delta: -0.0325)
+  [searchThen/s0] Instant Retry: Triggering evolution again...
+
+[searchThen/s0] --- Stagnation at Score -0.1425 ---
+  [searchThen/s0] [Evolution] Targeting Chain 1 Layer 0 (Imp: 7.243e-04)...
+  [searchThen/s0] [Evolution] Targeting Chain 0 Layer 0 (Imp: 2.057e-03)...
+[searchThen/s0] No mutations possible or supported.
+[searchThen/s0] Restoring Best Ever State (Score: -0.1425)
+[searchThen/s1] Epoch 0: Val Loss 0.60286 | Temp 0.5000
+[searchThen/s1] Epoch 500: Val Loss 0.17144 | Temp 0.4583
+[searchThen/s1] Epoch 1000: Val Loss 0.14859 | Temp 0.4167
+[searchThen/s1] Epoch 1500: Val Loss 0.14579 | Temp 0.3750
+[searchThen/s1] Epoch 2000: Val Loss 0.14515 | Temp 0.3333
+
+[searchThen/s1] --- Stagnation at Score -0.1451 ---
+  [searchThen/s1] [Evolution] Targeting Chain 0 Layer 0 (Imp: 1.307e-04)...
+    [searchThen/s1] -> Mutating: RELU ===> IDENTITY
+  [searchThen/s1] [Result] 'IDENTITY' REJECTED. Score: -0.1614 (Delta: -0.0161)
+  [searchThen/s1] Instant Retry: Triggering evolution again...
+
+[searchThen/s1] --- Stagnation at Score -0.1451 ---
+  [searchThen/s1] [Evolution] Targeting Chain 0 Layer 0 (Imp: 1.307e-04)...
+    [searchThen/s1] -> Mutating: RELU ===> GAUSSIAN
+  [searchThen/s1] [Result] 'GAUSSIAN' REJECTED. Score: -0.2510 (Delta: -0.0897)
+  [searchThen/s1] Instant Retry: Triggering evolution again...
+
+[searchThen/s1] --- Stagnation at Score -0.1451 ---
+  [searchThen/s1] [Evolution] Targeting Chain 0 Layer 0 (Imp: 1.307e-04)...
+    [searchThen/s1] -> Mutating: RELU ===> SQUARE
+  [searchThen/s1] [Result] 'SQUARE' ACCEPTED. Score: -0.1678 (Delta: 0.0832)
+[searchThen/s1] Epoch 2500: Val Loss 0.08040 | Temp 0.2917
+
+[searchThen/s1] --- Stagnation at Score -0.0803 ---
+  [searchThen/s1] [Evolution] Targeting Chain 0 Layer 0 (Imp: 2.092e-04)...
+    [searchThen/s1] -> Mutating: SQUARE ===> RELU
+  [searchThen/s1] [Result] 'RELU' REJECTED. Score: -0.1750 (Delta: -0.0947)
+  [searchThen/s1] Instant Retry: Triggering evolution again...
+
+[searchThen/s1] --- Stagnation at Score -0.0803 ---
+  [searchThen/s1] [Evolution] Targeting Chain 0 Layer 0 (Imp: 2.092e-04)...
+    [searchThen/s1] -> Mutating: SQUARE ===> TANH
+  [searchThen/s1] [Result] 'TANH' ACCEPTED. Score: -0.1582 (Delta: 0.0168)
+
+[searchThen/s1] --- Stagnation at Score -0.0803 ---
+  [searchThen/s1] [Evolution] Targeting Chain 0 Layer 0 (Imp: 4.095e-04)...
+    [searchThen/s1] -> Mutating: TANH ===> SQUARE
+  [searchThen/s1] [Result] 'SQUARE' REJECTED. Score: -0.3050 (Delta: -0.1815)
+  [searchThen/s1] Instant Retry: Triggering evolution again...
+
+[searchThen/s1] --- Stagnation at Score -0.0803 ---
+  [searchThen/s1] [Evolution] Targeting Chain 0 Layer 0 (Imp: 4.095e-04)...
+    [searchThen/s1] -> Mutating: TANH ===> SIN
+  [searchThen/s1] [Result] 'SIN' ACCEPTED. Score: -0.1272 (Delta: 0.1778)
+[searchThen/s1] Epoch 3000: Val Loss 0.12090 | Temp 0.2500
+
+[searchThen/s1] --- Stagnation at Score -0.0803 ---
+  [searchThen/s1] [Evolution] Targeting Chain 0 Layer 0 (Imp: 5.353e-04)...
+    [searchThen/s1] -> Mutating: SIN ===> TANH
+  [searchThen/s1] [Result] 'TANH' REJECTED. Score: -0.2330 (Delta: -0.1124)
+  [searchThen/s1] Instant Retry: Triggering evolution again...
+
+[searchThen/s1] --- Stagnation at Score -0.0803 ---
+  [searchThen/s1] [Evolution] Targeting Chain 0 Layer 0 (Imp: 5.353e-04)...
+  [searchThen/s1] [Evolution] Targeting Chain 1 Layer 0 (Imp: 1.306e-03)...
+    [searchThen/s1] -> Mutating: TANH ===> IDENTITY
+  [searchThen/s1] [Result] 'IDENTITY' REJECTED. Score: -0.5255 (Delta: -0.2925)
+  [searchThen/s1] Instant Retry: Triggering evolution again...
+
+[searchThen/s1] --- Stagnation at Score -0.0803 ---
+  [searchThen/s1] [Evolution] Targeting Chain 0 Layer 0 (Imp: 5.353e-04)...
+  [searchThen/s1] [Evolution] Targeting Chain 1 Layer 0 (Imp: 1.306e-03)...
+    [searchThen/s1] -> Mutating: TANH ===> GAUSSIAN
+  [searchThen/s1] [Result] 'GAUSSIAN' REJECTED. Score: -0.5916 (Delta: -0.0661)
+  [searchThen/s1] Instant Retry: Triggering evolution again...
+
+[searchThen/s1] --- Stagnation at Score -0.0803 ---
+  [searchThen/s1] [Evolution] Targeting Chain 0 Layer 0 (Imp: 5.353e-04)...
+  [searchThen/s1] [Evolution] Targeting Chain 1 Layer 0 (Imp: 1.306e-03)...
+    [searchThen/s1] -> Mutating: TANH ===> SIN
+  [searchThen/s1] [Result] 'SIN' ACCEPTED. Score: -0.3263 (Delta: 0.2654)
+
+[searchThen/s1] --- Stagnation at Score -0.0803 ---
+  [searchThen/s1] [Evolution] Targeting Chain 0 Layer 0 (Imp: 9.881e-04)...
+  [searchThen/s1] [Evolution] Targeting Chain 1 Layer 0 (Imp: 1.023e-03)...
+    [searchThen/s1] -> Mutating: SIN ===> RELU
+  [searchThen/s1] [Result] 'RELU' REJECTED. Score: -0.4230 (Delta: -0.1653)
+  [searchThen/s1] Instant Retry: Triggering evolution again...
+
+[searchThen/s1] --- Stagnation at Score -0.0803 ---
+  [searchThen/s1] [Evolution] Targeting Chain 0 Layer 0 (Imp: 9.881e-04)...
+  [searchThen/s1] [Evolution] Targeting Chain 1 Layer 0 (Imp: 1.023e-03)...
+    [searchThen/s1] -> Mutating: SIN ===> TANH
+  [searchThen/s1] [Result] 'TANH' ACCEPTED. Score: -0.3375 (Delta: 0.0855)
+
+[searchThen/s1] --- Stagnation at Score -0.0803 ---
+  [searchThen/s1] [Evolution] Targeting Chain 1 Layer 0 (Imp: 3.544e-04)...
+    [searchThen/s1] -> Mutating: TANH ===> SQUARE
+  [searchThen/s1] [Result] 'SQUARE' ACCEPTED. Score: -0.2918 (Delta: 0.0291)
+[searchThen/s1] Epoch 3500: Val Loss 0.27459 | Temp 0.2083
+[searchThen/s1] Epoch 4000: Val Loss 0.00000 | Temp 0.1667
+
+[searchThen/s1] --- Stagnation at Score -0.0000 ---
+  [searchThen/s1] [Evolution] Targeting Chain 1 Layer 0 (Imp: 4.928e-05)...
+    [searchThen/s1] -> Mutating: SQUARE ===> SIN
+  [searchThen/s1] [Result] 'SIN' REJECTED. Score: -0.0981 (Delta: -0.0981)
+  [searchThen/s1] Instant Retry: Triggering evolution again...
+
+[searchThen/s1] --- Stagnation at Score -0.0000 ---
+  [searchThen/s1] [Evolution] Targeting Chain 1 Layer 0 (Imp: 4.928e-05)...
+    [searchThen/s1] -> Mutating: SQUARE ===> TANH
+  [searchThen/s1] [Result] 'TANH' REJECTED. Score: -0.0990 (Delta: -0.0009)
+  [searchThen/s1] Instant Retry: Triggering evolution again...
+
+[searchThen/s1] --- Stagnation at Score -0.0000 ---
+  [searchThen/s1] [Evolution] Targeting Chain 1 Layer 0 (Imp: 4.928e-05)...
+  [searchThen/s1] [Evolution] Targeting Chain 0 Layer 0 (Imp: 1.756e-04)...
+[searchThen/s1] No mutations possible or supported.
+[searchThen/s1] Restoring Best Ever State (Score: -0.0000)
+[searchThen/s2] Epoch 0: Val Loss 0.70634 | Temp 0.5000
+[searchThen/s2] Epoch 500: Val Loss 0.12463 | Temp 0.4583
+[searchThen/s2] Epoch 1000: Val Loss 0.11582 | Temp 0.4167
+[searchThen/s2] Epoch 1500: Val Loss 0.11378 | Temp 0.3750
+[searchThen/s2] Epoch 2000: Val Loss 0.11261 | Temp 0.3333
+[searchThen/s2] Epoch 2500: Val Loss 0.11187 | Temp 0.2917
+[searchThen/s2] Epoch 3000: Val Loss 0.11136 | Temp 0.2500
+[searchThen/s2] Epoch 3500: Val Loss 0.11094 | Temp 0.2083
+[searchThen/s2] Epoch 4000: Val Loss 0.11066 | Temp 0.1667
+[searchThen/s2] Epoch 4500: Val Loss 0.11042 | Temp 0.1250
+
+[searchThen/s2] --- Stagnation at Score -0.1103 ---
+  [searchThen/s2] [Evolution] Targeting Chain 0 Layer 0 (Imp: 1.824e-03)...
+    [searchThen/s2] -> Mutating: TANH ===> GAUSSIAN
+  [searchThen/s2] [Result] 'GAUSSIAN' REJECTED. Score: -21.8482 (Delta: -21.7379)
+  [searchThen/s2] Instant Retry: Triggering evolution again...
+
+[searchThen/s2] --- Stagnation at Score -0.1103 ---
+  [searchThen/s2] [Evolution] Targeting Chain 0 Layer 0 (Imp: 1.824e-03)...
+    [searchThen/s2] -> Mutating: TANH ===> IDENTITY
+[searchThen/s2] Epoch 5000: Val Loss 9.09766 | Temp 0.0833
+  [searchThen/s2] [Result] 'IDENTITY' ACCEPTED. Score: -5.4994 (Delta: 16.3488)
+
+[searchThen/s2] --- Stagnation at Score -0.1103 ---
+  [searchThen/s2] [Evolution] Targeting Chain 0 Layer 0 (Imp: 3.928e-03)...
+    [searchThen/s2] -> Mutating: IDENTITY ===> RELU
+  [searchThen/s2] [Result] 'RELU' REJECTED. Score: -1.5864 (Delta: -1.4446)
+  [searchThen/s2] Instant Retry: Triggering evolution again...
+
+[searchThen/s2] --- Stagnation at Score -0.1103 ---
+  [searchThen/s2] [Evolution] Targeting Chain 0 Layer 0 (Imp: 3.928e-03)...
+    [searchThen/s2] -> Mutating: IDENTITY ===> SQUARE
+  [searchThen/s2] [Result] 'SQUARE' REJECTED. Score: -1.8884 (Delta: -0.3020)
+  [searchThen/s2] Instant Retry: Triggering evolution again...
+
+[searchThen/s2] --- Stagnation at Score -0.1103 ---
+  [searchThen/s2] [Evolution] Targeting Chain 0 Layer 0 (Imp: 3.928e-03)...
+    [searchThen/s2] -> Mutating: IDENTITY ===> SIN
+  [searchThen/s2] [Result] 'SIN' ACCEPTED. Score: -0.2247 (Delta: 1.6637)
+
+[searchThen/s2] --- Stagnation at Score -0.1103 ---
+  [searchThen/s2] [Evolution] Targeting Chain 0 Layer 0 (Imp: 2.182e-03)...
+    [searchThen/s2] -> Mutating: SIN ===> TANH
+  [searchThen/s2] [Result] 'TANH' REJECTED. Score: -1.1674 (Delta: -1.0072)
+  [searchThen/s2] Instant Retry: Triggering evolution again...
+
+[searchThen/s2] --- Stagnation at Score -0.1103 ---
+  [searchThen/s2] [Evolution] Targeting Chain 0 Layer 0 (Imp: 2.182e-03)...
+    [searchThen/s2] -> Mutating: SIN ===> IDENTITY
+  [searchThen/s2] [Result] 'IDENTITY' ACCEPTED. Score: -1.1120 (Delta: 0.0554)
+[searchThen/s2] Epoch 5500: Val Loss 0.30525 | Temp 0.0417
+
+[searchThen/s2] --- Stagnation at Score -0.1103 ---
+  [searchThen/s2] [Evolution] Targeting Chain 0 Layer 0 (Imp: 1.679e-03)...
+    [searchThen/s2] -> Mutating: IDENTITY ===> SIN
+  [searchThen/s2] [Result] 'SIN' REJECTED. Score: -0.3265 (Delta: -0.0824)
+  [searchThen/s2] Instant Retry: Triggering evolution again...
+
+[searchThen/s2] --- Stagnation at Score -0.1103 ---
+  [searchThen/s2] [Evolution] Targeting Chain 0 Layer 0 (Imp: 1.679e-03)...
+  [searchThen/s2] [Evolution] Targeting Chain 1 Layer 0 (Imp: 4.206e-03)...
+    [searchThen/s2] -> Mutating: TANH ===> SQUARE
+  [searchThen/s2] [Result] 'SQUARE' REJECTED. Score: -0.8560 (Delta: -0.5296)
+  [searchThen/s2] Instant Retry: Triggering evolution again...
+
+[searchThen/s2] --- Stagnation at Score -0.1103 ---
+  [searchThen/s2] [Evolution] Targeting Chain 0 Layer 0 (Imp: 1.679e-03)...
+  [searchThen/s2] [Evolution] Targeting Chain 1 Layer 0 (Imp: 4.206e-03)...
+    [searchThen/s2] -> Mutating: TANH ===> GAUSSIAN
+  [searchThen/s2] [Result] 'GAUSSIAN' REJECTED. Score: -5.2868 (Delta: -4.4308)
+  [searchThen/s2] Instant Retry: Triggering evolution again...
+
+[searchThen/s2] --- Stagnation at Score -0.1103 ---
+  [searchThen/s2] [Evolution] Targeting Chain 0 Layer 0 (Imp: 1.679e-03)...
+  [searchThen/s2] [Evolution] Targeting Chain 1 Layer 0 (Imp: 4.206e-03)...
+    [searchThen/s2] -> Mutating: TANH ===> SIN
+  [searchThen/s2] [Result] 'SIN' ACCEPTED. Score: -0.3470 (Delta: 4.9398)
+
+[searchThen/s2] --- Stagnation at Score -0.1103 ---
+  [searchThen/s2] [Evolution] Targeting Chain 0 Layer 0 (Imp: 1.368e-03)...
+  [searchThen/s2] [Evolution] Targeting Chain 1 Layer 0 (Imp: 2.042e-03)...
+    [searchThen/s2] -> Mutating: SIN ===> TANH
+  [searchThen/s2] [Result] 'TANH' REJECTED. Score: -0.4562 (Delta: -0.1559)
+  [searchThen/s2] Instant Retry: Triggering evolution again...
+
+[searchThen/s2] --- Stagnation at Score -0.1103 ---
+  [searchThen/s2] [Evolution] Targeting Chain 0 Layer 0 (Imp: 1.368e-03)...
+  [searchThen/s2] [Evolution] Targeting Chain 1 Layer 0 (Imp: 2.042e-03)...
+    [searchThen/s2] -> Mutating: SIN ===> IDENTITY
+  [searchThen/s2] [Result] 'IDENTITY' ACCEPTED. Score: -0.4286 (Delta: 0.0276)
+[searchThen/s2] Restoring Best Ever State (Score: -0.1103)
+[searchThen/s3] Epoch 0: Val Loss 0.65159 | Temp 0.5000
+
+[searchThen/s3] --- Stagnation at Score -0.2779 ---
+  [searchThen/s3] [Evolution] Targeting Chain 1 Layer 0 (Imp: 1.686e-05)...
+    [searchThen/s3] -> Mutating: RELU ===> IDENTITY
+[searchThen/s3] Epoch 500: Val Loss 0.25103 | Temp 0.4583
+  [searchThen/s3] [Result] 'IDENTITY' ACCEPTED. Score: -0.2512 (Delta: 0.0268)
+
+[searchThen/s3] --- Stagnation at Score -0.2508 ---
+  [searchThen/s3] [Evolution] Targeting Chain 1 Layer 0 (Imp: 1.955e-03)...
+    [searchThen/s3] -> Mutating: IDENTITY ===> TANH
+  [searchThen/s3] [Result] 'TANH' REJECTED. Score: -1.3632 (Delta: -1.1110)
+  [searchThen/s3] Instant Retry: Triggering evolution again...
+
+[searchThen/s3] --- Stagnation at Score -0.2508 ---
+  [searchThen/s3] [Evolution] Targeting Chain 1 Layer 0 (Imp: 1.955e-03)...
+    [searchThen/s3] -> Mutating: IDENTITY ===> RELU
+  [searchThen/s3] [Result] 'RELU' REJECTED. Score: -1.9826 (Delta: -0.6193)
+  [searchThen/s3] Instant Retry: Triggering evolution again...
+
+[searchThen/s3] --- Stagnation at Score -0.2508 ---
+  [searchThen/s3] [Evolution] Targeting Chain 1 Layer 0 (Imp: 1.955e-03)...
+    [searchThen/s3] -> Mutating: IDENTITY ===> SIN
+  [searchThen/s3] [Result] 'SIN' ACCEPTED. Score: -0.6753 (Delta: 1.3073)
+
+[searchThen/s3] --- Stagnation at Score -0.2508 ---
+  [searchThen/s3] [Evolution] Targeting Chain 1 Layer 0 (Imp: 1.607e-03)...
+    [searchThen/s3] -> Mutating: SIN ===> SQUARE
+  [searchThen/s3] [Result] 'SQUARE' REJECTED. Score: -0.4362 (Delta: -0.1349)
+  [searchThen/s3] Instant Retry: Triggering evolution again...
+
+[searchThen/s3] --- Stagnation at Score -0.2508 ---
+  [searchThen/s3] [Evolution] Targeting Chain 1 Layer 0 (Imp: 1.607e-03)...
+    [searchThen/s3] -> Mutating: SIN ===> IDENTITY
+  [searchThen/s3] [Result] 'IDENTITY' ACCEPTED. Score: -0.3706 (Delta: 0.0655)
+[searchThen/s3] Epoch 1000: Val Loss 0.26939 | Temp 0.4167
+
+[searchThen/s3] --- Stagnation at Score -0.2508 ---
+  [searchThen/s3] [Evolution] Targeting Chain 1 Layer 0 (Imp: 4.055e-04)...
+    [searchThen/s3] -> Mutating: IDENTITY ===> GAUSSIAN
+  [searchThen/s3] [Result] 'GAUSSIAN' REJECTED. Score: -0.2676 (Delta: -0.0043)
+  [searchThen/s3] Instant Retry: Triggering evolution again...
+
+[searchThen/s3] --- Stagnation at Score -0.2508 ---
+  [searchThen/s3] [Evolution] Targeting Chain 1 Layer 0 (Imp: 4.055e-04)...
+    [searchThen/s3] -> Mutating: IDENTITY ===> SIN
+  [searchThen/s3] [Result] 'SIN' REJECTED. Score: -0.2747 (Delta: -0.0071)
+  [searchThen/s3] Instant Retry: Triggering evolution again...
+
+[searchThen/s3] --- Stagnation at Score -0.2508 ---
+  [searchThen/s3] [Evolution] Targeting Chain 1 Layer 0 (Imp: 4.055e-04)...
+  [searchThen/s3] [Evolution] Targeting Chain 0 Layer 0 (Imp: 2.157e-03)...
+    [searchThen/s3] -> Mutating: RELU ===> SQUARE
+  [searchThen/s3] [Result] 'SQUARE' REJECTED. Score: -0.8365 (Delta: -0.5618)
+  [searchThen/s3] Instant Retry: Triggering evolution again...
+
+[searchThen/s3] --- Stagnation at Score -0.2508 ---
+  [searchThen/s3] [Evolution] Targeting Chain 1 Layer 0 (Imp: 4.055e-04)...
+  [searchThen/s3] [Evolution] Targeting Chain 0 Layer 0 (Imp: 2.157e-03)...
+    [searchThen/s3] -> Mutating: RELU ===> SIN
+  [searchThen/s3] [Result] 'SIN' ACCEPTED. Score: -0.3937 (Delta: 0.4428)
+
+[searchThen/s3] --- Stagnation at Score -0.2508 ---
+  [searchThen/s3] [Evolution] Targeting Chain 1 Layer 0 (Imp: 9.520e-04)...
+  [searchThen/s3] [Evolution] Targeting Chain 0 Layer 0 (Imp: 1.231e-03)...
+    [searchThen/s3] -> Mutating: SIN ===> IDENTITY
+  [searchThen/s3] [Result] 'IDENTITY' REJECTED. Score: -0.4855 (Delta: -0.1911)
+  [searchThen/s3] Instant Retry: Triggering evolution again...
+
+[searchThen/s3] --- Stagnation at Score -0.2508 ---
+  [searchThen/s3] [Evolution] Targeting Chain 1 Layer 0 (Imp: 9.520e-04)...
+  [searchThen/s3] [Evolution] Targeting Chain 0 Layer 0 (Imp: 1.231e-03)...
+    [searchThen/s3] -> Mutating: SIN ===> GAUSSIAN
+  [searchThen/s3] [Result] 'GAUSSIAN' REJECTED. Score: -0.5679 (Delta: -0.0823)
+  [searchThen/s3] Instant Retry: Triggering evolution again...
+
+[searchThen/s3] --- Stagnation at Score -0.2508 ---
+  [searchThen/s3] [Evolution] Targeting Chain 1 Layer 0 (Imp: 9.520e-04)...
+  [searchThen/s3] [Evolution] Targeting Chain 0 Layer 0 (Imp: 1.231e-03)...
+    [searchThen/s3] -> Mutating: SIN ===> TANH
+  [searchThen/s3] [Result] 'TANH' ACCEPTED. Score: -0.5121 (Delta: 0.0557)
+[searchThen/s3] Epoch 1500: Val Loss 0.32166 | Temp 0.3750
+
+[searchThen/s3] --- Stagnation at Score -0.2508 ---
+  [searchThen/s3] [Evolution] Targeting Chain 0 Layer 0 (Imp: 6.118e-04)...
+    [searchThen/s3] -> Mutating: TANH ===> SIN
+  [searchThen/s3] [Result] 'SIN' REJECTED. Score: -0.3319 (Delta: -0.0138)
+  [searchThen/s3] Instant Retry: Triggering evolution again...
+
+[searchThen/s3] --- Stagnation at Score -0.2508 ---
+  [searchThen/s3] [Evolution] Targeting Chain 0 Layer 0 (Imp: 6.118e-04)...
+    [searchThen/s3] -> Mutating: TANH ===> RELU
+  [searchThen/s3] [Result] 'RELU' REJECTED. Score: -0.3337 (Delta: -0.0018)
+  [searchThen/s3] Instant Retry: Triggering evolution again...
+
+[searchThen/s3] --- Stagnation at Score -0.2508 ---
+  [searchThen/s3] [Evolution] Targeting Chain 0 Layer 0 (Imp: 6.118e-04)...
+  [searchThen/s3] [Evolution] Targeting Chain 1 Layer 0 (Imp: 1.541e-03)...
+[searchThen/s3] No mutations possible or supported.
+[searchThen/s3] Restoring Best Ever State (Score: -0.2508)
+[searchThen/s4] Epoch 0: Val Loss 1.65944 | Temp 0.5000
+[searchThen/s4] Epoch 500: Val Loss 0.19011 | Temp 0.4583
+[searchThen/s4] Epoch 1000: Val Loss 0.18731 | Temp 0.4167
+[searchThen/s4] Epoch 1500: Val Loss 0.18602 | Temp 0.3750
+[searchThen/s4] Epoch 2000: Val Loss 0.18528 | Temp 0.3333
+[searchThen/s4] Epoch 2500: Val Loss 0.18478 | Temp 0.2917
+[searchThen/s4] Epoch 3000: Val Loss 0.18442 | Temp 0.2500
+[searchThen/s4] Epoch 3500: Val Loss 0.18414 | Temp 0.2083
+[searchThen/s4] Epoch 4000: Val Loss 0.18390 | Temp 0.1667
+[searchThen/s4] Epoch 4500: Val Loss 0.18369 | Temp 0.1250
+[searchThen/s4] Epoch 5000: Val Loss 0.18355 | Temp 0.0833
+[searchThen/s4] Epoch 5500: Val Loss 0.18340 | Temp 0.0417
+[searchThen/s4] Restoring Best Ever State (Score: -0.1831)
+[searchThen/s5] Epoch 0: Val Loss 0.74096 | Temp 0.5000
+
+[searchThen/s5] --- Stagnation at Score -0.0002 ---
+  [searchThen/s5] [Evolution] Targeting Chain 1 Layer 0 (Imp: 1.232e-04)...
+    [searchThen/s5] -> Mutating: SIN ===> TANH
+  [searchThen/s5] [Result] 'TANH' REJECTED. Score: -0.1141 (Delta: -0.1138)
+  [searchThen/s5] Instant Retry: Triggering evolution again...
+
+[searchThen/s5] --- Stagnation at Score -0.0002 ---
+  [searchThen/s5] [Evolution] Targeting Chain 1 Layer 0 (Imp: 1.232e-04)...
+    [searchThen/s5] -> Mutating: SIN ===> RELU
+[searchThen/s5] Epoch 500: Val Loss 0.25329 | Temp 0.4583
+  [searchThen/s5] [Result] 'RELU' REJECTED. Score: -0.2466 (Delta: -0.1325)
+  [searchThen/s5] Instant Retry: Triggering evolution again...
+
+[searchThen/s5] --- Stagnation at Score -0.0002 ---
+  [searchThen/s5] [Evolution] Targeting Chain 1 Layer 0 (Imp: 1.232e-04)...
+    [searchThen/s5] -> Mutating: SIN ===> SQUARE
+  [searchThen/s5] [Result] 'SQUARE' REJECTED. Score: -0.2471 (Delta: -0.0005)
+  [searchThen/s5] Instant Retry: Triggering evolution again...
+
+[searchThen/s5] --- Stagnation at Score -0.0002 ---
+  [searchThen/s5] [Evolution] Targeting Chain 1 Layer 0 (Imp: 1.232e-04)...
+    [searchThen/s5] -> Mutating: SIN ===> IDENTITY
+  [searchThen/s5] [Result] 'IDENTITY' ACCEPTED. Score: -0.1112 (Delta: 0.1359)
+
+[searchThen/s5] --- Stagnation at Score -0.0002 ---
+  [searchThen/s5] [Evolution] Targeting Chain 1 Layer 0 (Imp: 3.274e-04)...
+    [searchThen/s5] -> Mutating: IDENTITY ===> GAUSSIAN
+  [searchThen/s5] [Result] 'GAUSSIAN' REJECTED. Score: -0.9578 (Delta: -0.8622)
+  [searchThen/s5] Instant Retry: Triggering evolution again...
+
+[searchThen/s5] --- Stagnation at Score -0.0002 ---
+  [searchThen/s5] [Evolution] Targeting Chain 1 Layer 0 (Imp: 3.274e-04)...
+    [searchThen/s5] -> Mutating: IDENTITY ===> SIN
+  [searchThen/s5] [Result] 'SIN' ACCEPTED. Score: -0.0977 (Delta: 0.8601)
+
+[searchThen/s5] --- Stagnation at Score -0.0002 ---
+  [searchThen/s5] [Evolution] Targeting Chain 1 Layer 0 (Imp: 2.704e-04)...
+    [searchThen/s5] -> Mutating: SIN ===> IDENTITY
+  [searchThen/s5] [Result] 'IDENTITY' REJECTED. Score: -0.0980 (Delta: -0.0026)
+  [searchThen/s5] Instant Retry: Triggering evolution again...
+
+[searchThen/s5] --- Stagnation at Score -0.0002 ---
+  [searchThen/s5] [Evolution] Targeting Chain 1 Layer 0 (Imp: 2.704e-04)...
+  [searchThen/s5] [Evolution] Targeting Chain 0 Layer 0 (Imp: 7.423e-04)...
+    [searchThen/s5] -> Mutating: SIN ===> GAUSSIAN
+  [searchThen/s5] [Result] 'GAUSSIAN' REJECTED. Score: -0.4743 (Delta: -0.3763)
+  [searchThen/s5] Instant Retry: Triggering evolution again...
+
+[searchThen/s5] --- Stagnation at Score -0.0002 ---
+  [searchThen/s5] [Evolution] Targeting Chain 1 Layer 0 (Imp: 2.704e-04)...
+  [searchThen/s5] [Evolution] Targeting Chain 0 Layer 0 (Imp: 7.423e-04)...
+    [searchThen/s5] -> Mutating: SIN ===> RELU
+  [searchThen/s5] [Result] 'RELU' ACCEPTED. Score: -0.3487 (Delta: 0.1256)
+[searchThen/s5] Epoch 1000: Val Loss 0.31332 | Temp 0.4167
+
+[searchThen/s5] --- Stagnation at Score -0.0002 ---
+  [searchThen/s5] [Evolution] Targeting Chain 0 Layer 0 (Imp: 1.515e-07)...
+    [searchThen/s5] -> Mutating: RELU ===> IDENTITY
+  [searchThen/s5] [Result] 'IDENTITY' ACCEPTED. Score: -0.1360 (Delta: 0.1296)
+
+[searchThen/s5] --- Stagnation at Score -0.0002 ---
+  [searchThen/s5] [Evolution] Targeting Chain 0 Layer 0 (Imp: 2.246e-04)...
+    [searchThen/s5] -> Mutating: IDENTITY ===> SQUARE
+  [searchThen/s5] [Result] 'SQUARE' ACCEPTED. Score: -0.0855 (Delta: 0.0104)
+[searchThen/s5] Epoch 1500: Val Loss 0.00000 | Temp 0.3750
+
+[searchThen/s5] --- Stagnation at Score -0.0000 ---
+  [searchThen/s5] [Evolution] Targeting Chain 0 Layer 0 (Imp: 1.090e-05)...
+    [searchThen/s5] -> Mutating: SQUARE ===> TANH
+  [searchThen/s5] [Result] 'TANH' REJECTED. Score: -0.0989 (Delta: -0.0989)
+  [searchThen/s5] Instant Retry: Triggering evolution again...
+
+[searchThen/s5] --- Stagnation at Score -0.0000 ---
+  [searchThen/s5] [Evolution] Targeting Chain 0 Layer 0 (Imp: 1.090e-05)...
+    [searchThen/s5] -> Mutating: SQUARE ===> IDENTITY
+  [searchThen/s5] [Result] 'IDENTITY' REJECTED. Score: -0.0990 (Delta: -0.0001)
+  [searchThen/s5] Instant Retry: Triggering evolution again...
+
+[searchThen/s5] --- Stagnation at Score -0.0000 ---
+  [searchThen/s5] [Evolution] Targeting Chain 0 Layer 0 (Imp: 1.090e-05)...
+    [searchThen/s5] -> Mutating: SQUARE ===> SIN
+  [searchThen/s5] [Result] 'SIN' ACCEPTED. Score: -0.0967 (Delta: 0.0023)
+[searchThen/s5] Epoch 2000: Val Loss 0.09520 | Temp 0.3333
+
+[searchThen/s5] --- Stagnation at Score -0.0000 ---
+  [searchThen/s5] [Evolution] Targeting Chain 0 Layer 0 (Imp: 2.672e-04)...
+    [searchThen/s5] -> Mutating: SIN ===> RELU
+  [searchThen/s5] [Result] 'RELU' REJECTED. Score: -0.1022 (Delta: -0.0070)
+  [searchThen/s5] Instant Retry: Triggering evolution again...
+
+[searchThen/s5] --- Stagnation at Score -0.0000 ---
+  [searchThen/s5] [Evolution] Targeting Chain 0 Layer 0 (Imp: 2.672e-04)...
+    [searchThen/s5] -> Mutating: SIN ===> SQUARE
+  [searchThen/s5] [Result] 'SQUARE' ACCEPTED. Score: -0.0951 (Delta: 0.0072)
+
+[searchThen/s5] --- Stagnation at Score -0.0000 ---
+  [searchThen/s5] [Evolution] Targeting Chain 0 Layer 0 (Imp: 3.396e-05)...
+    [searchThen/s5] -> Mutating: SQUARE ===> SIN
+  [searchThen/s5] [Result] 'SIN' REJECTED. Score: -0.0973 (Delta: -0.0973)
+  [searchThen/s5] Instant Retry: Triggering evolution again...
+
+[searchThen/s5] --- Stagnation at Score -0.0000 ---
+  [searchThen/s5] [Evolution] Targeting Chain 0 Layer 0 (Imp: 3.396e-05)...
+  [searchThen/s5] [Evolution] Targeting Chain 1 Layer 0 (Imp: 2.376e-04)...
+[searchThen/s5] No mutations possible or supported.
+[searchThen/s5] Restoring Best Ever State (Score: -0.0000)
+[searchThen/s6] Epoch 0: Val Loss 1.06195 | Temp 0.5000
+[searchThen/s6] Epoch 500: Val Loss 0.12175 | Temp 0.4583
+[searchThen/s6] Epoch 1000: Val Loss 0.10248 | Temp 0.4167
+[searchThen/s6] Epoch 1500: Val Loss 0.09763 | Temp 0.3750
+[searchThen/s6] Epoch 2000: Val Loss 0.09584 | Temp 0.3333
+[searchThen/s6] Epoch 2500: Val Loss 0.09505 | Temp 0.2917
+[searchThen/s6] Epoch 3000: Val Loss 0.09468 | Temp 0.2500
+[searchThen/s6] Epoch 3500: Val Loss 0.09450 | Temp 0.2083
+[searchThen/s6] Epoch 4000: Val Loss 0.09442 | Temp 0.1667
+[searchThen/s6] Epoch 4500: Val Loss 0.09438 | Temp 0.1250
+[searchThen/s6] Epoch 5000: Val Loss 0.09438 | Temp 0.0833
+[searchThen/s6] Epoch 5500: Val Loss 0.09437 | Temp 0.0417
+
+[searchThen/s6] --- Stagnation at Score -0.0944 ---
+  [searchThen/s6] [Evolution] Targeting Chain 1 Layer 0 (Imp: 3.244e-04)...
+    [searchThen/s6] -> Mutating: GAUSSIAN ===> TANH
+  [searchThen/s6] [Result] 'TANH' REJECTED. Score: -0.1586 (Delta: -0.0642)
+  [searchThen/s6] Instant Retry: Triggering evolution again...
+
+[searchThen/s6] --- Stagnation at Score -0.0944 ---
+  [searchThen/s6] [Evolution] Targeting Chain 1 Layer 0 (Imp: 3.244e-04)...
+    [searchThen/s6] -> Mutating: GAUSSIAN ===> IDENTITY
+[searchThen/s6] Restoring Best Ever State (Score: -0.0944)
+[searchThen/s7] Epoch 0: Val Loss 0.65122 | Temp 0.5000
+[searchThen/s7] Epoch 500: Val Loss 0.05340 | Temp 0.4583
+[searchThen/s7] Epoch 1000: Val Loss 0.05326 | Temp 0.4167
+
+[searchThen/s7] --- Stagnation at Score -0.0533 ---
+  [searchThen/s7] [Evolution] Targeting Chain 1 Layer 0 (Imp: 3.666e-05)...
+    [searchThen/s7] -> Mutating: RELU ===> SIN
+  [searchThen/s7] [Result] 'SIN' REJECTED. Score: -0.0949 (Delta: -0.0417)
+  [searchThen/s7] Instant Retry: Triggering evolution again...
+
+[searchThen/s7] --- Stagnation at Score -0.0533 ---
+  [searchThen/s7] [Evolution] Targeting Chain 1 Layer 0 (Imp: 3.666e-05)...
+    [searchThen/s7] -> Mutating: RELU ===> IDENTITY
+  [searchThen/s7] [Result] 'IDENTITY' REJECTED. Score: -0.0953 (Delta: -0.0003)
+  [searchThen/s7] Instant Retry: Triggering evolution again...
+
+[searchThen/s7] --- Stagnation at Score -0.0533 ---
+  [searchThen/s7] [Evolution] Targeting Chain 1 Layer 0 (Imp: 3.666e-05)...
+    [searchThen/s7] -> Mutating: RELU ===> SQUARE
+  [searchThen/s7] [Result] 'SQUARE' ACCEPTED. Score: -0.0776 (Delta: 0.0177)
+[searchThen/s7] Epoch 1500: Val Loss 0.00000 | Temp 0.3750
+
+[searchThen/s7] --- Stagnation at Score -0.0000 ---
+  [searchThen/s7] [Evolution] Targeting Chain 1 Layer 0 (Imp: 8.704e-06)...
+    [searchThen/s7] -> Mutating: SQUARE ===> TANH
+  [searchThen/s7] [Result] 'TANH' REJECTED. Score: -0.0987 (Delta: -0.0987)
+  [searchThen/s7] Instant Retry: Triggering evolution again...
+
+[searchThen/s7] --- Stagnation at Score -0.0000 ---
+  [searchThen/s7] [Evolution] Targeting Chain 1 Layer 0 (Imp: 8.704e-06)...
+    [searchThen/s7] -> Mutating: SQUARE ===> GAUSSIAN
+  [searchThen/s7] [Result] 'GAUSSIAN' REJECTED. Score: -0.1325 (Delta: -0.0338)
+  [searchThen/s7] Instant Retry: Triggering evolution again...
+
+[searchThen/s7] --- Stagnation at Score -0.0000 ---
+  [searchThen/s7] [Evolution] Targeting Chain 1 Layer 0 (Imp: 8.704e-06)...
+    [searchThen/s7] -> Mutating: SQUARE ===> RELU
+  [searchThen/s7] [Result] 'RELU' ACCEPTED. Score: -0.0946 (Delta: 0.0379)
+[searchThen/s7] Epoch 2000: Val Loss 0.09476 | Temp 0.3333
+
+[searchThen/s7] --- Stagnation at Score -0.0000 ---
+  [searchThen/s7] [Evolution] Targeting Chain 1 Layer 0 (Imp: 1.525e-04)...
+    [searchThen/s7] -> Mutating: RELU ===> SQUARE
+  [searchThen/s7] [Result] 'SQUARE' ACCEPTED. Score: -0.0823 (Delta: 0.0123)
+
+[searchThen/s7] --- Stagnation at Score -0.0000 ---
+  [searchThen/s7] [Evolution] Targeting Chain 1 Layer 0 (Imp: 2.726e-05)...
+    [searchThen/s7] -> Mutating: SQUARE ===> RELU
+  [searchThen/s7] [Result] 'RELU' REJECTED. Score: -0.0948 (Delta: -0.0948)
+  [searchThen/s7] Instant Retry: Triggering evolution again...
+
+[searchThen/s7] --- Stagnation at Score -0.0000 ---
+  [searchThen/s7] [Evolution] Targeting Chain 1 Layer 0 (Imp: 2.726e-05)...
+  [searchThen/s7] [Evolution] Targeting Chain 0 Layer 0 (Imp: 2.163e-04)...
+    [searchThen/s7] -> Mutating: SIN ===> TANH
+  [searchThen/s7] [Result] 'TANH' REJECTED. Score: -0.3278 (Delta: -0.2330)
+  [searchThen/s7] Instant Retry: Triggering evolution again...
+
+[searchThen/s7] --- Stagnation at Score -0.0000 ---
+  [searchThen/s7] [Evolution] Targeting Chain 1 Layer 0 (Imp: 2.726e-05)...
+  [searchThen/s7] [Evolution] Targeting Chain 0 Layer 0 (Imp: 2.163e-04)...
+    [searchThen/s7] -> Mutating: SIN ===> GAUSSIAN
+  [searchThen/s7] [Result] 'GAUSSIAN' REJECTED. Score: -0.5650 (Delta: -0.2372)
+  [searchThen/s7] Instant Retry: Triggering evolution again...
+
+[searchThen/s7] --- Stagnation at Score -0.0000 ---
+  [searchThen/s7] [Evolution] Targeting Chain 1 Layer 0 (Imp: 2.726e-05)...
+  [searchThen/s7] [Evolution] Targeting Chain 0 Layer 0 (Imp: 2.163e-04)...
+    [searchThen/s7] -> Mutating: SIN ===> SQUARE
+  [searchThen/s7] [Result] 'SQUARE' ACCEPTED. Score: -0.4100 (Delta: 0.1551)
+
+[searchThen/s7] --- Stagnation at Score -0.0000 ---
+  [searchThen/s7] [Evolution] Targeting Chain 1 Layer 0 (Imp: 7.401e-04)...
+  [searchThen/s7] [Evolution] Targeting Chain 0 Layer 0 (Imp: 8.495e-04)...
+    [searchThen/s7] -> Mutating: SQUARE ===> IDENTITY
+[searchThen/s7] Epoch 2500: Val Loss 0.85913 | Temp 0.2917
+  [searchThen/s7] [Result] 'IDENTITY' REJECTED. Score: -0.4437 (Delta: -0.2080)
+  [searchThen/s7] Instant Retry: Triggering evolution again...
+
+[searchThen/s7] --- Stagnation at Score -0.0000 ---
+  [searchThen/s7] [Evolution] Targeting Chain 1 Layer 0 (Imp: 7.401e-04)...
+  [searchThen/s7] [Evolution] Targeting Chain 0 Layer 0 (Imp: 8.495e-04)...
+    [searchThen/s7] -> Mutating: SQUARE ===> RELU
+  [searchThen/s7] [Result] 'RELU' REJECTED. Score: -0.5024 (Delta: -0.0588)
+  [searchThen/s7] Instant Retry: Triggering evolution again...
+
+[searchThen/s7] --- Stagnation at Score -0.0000 ---
+  [searchThen/s7] [Evolution] Targeting Chain 1 Layer 0 (Imp: 7.401e-04)...
+  [searchThen/s7] [Evolution] Targeting Chain 0 Layer 0 (Imp: 8.495e-04)...
+    [searchThen/s7] -> Mutating: SQUARE ===> SIN
+  [searchThen/s7] [Result] 'SIN' ACCEPTED. Score: -0.3465 (Delta: 0.1559)
+
+[searchThen/s7] --- Stagnation at Score -0.0000 ---
+  [searchThen/s7] [Evolution] Targeting Chain 1 Layer 0 (Imp: 7.499e-04)...
+  [searchThen/s7] [Evolution] Targeting Chain 0 Layer 0 (Imp: 1.110e-03)...
+    [searchThen/s7] -> Mutating: SIN ===> SQUARE
+  [searchThen/s7] [Result] 'SQUARE' REJECTED. Score: -0.3980 (Delta: -0.1839)
+  [searchThen/s7] Instant Retry: Triggering evolution again...
+
+[searchThen/s7] --- Stagnation at Score -0.0000 ---
+  [searchThen/s7] [Evolution] Targeting Chain 1 Layer 0 (Imp: 7.499e-04)...
+  [searchThen/s7] [Evolution] Targeting Chain 0 Layer 0 (Imp: 1.110e-03)...
+[searchThen/s7] No mutations possible or supported.
+[searchThen/s7] Restoring Best Ever State (Score: -0.0000)
+[searchThen/s8] Epoch 0: Val Loss 1.20577 | Temp 0.5000
+[searchThen/s8] Epoch 500: Val Loss 0.51488 | Temp 0.4583
+[searchThen/s8] Epoch 1000: Val Loss 0.51372 | Temp 0.4167
+[searchThen/s8] Epoch 1500: Val Loss 0.51338 | Temp 0.3750
+[searchThen/s8] Epoch 2000: Val Loss 0.51325 | Temp 0.3333
+[searchThen/s8] Epoch 2500: Val Loss 0.51321 | Temp 0.2917
+[searchThen/s8] Epoch 3000: Val Loss 0.51320 | Temp 0.2500
+
+[searchThen/s8] --- Stagnation at Score -0.5132 ---
+  [searchThen/s8] [Evolution] Targeting Chain 0 Layer 0 (Imp: 1.358e-06)...
+    [searchThen/s8] -> Mutating: RELU ===> IDENTITY
+  [searchThen/s8] [Result] 'IDENTITY' ACCEPTED. Score: -0.2292 (Delta: 0.2840)
+[searchThen/s8] Epoch 3500: Val Loss 0.22840 | Temp 0.2083
+
+[searchThen/s8] --- Stagnation at Score -0.2279 ---
+  [searchThen/s8] [Evolution] Targeting Chain 0 Layer 0 (Imp: 8.587e-04)...
+    [searchThen/s8] -> Mutating: IDENTITY ===> SIN
+  [searchThen/s8] [Result] 'SIN' ACCEPTED. Score: -0.2279 (Delta: 0.0006)
+[searchThen/s8] Epoch 4000: Val Loss 0.21761 | Temp 0.1667
+
+[searchThen/s8] --- Stagnation at Score -0.0002 ---
+  [searchThen/s8] [Evolution] Targeting Chain 0 Layer 0 (Imp: 6.321e-04)...
+    [searchThen/s8] -> Mutating: SIN ===> SQUARE
+  [searchThen/s8] [Result] 'SQUARE' REJECTED. Score: -0.3995 (Delta: -0.3993)
+  [searchThen/s8] Instant Retry: Triggering evolution again...
+
+[searchThen/s8] --- Stagnation at Score -0.0002 ---
+  [searchThen/s8] [Evolution] Targeting Chain 0 Layer 0 (Imp: 6.321e-04)...
+    [searchThen/s8] -> Mutating: SIN ===> IDENTITY
+  [searchThen/s8] [Result] 'IDENTITY' ACCEPTED. Score: -0.3464 (Delta: 0.0531)
+[searchThen/s8] Epoch 4500: Val Loss 0.27896 | Temp 0.1250
+
+[searchThen/s8] --- Stagnation at Score -0.0002 ---
+  [searchThen/s8] [Evolution] Targeting Chain 0 Layer 0 (Imp: 7.514e-04)...
+    [searchThen/s8] -> Mutating: IDENTITY ===> RELU
+  [searchThen/s8] [Result] 'RELU' REJECTED. Score: -0.5012 (Delta: -0.2729)
+  [searchThen/s8] Instant Retry: Triggering evolution again...
+
+[searchThen/s8] --- Stagnation at Score -0.0002 ---
+  [searchThen/s8] [Evolution] Targeting Chain 0 Layer 0 (Imp: 7.514e-04)...
+    [searchThen/s8] -> Mutating: IDENTITY ===> TANH
+  [searchThen/s8] [Result] 'TANH' ACCEPTED. Score: -0.3380 (Delta: 0.1633)
+
+[searchThen/s8] --- Stagnation at Score -0.0002 ---
+  [searchThen/s8] [Evolution] Targeting Chain 0 Layer 0 (Imp: 6.914e-04)...
+    [searchThen/s8] -> Mutating: TANH ===> GAUSSIAN
+  [searchThen/s8] [Result] 'GAUSSIAN' REJECTED. Score: -1.0799 (Delta: -0.8660)
+  [searchThen/s8] Instant Retry: Triggering evolution again...
+
+[searchThen/s8] --- Stagnation at Score -0.0002 ---
+  [searchThen/s8] [Evolution] Targeting Chain 0 Layer 0 (Imp: 6.914e-04)...
+    [searchThen/s8] -> Mutating: TANH ===> IDENTITY
+  [searchThen/s8] [Result] 'IDENTITY' ACCEPTED. Score: -0.3182 (Delta: 0.7617)
+[searchThen/s8] Epoch 5000: Val Loss 0.22834 | Temp 0.0833
+
+[searchThen/s8] --- Stagnation at Score -0.0002 ---
+  [searchThen/s8] [Evolution] Targeting Chain 0 Layer 0 (Imp: 7.173e-04)...
+    [searchThen/s8] -> Mutating: IDENTITY ===> SIN
+  [searchThen/s8] [Result] 'SIN' REJECTED. Score: -0.2309 (Delta: -0.0026)
+  [searchThen/s8] Instant Retry: Triggering evolution again...
+
+[searchThen/s8] --- Stagnation at Score -0.0002 ---
+  [searchThen/s8] [Evolution] Targeting Chain 0 Layer 0 (Imp: 7.173e-04)...
+    [searchThen/s8] -> Mutating: IDENTITY ===> TANH
+  [searchThen/s8] [Result] 'TANH' REJECTED. Score: -0.3290 (Delta: -0.0981)
+  [searchThen/s8] Instant Retry: Triggering evolution again...
+
+[searchThen/s8] --- Stagnation at Score -0.0002 ---
+  [searchThen/s8] [Evolution] Targeting Chain 0 Layer 0 (Imp: 7.173e-04)...
+  [searchThen/s8] [Evolution] Targeting Chain 1 Layer 0 (Imp: 2.267e-03)...
+    [searchThen/s8] -> Mutating: SIN ===> TANH
+  [searchThen/s8] [Result] 'TANH' REJECTED. Score: -0.4943 (Delta: -0.1653)
+  [searchThen/s8] Instant Retry: Triggering evolution again...
+
+[searchThen/s8] --- Stagnation at Score -0.0002 ---
+  [searchThen/s8] [Evolution] Targeting Chain 0 Layer 0 (Imp: 7.173e-04)...
+  [searchThen/s8] [Evolution] Targeting Chain 1 Layer 0 (Imp: 2.267e-03)...
+    [searchThen/s8] -> Mutating: SIN ===> IDENTITY
+  [searchThen/s8] [Result] 'IDENTITY' ACCEPTED. Score: -0.4876 (Delta: 0.0068)
+
+[searchThen/s8] --- Stagnation at Score -0.0002 ---
+  [searchThen/s8] [Evolution] Targeting Chain 1 Layer 0 (Imp: 9.657e-04)...
+    [searchThen/s8] -> Mutating: IDENTITY ===> SQUARE
+  [searchThen/s8] [Result] 'SQUARE' ACCEPTED. Score: -0.3253 (Delta: 0.0026)
+
+[searchThen/s8] --- Stagnation at Score -0.0002 ---
+  [searchThen/s8] [Evolution] Targeting Chain 1 Layer 0 (Imp: 3.732e-04)...
+    [searchThen/s8] -> Mutating: SQUARE ===> GAUSSIAN
+[searchThen/s8] Epoch 5500: Val Loss 1.26474 | Temp 0.0417
+  [searchThen/s8] [Result] 'GAUSSIAN' REJECTED. Score: -1.1114 (Delta: -0.8843)
+  [searchThen/s8] Instant Retry: Triggering evolution again...
+
+[searchThen/s8] --- Stagnation at Score -0.0002 ---
+  [searchThen/s8] [Evolution] Targeting Chain 1 Layer 0 (Imp: 3.732e-04)...
+    [searchThen/s8] -> Mutating: SQUARE ===> RELU
+  [searchThen/s8] [Result] 'RELU' ACCEPTED. Score: -0.2996 (Delta: 0.8118)
+
+[searchThen/s8] --- Stagnation at Score -0.0002 ---
+  [searchThen/s8] [Evolution] Targeting Chain 1 Layer 0 (Imp: 5.093e-04)...
+    [searchThen/s8] -> Mutating: RELU ===> SIN
+  [searchThen/s8] [Result] 'SIN' REJECTED. Score: -0.3437 (Delta: -0.1038)
+  [searchThen/s8] Instant Retry: Triggering evolution again...
+
+[searchThen/s8] --- Stagnation at Score -0.0002 ---
+  [searchThen/s8] [Evolution] Targeting Chain 1 Layer 0 (Imp: 5.093e-04)...
+    [searchThen/s8] -> Mutating: RELU ===> SQUARE
+  [searchThen/s8] [Result] 'SQUARE' ACCEPTED. Score: -0.3269 (Delta: 0.0168)
+
+[searchThen/s8] --- Stagnation at Score -0.0002 ---
+  [searchThen/s8] [Evolution] Targeting Chain 1 Layer 0 (Imp: 4.503e-04)...
+    [searchThen/s8] -> Mutating: SQUARE ===> RELU
+  [searchThen/s8] [Result] 'RELU' REJECTED. Score: -0.2948 (Delta: -0.0677)
+  [searchThen/s8] Instant Retry: Triggering evolution again...
+
+[searchThen/s8] --- Stagnation at Score -0.0002 ---
+  [searchThen/s8] [Evolution] Targeting Chain 1 Layer 0 (Imp: 4.503e-04)...
+    [searchThen/s8] -> Mutating: SQUARE ===> IDENTITY
+  [searchThen/s8] [Result] 'IDENTITY' REJECTED. Score: -0.3310 (Delta: -0.0362)
+  [searchThen/s8] Instant Retry: Triggering evolution again...
+
+[searchThen/s8] --- Stagnation at Score -0.0002 ---
+  [searchThen/s8] [Evolution] Targeting Chain 1 Layer 0 (Imp: 4.503e-04)...
+  [searchThen/s8] [Evolution] Targeting Chain 0 Layer 0 (Imp: 1.646e-03)...
+[searchThen/s8] No mutations possible or supported.
+[searchThen/s8] Restoring Best Ever State (Score: -0.0002)
+[searchThen/s9] Epoch 0: Val Loss 1.83687 | Temp 0.5000
+[searchThen/s9] Epoch 500: Val Loss 0.13802 | Temp 0.4583
+[searchThen/s9] Epoch 1000: Val Loss 0.10837 | Temp 0.4167
+[searchThen/s9] Epoch 1500: Val Loss 0.10203 | Temp 0.3750
+[searchThen/s9] Epoch 2000: Val Loss 0.09958 | Temp 0.3333
+[searchThen/s9] Epoch 2500: Val Loss 0.09830 | Temp 0.2917
+[searchThen/s9] Epoch 3000: Val Loss 0.09755 | Temp 0.2500
+
+[searchThen/s9] --- Stagnation at Score -0.0972 ---
+  [searchThen/s9] [Evolution] Targeting Chain 0 Layer 0 (Imp: 1.133e-03)...
+    [searchThen/s9] -> Mutating: GAUSSIAN ===> SQUARE
+  [searchThen/s9] [Result] 'SQUARE' REJECTED. Score: -1.5596 (Delta: -1.4621)
+  [searchThen/s9] Instant Retry: Triggering evolution again...
+
+[searchThen/s9] --- Stagnation at Score -0.0972 ---
+  [searchThen/s9] [Evolution] Targeting Chain 0 Layer 0 (Imp: 1.133e-03)...
+    [searchThen/s9] -> Mutating: GAUSSIAN ===> SIN
+  [searchThen/s9] [Result] 'SIN' ACCEPTED. Score: -0.6593 (Delta: 0.9002)
+
+[searchThen/s9] --- Stagnation at Score -0.0972 ---
+  [searchThen/s9] [Evolution] Targeting Chain 0 Layer 0 (Imp: 2.786e-03)...
+    [searchThen/s9] -> Mutating: SIN ===> RELU
+  [searchThen/s9] [Result] 'RELU' REJECTED. Score: -0.3512 (Delta: -0.1281)
+  [searchThen/s9] Instant Retry: Triggering evolution again...
+
+[searchThen/s9] --- Stagnation at Score -0.0972 ---
+  [searchThen/s9] [Evolution] Targeting Chain 0 Layer 0 (Imp: 2.786e-03)...
+    [searchThen/s9] -> Mutating: SIN ===> GAUSSIAN
+  [searchThen/s9] [Result] 'GAUSSIAN' REJECTED. Score: -0.8294 (Delta: -0.4781)
+  [searchThen/s9] Instant Retry: Triggering evolution again...
+
+[searchThen/s9] --- Stagnation at Score -0.0972 ---
+  [searchThen/s9] [Evolution] Targeting Chain 0 Layer 0 (Imp: 2.786e-03)...
+    [searchThen/s9] -> Mutating: SIN ===> IDENTITY
+  [searchThen/s9] [Result] 'IDENTITY' ACCEPTED. Score: -0.3672 (Delta: 0.4622)
+[searchThen/s9] Epoch 3500: Val Loss 0.22821 | Temp 0.2083
+
+[searchThen/s9] --- Stagnation at Score -0.0972 ---
+  [searchThen/s9] [Evolution] Targeting Chain 0 Layer 0 (Imp: 1.371e-03)...
+    [searchThen/s9] -> Mutating: IDENTITY ===> SIN
+  [searchThen/s9] [Result] 'SIN' REJECTED. Score: -0.2375 (Delta: -0.0093)
+  [searchThen/s9] Instant Retry: Triggering evolution again...
+
+[searchThen/s9] --- Stagnation at Score -0.0972 ---
+  [searchThen/s9] [Evolution] Targeting Chain 0 Layer 0 (Imp: 1.371e-03)...
+    [searchThen/s9] -> Mutating: IDENTITY ===> TANH
+  [searchThen/s9] [Result] 'TANH' REJECTED. Score: -0.2533 (Delta: -0.0159)
+  [searchThen/s9] Instant Retry: Triggering evolution again...
+
+[searchThen/s9] --- Stagnation at Score -0.0972 ---
+  [searchThen/s9] [Evolution] Targeting Chain 0 Layer 0 (Imp: 1.371e-03)...
+  [searchThen/s9] [Evolution] Targeting Chain 1 Layer 0 (Imp: 4.039e-03)...
+    [searchThen/s9] -> Mutating: SIN ===> TANH
+  [searchThen/s9] [Result] 'TANH' REJECTED. Score: -0.9259 (Delta: -0.6726)
+  [searchThen/s9] Instant Retry: Triggering evolution again...
+
+[searchThen/s9] --- Stagnation at Score -0.0972 ---
+  [searchThen/s9] [Evolution] Targeting Chain 0 Layer 0 (Imp: 1.371e-03)...
+  [searchThen/s9] [Evolution] Targeting Chain 1 Layer 0 (Imp: 4.039e-03)...
+    [searchThen/s9] -> Mutating: SIN ===> SQUARE
+  [searchThen/s9] [Result] 'SQUARE' REJECTED. Score: -2.0577 (Delta: -1.1318)
+  [searchThen/s9] Instant Retry: Triggering evolution again...
+
+[searchThen/s9] --- Stagnation at Score -0.0972 ---
+  [searchThen/s9] [Evolution] Targeting Chain 0 Layer 0 (Imp: 1.371e-03)...
+  [searchThen/s9] [Evolution] Targeting Chain 1 Layer 0 (Imp: 4.039e-03)...
+    [searchThen/s9] -> Mutating: SIN ===> RELU
+  [searchThen/s9] [Result] 'RELU' ACCEPTED. Score: -2.0571 (Delta: 0.0007)
+
+[searchThen/s9] --- Stagnation at Score -0.0972 ---
+  [searchThen/s9] [Evolution] Targeting Chain 1 Layer 0 (Imp: 5.107e-07)...
+    [searchThen/s9] -> Mutating: RELU ===> GAUSSIAN
+  [searchThen/s9] [Result] 'GAUSSIAN' REJECTED. Score: -2.2579 (Delta: -1.9300)
+  [searchThen/s9] Instant Retry: Triggering evolution again...
+
+[searchThen/s9] --- Stagnation at Score -0.0972 ---
+  [searchThen/s9] [Evolution] Targeting Chain 1 Layer 0 (Imp: 5.107e-07)...
+    [searchThen/s9] -> Mutating: RELU ===> SIN
+  [searchThen/s9] [Result] 'SIN' ACCEPTED. Score: -0.3312 (Delta: 1.9267)
+
+[searchThen/s9] --- Stagnation at Score -0.0972 ---
+  [searchThen/s9] [Evolution] Targeting Chain 1 Layer 0 (Imp: 5.871e-05)...
+    [searchThen/s9] -> Mutating: SIN ===> IDENTITY
+[searchThen/s9] Epoch 4000: Val Loss 0.32836 | Temp 0.1667
+  [searchThen/s9] [Result] 'IDENTITY' REJECTED. Score: -0.3289 (Delta: -0.0009)
+  [searchThen/s9] Instant Retry: Triggering evolution again...
+
+[searchThen/s9] --- Stagnation at Score -0.0972 ---
+  [searchThen/s9] [Evolution] Targeting Chain 1 Layer 0 (Imp: 5.871e-05)...
+    [searchThen/s9] -> Mutating: SIN ===> RELU
+  [searchThen/s9] [Result] 'RELU' ACCEPTED. Score: -0.2920 (Delta: 0.0369)
+
+[searchThen/s9] --- Stagnation at Score -0.0972 ---
+  [searchThen/s9] [Evolution] Targeting Chain 1 Layer 0 (Imp: 6.338e-04)...
+    [searchThen/s9] -> Mutating: RELU ===> SIN
+  [searchThen/s9] [Result] 'SIN' REJECTED. Score: -0.3297 (Delta: -0.0891)
+  [searchThen/s9] Instant Retry: Triggering evolution again...
+
+[searchThen/s9] --- Stagnation at Score -0.0972 ---
+  [searchThen/s9] [Evolution] Targeting Chain 1 Layer 0 (Imp: 6.338e-04)...
+  [searchThen/s9] [Evolution] Targeting Chain 0 Layer 0 (Imp: 1.771e-03)...
+[searchThen/s9] No mutations possible or supported.
+[searchThen/s9] Restoring Best Ever State (Score: -0.0972)
+[searchThen/s10] Epoch 0: Val Loss 0.76186 | Temp 0.5000
+[searchThen/s10] Epoch 500: Val Loss 0.15609 | Temp 0.4583
+[searchThen/s10] Epoch 1000: Val Loss 0.14479 | Temp 0.4167
+[searchThen/s10] Epoch 1500: Val Loss 0.14160 | Temp 0.3750
+[searchThen/s10] Epoch 2000: Val Loss 0.14012 | Temp 0.3333
+[searchThen/s10] Epoch 2500: Val Loss 0.13941 | Temp 0.2917
+[searchThen/s10] Epoch 3000: Val Loss 0.13912 | Temp 0.2500
+[searchThen/s10] Epoch 3500: Val Loss 0.13904 | Temp 0.2083
+
+[searchThen/s10] --- Stagnation at Score -0.1390 ---
+  [searchThen/s10] [Evolution] Targeting Chain 1 Layer 0 (Imp: 1.918e-04)...
+    [searchThen/s10] -> Mutating: GAUSSIAN ===> TANH
+  [searchThen/s10] [Result] 'TANH' REJECTED. Score: -0.1704 (Delta: -0.0313)
+  [searchThen/s10] Instant Retry: Triggering evolution again...
+
+[searchThen/s10] --- Stagnation at Score -0.1390 ---
+  [searchThen/s10] [Evolution] Targeting Chain 1 Layer 0 (Imp: 1.918e-04)...
+    [searchThen/s10] -> Mutating: GAUSSIAN ===> IDENTITY
+  [searchThen/s10] [Result] 'IDENTITY' ACCEPTED. Score: -0.1703 (Delta: 0.0001)
+[searchThen/s10] Epoch 4000: Val Loss 0.16109 | Temp 0.1667
+[searchThen/s10] Epoch 4500: Val Loss 0.09998 | Temp 0.1250
+[searchThen/s10] Epoch 5000: Val Loss 0.09658 | Temp 0.0833
+[searchThen/s10] Epoch 5500: Val Loss 0.09588 | Temp 0.0417
+
+[searchThen/s10] --- Stagnation at Score -0.0958 ---
+  [searchThen/s10] [Evolution] Targeting Chain 1 Layer 0 (Imp: 1.239e-03)...
+    [searchThen/s10] -> Mutating: IDENTITY ===> SQUARE
+  [searchThen/s10] [Result] 'SQUARE' REJECTED. Score: -2.4972 (Delta: -2.4014)
+  [searchThen/s10] Instant Retry: Triggering evolution again...
+
+[searchThen/s10] --- Stagnation at Score -0.0958 ---
+  [searchThen/s10] [Evolution] Targeting Chain 1 Layer 0 (Imp: 1.239e-03)...
+    [searchThen/s10] -> Mutating: IDENTITY ===> RELU
+  [searchThen/s10] [Result] 'RELU' REJECTED. Score: -2.8073 (Delta: -0.3101)
+  [searchThen/s10] Instant Retry: Triggering evolution again...
+
+[searchThen/s10] --- Stagnation at Score -0.0958 ---
+  [searchThen/s10] [Evolution] Targeting Chain 1 Layer 0 (Imp: 1.239e-03)...
+    [searchThen/s10] -> Mutating: IDENTITY ===> GAUSSIAN
+  [searchThen/s10] [Result] 'GAUSSIAN' REJECTED. Score: -8.6145 (Delta: -5.8072)
+  [searchThen/s10] Instant Retry: Triggering evolution again...
+
+[searchThen/s10] --- Stagnation at Score -0.0958 ---
+  [searchThen/s10] [Evolution] Targeting Chain 1 Layer 0 (Imp: 1.239e-03)...
+    [searchThen/s10] -> Mutating: IDENTITY ===> SIN
+  [searchThen/s10] [Result] 'SIN' ACCEPTED. Score: -0.1696 (Delta: 8.4450)
+
+[searchThen/s10] --- Stagnation at Score -0.0958 ---
+  [searchThen/s10] [Evolution] Targeting Chain 1 Layer 0 (Imp: 1.981e-03)...
+    [searchThen/s10] -> Mutating: SIN ===> IDENTITY
+  [searchThen/s10] [Result] 'IDENTITY' REJECTED. Score: -1.2453 (Delta: -1.1244)
+  [searchThen/s10] Instant Retry: Triggering evolution again...
+
+[searchThen/s10] --- Stagnation at Score -0.0958 ---
+  [searchThen/s10] [Evolution] Targeting Chain 1 Layer 0 (Imp: 1.981e-03)...
+  [searchThen/s10] [Evolution] Targeting Chain 0 Layer 0 (Imp: 3.398e-03)...
+    [searchThen/s10] -> Mutating: TANH ===> SIN
+  [searchThen/s10] [Result] 'SIN' ACCEPTED. Score: -0.3165 (Delta: 0.9288)
+[searchThen/s10] Restoring Best Ever State (Score: -0.0958)
+[searchThen/s11] Epoch 0: Val Loss 0.73717 | Temp 0.5000
+[searchThen/s11] Epoch 500: Val Loss 0.05421 | Temp 0.4583
+
+[searchThen/s11] --- Stagnation at Score -0.0533 ---
+  [searchThen/s11] [Evolution] Targeting Chain 0 Layer 0 (Imp: 2.825e-04)...
+    [searchThen/s11] -> Mutating: GAUSSIAN ===> SQUARE
+  [searchThen/s11] [Result] 'SQUARE' REJECTED. Score: -0.3825 (Delta: -0.3290)
+  [searchThen/s11] Instant Retry: Triggering evolution again...
+
+[searchThen/s11] --- Stagnation at Score -0.0533 ---
+  [searchThen/s11] [Evolution] Targeting Chain 0 Layer 0 (Imp: 2.825e-04)...
+    [searchThen/s11] -> Mutating: GAUSSIAN ===> TANH
+  [searchThen/s11] [Result] 'TANH' ACCEPTED. Score: -0.3284 (Delta: 0.0541)
+
+[searchThen/s11] --- Stagnation at Score -0.0533 ---
+  [searchThen/s11] [Evolution] Targeting Chain 0 Layer 0 (Imp: 7.253e-04)...
+    [searchThen/s11] -> Mutating: TANH ===> SIN
+[searchThen/s11] Epoch 1000: Val Loss 0.25470 | Temp 0.4167
+  [searchThen/s11] [Result] 'SIN' REJECTED. Score: -0.2461 (Delta: -0.0218)
+  [searchThen/s11] Instant Retry: Triggering evolution again...
+
+[searchThen/s11] --- Stagnation at Score -0.0533 ---
+  [searchThen/s11] [Evolution] Targeting Chain 0 Layer 0 (Imp: 7.253e-04)...
+    [searchThen/s11] -> Mutating: TANH ===> RELU
+  [searchThen/s11] [Result] 'RELU' REJECTED. Score: -0.2925 (Delta: -0.0463)
+  [searchThen/s11] Instant Retry: Triggering evolution again...
+
+[searchThen/s11] --- Stagnation at Score -0.0533 ---
+  [searchThen/s11] [Evolution] Targeting Chain 0 Layer 0 (Imp: 7.253e-04)...
+    [searchThen/s11] -> Mutating: TANH ===> GAUSSIAN
+  [searchThen/s11] [Result] 'GAUSSIAN' REJECTED. Score: -0.8751 (Delta: -0.5826)
+  [searchThen/s11] Instant Retry: Triggering evolution again...
+
+[searchThen/s11] --- Stagnation at Score -0.0533 ---
+  [searchThen/s11] [Evolution] Targeting Chain 0 Layer 0 (Imp: 7.253e-04)...
+    [searchThen/s11] -> Mutating: TANH ===> IDENTITY
+  [searchThen/s11] [Result] 'IDENTITY' ACCEPTED. Score: -0.2918 (Delta: 0.5832)
+
+[searchThen/s11] --- Stagnation at Score -0.0533 ---
+  [searchThen/s11] [Evolution] Targeting Chain 0 Layer 0 (Imp: 6.685e-04)...
+    [searchThen/s11] -> Mutating: IDENTITY ===> TANH
+  [searchThen/s11] [Result] 'TANH' REJECTED. Score: -0.2800 (Delta: -0.0490)
+  [searchThen/s11] Instant Retry: Triggering evolution again...
+
+[searchThen/s11] --- Stagnation at Score -0.0533 ---
+  [searchThen/s11] [Evolution] Targeting Chain 0 Layer 0 (Imp: 6.685e-04)...
+  [searchThen/s11] [Evolution] Targeting Chain 1 Layer 0 (Imp: 2.940e-03)...
+    [searchThen/s11] -> Mutating: GAUSSIAN ===> TANH
+  [searchThen/s11] [Result] 'TANH' REJECTED. Score: -0.5434 (Delta: -0.2634)
+  [searchThen/s11] Instant Retry: Triggering evolution again...
+
+[searchThen/s11] --- Stagnation at Score -0.0533 ---
+  [searchThen/s11] [Evolution] Targeting Chain 0 Layer 0 (Imp: 6.685e-04)...
+  [searchThen/s11] [Evolution] Targeting Chain 1 Layer 0 (Imp: 2.940e-03)...
+    [searchThen/s11] -> Mutating: GAUSSIAN ===> RELU
+  [searchThen/s11] [Result] 'RELU' ACCEPTED. Score: -0.5044 (Delta: 0.0390)
+
+[searchThen/s11] --- Stagnation at Score -0.0533 ---
+  [searchThen/s11] [Evolution] Targeting Chain 1 Layer 0 (Imp: 1.302e-03)...
+    [searchThen/s11] -> Mutating: RELU ===> GAUSSIAN
+  [searchThen/s11] [Result] 'GAUSSIAN' REJECTED. Score: -0.5544 (Delta: -0.2310)
+  [searchThen/s11] Instant Retry: Triggering evolution again...
+
+[searchThen/s11] --- Stagnation at Score -0.0533 ---
+  [searchThen/s11] [Evolution] Targeting Chain 1 Layer 0 (Imp: 1.302e-03)...
+    [searchThen/s11] -> Mutating: RELU ===> SIN
+[searchThen/s11] Epoch 1500: Val Loss 0.37944 | Temp 0.3750
+  [searchThen/s11] [Result] 'SIN' ACCEPTED. Score: -0.3422 (Delta: 0.2122)
+
+[searchThen/s11] --- Stagnation at Score -0.0533 ---
+  [searchThen/s11] [Evolution] Targeting Chain 1 Layer 0 (Imp: 1.082e-03)...
+    [searchThen/s11] -> Mutating: SIN ===> RELU
+  [searchThen/s11] [Result] 'RELU' REJECTED. Score: -0.3595 (Delta: -0.0359)
+  [searchThen/s11] Instant Retry: Triggering evolution again...
+
+[searchThen/s11] --- Stagnation at Score -0.0533 ---
+  [searchThen/s11] [Evolution] Targeting Chain 1 Layer 0 (Imp: 1.082e-03)...
+    [searchThen/s11] -> Mutating: SIN ===> IDENTITY
+  [searchThen/s11] [Result] 'IDENTITY' ACCEPTED. Score: -0.3405 (Delta: 0.0190)
+
+[searchThen/s11] --- Stagnation at Score -0.0533 ---
+  [searchThen/s11] [Evolution] Targeting Chain 1 Layer 0 (Imp: 5.794e-04)...
+    [searchThen/s11] -> Mutating: IDENTITY ===> SIN
+  [searchThen/s11] [Result] 'SIN' REJECTED. Score: -0.3318 (Delta: -0.0039)
+  [searchThen/s11] Instant Retry: Triggering evolution again...
+
+[searchThen/s11] --- Stagnation at Score -0.0533 ---
+  [searchThen/s11] [Evolution] Targeting Chain 1 Layer 0 (Imp: 5.794e-04)...
+    [searchThen/s11] -> Mutating: IDENTITY ===> SQUARE
+  [searchThen/s11] [Result] 'SQUARE' REJECTED. Score: -0.3411 (Delta: -0.0093)
+  [searchThen/s11] Instant Retry: Triggering evolution again...
+
+[searchThen/s11] --- Stagnation at Score -0.0533 ---
+  [searchThen/s11] [Evolution] Targeting Chain 1 Layer 0 (Imp: 5.794e-04)...
+  [searchThen/s11] [Evolution] Targeting Chain 0 Layer 0 (Imp: 2.190e-03)...
+[searchThen/s11] No mutations possible or supported.
+[searchThen/s11] Restoring Best Ever State (Score: -0.0533)
+[searchThen/s12] Epoch 0: Val Loss 1.36756 | Temp 0.5000
+[searchThen/s12] Epoch 500: Val Loss 0.40307 | Temp 0.4583
+
+[searchThen/s12] --- Stagnation at Score -0.4031 ---
+  [searchThen/s12] [Evolution] Targeting Chain 0 Layer 0 (Imp: 4.986e-04)...
+    [searchThen/s12] -> Mutating: GAUSSIAN ===> SQUARE
+  [searchThen/s12] [Result] 'SQUARE' REJECTED. Score: -0.5698 (Delta: -0.1668)
+  [searchThen/s12] Instant Retry: Triggering evolution again...
+
+[searchThen/s12] --- Stagnation at Score -0.4031 ---
+  [searchThen/s12] [Evolution] Targeting Chain 0 Layer 0 (Imp: 4.986e-04)...
+    [searchThen/s12] -> Mutating: GAUSSIAN ===> SIN
+  [searchThen/s12] [Result] 'SIN' ACCEPTED. Score: -0.4585 (Delta: 0.1113)
+
+[searchThen/s12] --- Stagnation at Score -0.2523 ---
+  [searchThen/s12] [Evolution] Targeting Chain 0 Layer 0 (Imp: 4.872e-04)...
+    [searchThen/s12] -> Mutating: SIN ===> RELU
+  [searchThen/s12] [Result] 'RELU' REJECTED. Score: -0.5982 (Delta: -0.3455)
+  [searchThen/s12] Instant Retry: Triggering evolution again...
+
+[searchThen/s12] --- Stagnation at Score -0.2523 ---
+  [searchThen/s12] [Evolution] Targeting Chain 0 Layer 0 (Imp: 4.872e-04)...
+    [searchThen/s12] -> Mutating: SIN ===> GAUSSIAN
+  [searchThen/s12] [Result] 'GAUSSIAN' ACCEPTED. Score: -0.5682 (Delta: 0.0300)
+[searchThen/s12] Epoch 1000: Val Loss 0.41276 | Temp 0.4167
+
+[searchThen/s12] --- Stagnation at Score -0.2523 ---
+  [searchThen/s12] [Evolution] Targeting Chain 1 Layer 0 (Imp: 5.682e-04)...
+    [searchThen/s12] -> Mutating: SIN ===> SQUARE
+  [searchThen/s12] [Result] 'SQUARE' ACCEPTED. Score: -0.2742 (Delta: 0.1314)
+[searchThen/s12] Epoch 1500: Val Loss 0.10705 | Temp 0.3750
+[searchThen/s12] Epoch 2000: Val Loss 0.10027 | Temp 0.3333
+[searchThen/s12] Epoch 2500: Val Loss 0.09856 | Temp 0.2917
+
+[searchThen/s12] --- Stagnation at Score -0.0980 ---
+  [searchThen/s12] [Evolution] Targeting Chain 1 Layer 0 (Imp: 4.099e-04)...
+    [searchThen/s12] -> Mutating: SQUARE ===> GAUSSIAN
+  [searchThen/s12] [Result] 'GAUSSIAN' REJECTED. Score: -2.3065 (Delta: -2.2085)
+  [searchThen/s12] Instant Retry: Triggering evolution again...
+
+[searchThen/s12] --- Stagnation at Score -0.0980 ---
+  [searchThen/s12] [Evolution] Targeting Chain 1 Layer 0 (Imp: 4.099e-04)...
+    [searchThen/s12] -> Mutating: SQUARE ===> SIN
+  [searchThen/s12] [Result] 'SIN' ACCEPTED. Score: -0.1378 (Delta: 2.1687)
+[searchThen/s12] Epoch 3000: Val Loss 0.11837 | Temp 0.2500
+
+[searchThen/s12] --- Stagnation at Score -0.0980 ---
+  [searchThen/s12] [Evolution] Targeting Chain 1 Layer 0 (Imp: 7.847e-04)...
+    [searchThen/s12] -> Mutating: SIN ===> TANH
+  [searchThen/s12] [Result] 'TANH' REJECTED. Score: -0.1886 (Delta: -0.0714)
+  [searchThen/s12] Instant Retry: Triggering evolution again...
+
+[searchThen/s12] --- Stagnation at Score -0.0980 ---
+  [searchThen/s12] [Evolution] Targeting Chain 1 Layer 0 (Imp: 7.847e-04)...
+    [searchThen/s12] -> Mutating: SIN ===> RELU
+  [searchThen/s12] [Result] 'RELU' ACCEPTED. Score: -0.1677 (Delta: 0.0209)
+
+[searchThen/s12] --- Stagnation at Score -0.0980 ---
+  [searchThen/s12] [Evolution] Targeting Chain 1 Layer 0 (Imp: 5.979e-04)...
+    [searchThen/s12] -> Mutating: RELU ===> SQUARE
+  [searchThen/s12] [Result] 'SQUARE' REJECTED. Score: -0.2247 (Delta: -0.1136)
+  [searchThen/s12] Instant Retry: Triggering evolution again...
+
+[searchThen/s12] --- Stagnation at Score -0.0980 ---
+  [searchThen/s12] [Evolution] Targeting Chain 1 Layer 0 (Imp: 5.979e-04)...
+    [searchThen/s12] -> Mutating: RELU ===> SIN
+  [searchThen/s12] [Result] 'SIN' ACCEPTED. Score: -0.1392 (Delta: 0.0855)
+
+[searchThen/s12] --- Stagnation at Score -0.0980 ---
+  [searchThen/s12] [Evolution] Targeting Chain 1 Layer 0 (Imp: 7.074e-04)...
+    [searchThen/s12] -> Mutating: SIN ===> IDENTITY
+  [searchThen/s12] [Result] 'IDENTITY' REJECTED. Score: -0.1640 (Delta: -0.0452)
+  [searchThen/s12] Instant Retry: Triggering evolution again...
+
+[searchThen/s12] --- Stagnation at Score -0.0980 ---
+  [searchThen/s12] [Evolution] Targeting Chain 1 Layer 0 (Imp: 7.074e-04)...
+    [searchThen/s12] -> Mutating: SIN ===> RELU
+[searchThen/s12] Epoch 3500: Val Loss 0.55315 | Temp 0.2083
+  [searchThen/s12] [Result] 'RELU' ACCEPTED. Score: -0.1443 (Delta: 0.0197)
+
+[searchThen/s12] --- Stagnation at Score -0.0980 ---
+  [searchThen/s12] [Evolution] Targeting Chain 1 Layer 0 (Imp: 5.307e-04)...
+    [searchThen/s12] -> Mutating: RELU ===> SIN
+  [searchThen/s12] [Result] 'SIN' REJECTED. Score: -0.1372 (Delta: -0.0240)
+  [searchThen/s12] Instant Retry: Triggering evolution again...
+
+[searchThen/s12] --- Stagnation at Score -0.0980 ---
+  [searchThen/s12] [Evolution] Targeting Chain 1 Layer 0 (Imp: 5.307e-04)...
+  [searchThen/s12] [Evolution] Targeting Chain 0 Layer 0 (Imp: 1.459e-03)...
+    [searchThen/s12] -> Mutating: GAUSSIAN ===> SIN
+  [searchThen/s12] [Result] 'SIN' REJECTED. Score: -0.3659 (Delta: -0.2287)
+  [searchThen/s12] Instant Retry: Triggering evolution again...
+
+[searchThen/s12] --- Stagnation at Score -0.0980 ---
+  [searchThen/s12] [Evolution] Targeting Chain 1 Layer 0 (Imp: 5.307e-04)...
+  [searchThen/s12] [Evolution] Targeting Chain 0 Layer 0 (Imp: 1.459e-03)...
+    [searchThen/s12] -> Mutating: GAUSSIAN ===> TANH
+  [searchThen/s12] [Result] 'TANH' REJECTED. Score: -0.3948 (Delta: -0.0289)
+  [searchThen/s12] Instant Retry: Triggering evolution again...
+
+[searchThen/s12] --- Stagnation at Score -0.0980 ---
+  [searchThen/s12] [Evolution] Targeting Chain 1 Layer 0 (Imp: 5.307e-04)...
+  [searchThen/s12] [Evolution] Targeting Chain 0 Layer 0 (Imp: 1.459e-03)...
+    [searchThen/s12] -> Mutating: GAUSSIAN ===> IDENTITY
+  [searchThen/s12] [Result] 'IDENTITY' REJECTED. Score: -0.4268 (Delta: -0.0319)
+  [searchThen/s12] Instant Retry: Triggering evolution again...
+
+[searchThen/s12] --- Stagnation at Score -0.0980 ---
+  [searchThen/s12] [Evolution] Targeting Chain 1 Layer 0 (Imp: 5.307e-04)...
+  [searchThen/s12] [Evolution] Targeting Chain 0 Layer 0 (Imp: 1.459e-03)...
+[searchThen/s12] No mutations possible or supported.
+[searchThen/s12] Restoring Best Ever State (Score: -0.0980)
+[searchThen/s13] Epoch 0: Val Loss 1.82050 | Temp 0.5000
+[searchThen/s13] Epoch 500: Val Loss 0.00062 | Temp 0.4583
+[searchThen/s13] Epoch 1000: Val Loss 0.00024 | Temp 0.4167
+
+[searchThen/s13] --- Stagnation at Score -0.0002 ---
+  [searchThen/s13] [Evolution] Targeting Chain 1 Layer 0 (Imp: 1.997e-04)...
+    [searchThen/s13] -> Mutating: SIN ===> RELU
+  [searchThen/s13] [Result] 'RELU' REJECTED. Score: -0.1068 (Delta: -0.1065)
+  [searchThen/s13] Instant Retry: Triggering evolution again...
+
+[searchThen/s13] --- Stagnation at Score -0.0002 ---
+  [searchThen/s13] [Evolution] Targeting Chain 1 Layer 0 (Imp: 1.997e-04)...
+    [searchThen/s13] -> Mutating: SIN ===> SQUARE
+  [searchThen/s13] [Result] 'SQUARE' REJECTED. Score: -0.1872 (Delta: -0.0804)
+  [searchThen/s13] Instant Retry: Triggering evolution again...
+
+[searchThen/s13] --- Stagnation at Score -0.0002 ---
+  [searchThen/s13] [Evolution] Targeting Chain 1 Layer 0 (Imp: 1.997e-04)...
+    [searchThen/s13] -> Mutating: SIN ===> TANH
+  [searchThen/s13] [Result] 'TANH' ACCEPTED. Score: -0.1139 (Delta: 0.0733)
+
+[searchThen/s13] --- Stagnation at Score -0.0002 ---
+  [searchThen/s13] [Evolution] Targeting Chain 1 Layer 0 (Imp: 3.199e-04)...
+    [searchThen/s13] -> Mutating: TANH ===> SIN
+  [searchThen/s13] [Result] 'SIN' REJECTED. Score: -0.0993 (Delta: -0.0038)
+  [searchThen/s13] Instant Retry: Triggering evolution again...
+
+[searchThen/s13] --- Stagnation at Score -0.0002 ---
+  [searchThen/s13] [Evolution] Targeting Chain 1 Layer 0 (Imp: 3.199e-04)...
+    [searchThen/s13] -> Mutating: TANH ===> GAUSSIAN
+  [searchThen/s13] [Result] 'GAUSSIAN' REJECTED. Score: -0.1620 (Delta: -0.0627)
+  [searchThen/s13] Instant Retry: Triggering evolution again...
+
+[searchThen/s13] --- Stagnation at Score -0.0002 ---
+  [searchThen/s13] [Evolution] Targeting Chain 1 Layer 0 (Imp: 3.199e-04)...
+    [searchThen/s13] -> Mutating: TANH ===> IDENTITY
+  [searchThen/s13] [Result] 'IDENTITY' ACCEPTED. Score: -0.0983 (Delta: 0.0637)
+
+[searchThen/s13] --- Stagnation at Score -0.0002 ---
+  [searchThen/s13] [Evolution] Targeting Chain 1 Layer 0 (Imp: 1.679e-04)...
+    [searchThen/s13] -> Mutating: IDENTITY ===> TANH
+[searchThen/s13] Epoch 1500: Val Loss 0.10946 | Temp 0.3750
+  [searchThen/s13] [Result] 'TANH' ACCEPTED. Score: -0.0951 (Delta: 0.0003)
+
+[searchThen/s13] --- Stagnation at Score -0.0002 ---
+  [searchThen/s13] [Evolution] Targeting Chain 1 Layer 0 (Imp: 8.871e-05)...
+    [searchThen/s13] -> Mutating: TANH ===> IDENTITY
+  [searchThen/s13] [Result] 'IDENTITY' ACCEPTED. Score: -0.0950 (Delta: 0.0002)
+
+[searchThen/s13] --- Stagnation at Score -0.0002 ---
+  [searchThen/s13] [Evolution] Targeting Chain 1 Layer 0 (Imp: 4.590e-05)...
+    [searchThen/s13] -> Mutating: IDENTITY ===> TANH
+  [searchThen/s13] [Result] 'TANH' ACCEPTED. Score: -0.0951 (Delta: 0.0001)
+[searchThen/s13] Epoch 2000: Val Loss 0.09525 | Temp 0.3333
+
+[searchThen/s13] --- Stagnation at Score -0.0002 ---
+  [searchThen/s13] [Evolution] Targeting Chain 1 Layer 0 (Imp: 2.573e-05)...
+    [searchThen/s13] -> Mutating: TANH ===> IDENTITY
+  [searchThen/s13] [Result] 'IDENTITY' ACCEPTED. Score: -0.0950 (Delta: 0.0003)
+
+[searchThen/s13] --- Stagnation at Score -0.0002 ---
+  [searchThen/s13] [Evolution] Targeting Chain 1 Layer 0 (Imp: 1.544e-05)...
+    [searchThen/s13] -> Mutating: IDENTITY ===> TANH
+  [searchThen/s13] [Result] 'TANH' REJECTED. Score: -0.0955 (Delta: -0.0002)
+  [searchThen/s13] Instant Retry: Triggering evolution again...
+
+[searchThen/s13] --- Stagnation at Score -0.0002 ---
+  [searchThen/s13] [Evolution] Targeting Chain 1 Layer 0 (Imp: 1.544e-05)...
+  [searchThen/s13] [Evolution] Targeting Chain 0 Layer 0 (Imp: 6.375e-04)...
+    [searchThen/s13] -> Mutating: SIN ===> TANH
+  [searchThen/s13] [Result] 'TANH' REJECTED. Score: -0.3858 (Delta: -0.2904)
+  [searchThen/s13] Instant Retry: Triggering evolution again...
+
+[searchThen/s13] --- Stagnation at Score -0.0002 ---
+  [searchThen/s13] [Evolution] Targeting Chain 1 Layer 0 (Imp: 1.544e-05)...
+  [searchThen/s13] [Evolution] Targeting Chain 0 Layer 0 (Imp: 6.375e-04)...
+    [searchThen/s13] -> Mutating: SIN ===> IDENTITY
+  [searchThen/s13] [Result] 'IDENTITY' ACCEPTED. Score: -0.3552 (Delta: 0.0307)
+
+[searchThen/s13] --- Stagnation at Score -0.0002 ---
+  [searchThen/s13] [Evolution] Targeting Chain 1 Layer 0 (Imp: 3.839e-04)...
+  [searchThen/s13] [Evolution] Targeting Chain 0 Layer 0 (Imp: 4.004e-04)...
+    [searchThen/s13] -> Mutating: IDENTITY ===> SIN
+  [searchThen/s13] [Result] 'SIN' REJECTED. Score: -0.3299 (Delta: -0.0019)
+  [searchThen/s13] Instant Retry: Triggering evolution again...
+
+[searchThen/s13] --- Stagnation at Score -0.0002 ---
+  [searchThen/s13] [Evolution] Targeting Chain 1 Layer 0 (Imp: 3.839e-04)...
+  [searchThen/s13] [Evolution] Targeting Chain 0 Layer 0 (Imp: 4.004e-04)...
+    [searchThen/s13] -> Mutating: IDENTITY ===> GAUSSIAN
+  [searchThen/s13] [Result] 'GAUSSIAN' REJECTED. Score: -0.5770 (Delta: -0.2472)
+  [searchThen/s13] Instant Retry: Triggering evolution again...
+
+[searchThen/s13] --- Stagnation at Score -0.0002 ---
+  [searchThen/s13] [Evolution] Targeting Chain 1 Layer 0 (Imp: 3.839e-04)...
+  [searchThen/s13] [Evolution] Targeting Chain 0 Layer 0 (Imp: 4.004e-04)...
+    [searchThen/s13] -> Mutating: IDENTITY ===> SQUARE
+[searchThen/s13] Epoch 2500: Val Loss 0.33249 | Temp 0.2917
+  [searchThen/s13] [Result] 'SQUARE' ACCEPTED. Score: -0.3350 (Delta: 0.2420)
+
+[searchThen/s13] --- Stagnation at Score -0.0002 ---
+  [searchThen/s13] [Evolution] Targeting Chain 0 Layer 0 (Imp: 1.108e-04)...
+    [searchThen/s13] -> Mutating: SQUARE ===> IDENTITY
+  [searchThen/s13] [Result] 'IDENTITY' REJECTED. Score: -0.3288 (Delta: -0.0012)
+  [searchThen/s13] Instant Retry: Triggering evolution again...
+
+[searchThen/s13] --- Stagnation at Score -0.0002 ---
+  [searchThen/s13] [Evolution] Targeting Chain 0 Layer 0 (Imp: 1.108e-04)...
+    [searchThen/s13] -> Mutating: SQUARE ===> RELU
+  [searchThen/s13] [Result] 'RELU' ACCEPTED. Score: -0.3084 (Delta: 0.0204)
+
+[searchThen/s13] --- Stagnation at Score -0.0002 ---
+  [searchThen/s13] [Evolution] Targeting Chain 0 Layer 0 (Imp: 1.035e-04)...
+    [searchThen/s13] -> Mutating: RELU ===> SQUARE
+  [searchThen/s13] [Result] 'SQUARE' REJECTED. Score: -0.3268 (Delta: -0.0746)
+  [searchThen/s13] Instant Retry: Triggering evolution again...
+
+[searchThen/s13] --- Stagnation at Score -0.0002 ---
+  [searchThen/s13] [Evolution] Targeting Chain 0 Layer 0 (Imp: 1.035e-04)...
+  [searchThen/s13] [Evolution] Targeting Chain 1 Layer 0 (Imp: 9.353e-04)...
+[searchThen/s13] No mutations possible or supported.
+[searchThen/s13] Restoring Best Ever State (Score: -0.0002)
+[searchThen/s14] Epoch 0: Val Loss 0.91398 | Temp 0.5000
+[searchThen/s14] Epoch 500: Val Loss 0.27013 | Temp 0.4583
+[searchThen/s14] Epoch 1000: Val Loss 0.21862 | Temp 0.4167
+[searchThen/s14] Epoch 1500: Val Loss 0.13447 | Temp 0.3750
+[searchThen/s14] Epoch 2000: Val Loss 0.13418 | Temp 0.3333
+[searchThen/s14] Epoch 2500: Val Loss 0.13389 | Temp 0.2917
+[searchThen/s14] Epoch 3000: Val Loss 0.13331 | Temp 0.2500
+[searchThen/s14] Epoch 3500: Val Loss 0.13202 | Temp 0.2083
+[searchThen/s14] Epoch 4000: Val Loss 0.12923 | Temp 0.1667
+[searchThen/s14] Epoch 4500: Val Loss 0.12459 | Temp 0.1250
+[searchThen/s14] Epoch 5000: Val Loss 0.12072 | Temp 0.0833
+[searchThen/s14] Epoch 5500: Val Loss 0.11774 | Temp 0.0417
+[searchThen/s14] Restoring Best Ever State (Score: -0.1158)
+[searchThen/s15] Epoch 0: Val Loss 0.84782 | Temp 0.5000
+[searchThen/s15] Epoch 500: Val Loss 0.18186 | Temp 0.4583
+[searchThen/s15] Epoch 1000: Val Loss 0.13558 | Temp 0.4167
+[searchThen/s15] Epoch 1500: Val Loss 0.12624 | Temp 0.3750
+[searchThen/s15] Epoch 2000: Val Loss 0.12308 | Temp 0.3333
+[searchThen/s15] Epoch 2500: Val Loss 0.12163 | Temp 0.2917
+[searchThen/s15] Epoch 3000: Val Loss 0.12097 | Temp 0.2500
+[searchThen/s15] Epoch 3500: Val Loss 0.12063 | Temp 0.2083
+[searchThen/s15] Epoch 4000: Val Loss 0.12046 | Temp 0.1667
+[searchThen/s15] Epoch 4500: Val Loss 0.12039 | Temp 0.1250
+[searchThen/s15] Epoch 5000: Val Loss 0.12037 | Temp 0.0833
+[searchThen/s15] Epoch 5500: Val Loss 0.12036 | Temp 0.0417
+
+[searchThen/s15] --- Stagnation at Score -0.1203 ---
+  [searchThen/s15] [Evolution] Targeting Chain 0 Layer 0 (Imp: 1.317e-04)...
+    [searchThen/s15] -> Mutating: RELU ===> IDENTITY
+  [searchThen/s15] [Result] 'IDENTITY' REJECTED. Score: -0.1535 (Delta: -0.0331)
+  [searchThen/s15] Instant Retry: Triggering evolution again...
+
+[searchThen/s15] --- Stagnation at Score -0.1203 ---
+  [searchThen/s15] [Evolution] Targeting Chain 0 Layer 0 (Imp: 1.317e-04)...
+    [searchThen/s15] -> Mutating: RELU ===> GAUSSIAN
+  [searchThen/s15] [Result] 'GAUSSIAN' REJECTED. Score: -0.2304 (Delta: -0.0769)
+  [searchThen/s15] Instant Retry: Triggering evolution again...
+
+[searchThen/s15] --- Stagnation at Score -0.1203 ---
+  [searchThen/s15] [Evolution] Targeting Chain 0 Layer 0 (Imp: 1.317e-04)...
+    [searchThen/s15] -> Mutating: RELU ===> TANH
+  [searchThen/s15] [Result] 'TANH' ACCEPTED. Score: -0.1572 (Delta: 0.0732)
+
+[searchThen/s15] --- Stagnation at Score -0.1203 ---
+  [searchThen/s15] [Evolution] Targeting Chain 0 Layer 0 (Imp: 3.547e-04)...
+    [searchThen/s15] -> Mutating: TANH ===> SQUARE
+[searchThen/s15] Restoring Best Ever State (Score: -0.1203)
+[searchThen/s16] Epoch 0: Val Loss 2.54117 | Temp 0.5000
+[searchThen/s16] Epoch 500: Val Loss 0.14322 | Temp 0.4583
+[searchThen/s16] Epoch 1000: Val Loss 0.05717 | Temp 0.4167
+[searchThen/s16] Epoch 1500: Val Loss 0.05145 | Temp 0.3750
+
+[searchThen/s16] --- Stagnation at Score -0.0514 ---
+  [searchThen/s16] [Evolution] Targeting Chain 1 Layer 0 (Imp: 3.171e-04)...
+    [searchThen/s16] -> Mutating: GAUSSIAN ===> SIN
+  [searchThen/s16] [Result] 'SIN' REJECTED. Score: -0.2440 (Delta: -0.1925)
+  [searchThen/s16] Instant Retry: Triggering evolution again...
+
+[searchThen/s16] --- Stagnation at Score -0.0514 ---
+  [searchThen/s16] [Evolution] Targeting Chain 1 Layer 0 (Imp: 3.171e-04)...
+    [searchThen/s16] -> Mutating: GAUSSIAN ===> TANH
+  [searchThen/s16] [Result] 'TANH' REJECTED. Score: -0.3635 (Delta: -0.1195)
+  [searchThen/s16] Instant Retry: Triggering evolution again...
+
+[searchThen/s16] --- Stagnation at Score -0.0514 ---
+  [searchThen/s16] [Evolution] Targeting Chain 1 Layer 0 (Imp: 3.171e-04)...
+    [searchThen/s16] -> Mutating: GAUSSIAN ===> RELU
+  [searchThen/s16] [Result] 'RELU' REJECTED. Score: -0.3640 (Delta: -0.0005)
+  [searchThen/s16] Instant Retry: Triggering evolution again...
+
+[searchThen/s16] --- Stagnation at Score -0.0514 ---
+  [searchThen/s16] [Evolution] Targeting Chain 1 Layer 0 (Imp: 3.171e-04)...
+    [searchThen/s16] -> Mutating: GAUSSIAN ===> SQUARE
+  [searchThen/s16] [Result] 'SQUARE' REJECTED. Score: -0.4254 (Delta: -0.0613)
+  [searchThen/s16] Instant Retry: Triggering evolution again...
+
+[searchThen/s16] --- Stagnation at Score -0.0514 ---
+  [searchThen/s16] [Evolution] Targeting Chain 1 Layer 0 (Imp: 3.171e-04)...
+    [searchThen/s16] -> Mutating: GAUSSIAN ===> IDENTITY
+  [searchThen/s16] [Result] 'IDENTITY' ACCEPTED. Score: -0.3378 (Delta: 0.0876)
+
+[searchThen/s16] --- Stagnation at Score -0.0514 ---
+  [searchThen/s16] [Evolution] Targeting Chain 1 Layer 0 (Imp: 8.272e-04)...
+    [searchThen/s16] -> Mutating: IDENTITY ===> GAUSSIAN
+  [searchThen/s16] [Result] 'GAUSSIAN' REJECTED. Score: -1.2174 (Delta: -0.9891)
+  [searchThen/s16] Instant Retry: Triggering evolution again...
+
+[searchThen/s16] --- Stagnation at Score -0.0514 ---
+  [searchThen/s16] [Evolution] Targeting Chain 1 Layer 0 (Imp: 8.272e-04)...
+  [searchThen/s16] [Evolution] Targeting Chain 0 Layer 0 (Imp: 2.559e-03)...
+    [searchThen/s16] -> Mutating: SIN ===> SQUARE
+  [searchThen/s16] [Result] 'SQUARE' ACCEPTED. Score: -0.6002 (Delta: 0.6171)
+[searchThen/s16] Epoch 2000: Val Loss 0.32586 | Temp 0.3333
+
+[searchThen/s16] --- Stagnation at Score -0.0514 ---
+  [searchThen/s16] [Evolution] Targeting Chain 0 Layer 0 (Imp: 6.812e-04)...
+    [searchThen/s16] -> Mutating: SQUARE ===> GAUSSIAN
+  [searchThen/s16] [Result] 'GAUSSIAN' REJECTED. Score: -0.7273 (Delta: -0.3996)
+  [searchThen/s16] Instant Retry: Triggering evolution again...
+
+[searchThen/s16] --- Stagnation at Score -0.0514 ---
+  [searchThen/s16] [Evolution] Targeting Chain 0 Layer 0 (Imp: 6.812e-04)...
+    [searchThen/s16] -> Mutating: SQUARE ===> TANH
+  [searchThen/s16] [Result] 'TANH' ACCEPTED. Score: -0.3333 (Delta: 0.3940)
+
+[searchThen/s16] --- Stagnation at Score -0.0514 ---
+  [searchThen/s16] [Evolution] Targeting Chain 0 Layer 0 (Imp: 3.711e-04)...
+    [searchThen/s16] -> Mutating: TANH ===> SIN
+  [searchThen/s16] [Result] 'SIN' REJECTED. Score: -0.3279 (Delta: -0.0025)
+  [searchThen/s16] Instant Retry: Triggering evolution again...
+
+[searchThen/s16] --- Stagnation at Score -0.0514 ---
+  [searchThen/s16] [Evolution] Targeting Chain 0 Layer 0 (Imp: 3.711e-04)...
+    [searchThen/s16] -> Mutating: TANH ===> IDENTITY
+  [searchThen/s16] [Result] 'IDENTITY' ACCEPTED. Score: -0.3272 (Delta: 0.0007)
+
+[searchThen/s16] --- Stagnation at Score -0.0514 ---
+  [searchThen/s16] [Evolution] Targeting Chain 0 Layer 0 (Imp: 3.170e-04)...
+    [searchThen/s16] -> Mutating: IDENTITY ===> TANH
+[searchThen/s16] Epoch 2500: Val Loss 0.33064 | Temp 0.2917
+  [searchThen/s16] [Result] 'TANH' REJECTED. Score: -0.3283 (Delta: -0.0003)
+  [searchThen/s16] Instant Retry: Triggering evolution again...
+
+[searchThen/s16] --- Stagnation at Score -0.0514 ---
+  [searchThen/s16] [Evolution] Targeting Chain 0 Layer 0 (Imp: 3.170e-04)...
+    [searchThen/s16] -> Mutating: IDENTITY ===> RELU
+  [searchThen/s16] [Result] 'RELU' ACCEPTED. Score: -0.3057 (Delta: 0.0226)
+
+[searchThen/s16] --- Stagnation at Score -0.0514 ---
+  [searchThen/s16] [Evolution] Targeting Chain 0 Layer 0 (Imp: 1.054e-03)...
+    [searchThen/s16] -> Mutating: RELU ===> IDENTITY
+  [searchThen/s16] [Result] 'IDENTITY' REJECTED. Score: -0.4061 (Delta: -0.1445)
+  [searchThen/s16] Instant Retry: Triggering evolution again...
+
+[searchThen/s16] --- Stagnation at Score -0.0514 ---
+  [searchThen/s16] [Evolution] Targeting Chain 0 Layer 0 (Imp: 1.054e-03)...
+    [searchThen/s16] -> Mutating: RELU ===> SQUARE
+  [searchThen/s16] [Result] 'SQUARE' REJECTED. Score: -0.4700 (Delta: -0.0639)
+  [searchThen/s16] Instant Retry: Triggering evolution again...
+
+[searchThen/s16] --- Stagnation at Score -0.0514 ---
+  [searchThen/s16] [Evolution] Targeting Chain 0 Layer 0 (Imp: 1.054e-03)...
+  [searchThen/s16] [Evolution] Targeting Chain 1 Layer 0 (Imp: 1.683e-03)...
+[searchThen/s16] No mutations possible or supported.
+[searchThen/s16] Restoring Best Ever State (Score: -0.0514)
+[searchThen/s17] Epoch 0: Val Loss 2.22078 | Temp 0.5000
+
+[searchThen/s17] --- Stagnation at Score -0.5349 ---
+  [searchThen/s17] [Evolution] Targeting Chain 0 Layer 0 (Imp: 6.025e-04)...
+    [searchThen/s17] -> Mutating: GAUSSIAN ===> TANH
+[searchThen/s17] Epoch 500: Val Loss 0.17236 | Temp 0.4583
+[searchThen/s17] Epoch 1000: Val Loss 0.10448 | Temp 0.4167
+[searchThen/s17] Epoch 1500: Val Loss 0.09026 | Temp 0.3750
+[searchThen/s17] Epoch 2000: Val Loss 0.08576 | Temp 0.3333
+[searchThen/s17] Epoch 2500: Val Loss 0.08383 | Temp 0.2917
+  [searchThen/s17] [Result] 'TANH' ACCEPTED. Score: -0.0829 (Delta: 0.4641)
+[searchThen/s17] Epoch 3000: Val Loss 0.08294 | Temp 0.2500
+[searchThen/s17] Epoch 3500: Val Loss 0.08247 | Temp 0.2083
+[searchThen/s17] Epoch 4000: Val Loss 0.08222 | Temp 0.1667
+
+[searchThen/s17] --- Stagnation at Score -0.0822 ---
+  [searchThen/s17] [Evolution] Targeting Chain 1 Layer 0 (Imp: 3.655e-04)...
+    [searchThen/s17] -> Mutating: SIN ===> SQUARE
+  [searchThen/s17] [Result] 'SQUARE' REJECTED. Score: -0.1887 (Delta: -0.1065)
+  [searchThen/s17] Instant Retry: Triggering evolution again...
+
+[searchThen/s17] --- Stagnation at Score -0.0822 ---
+  [searchThen/s17] [Evolution] Targeting Chain 1 Layer 0 (Imp: 3.655e-04)...
+    [searchThen/s17] -> Mutating: SIN ===> RELU
+  [searchThen/s17] [Result] 'RELU' ACCEPTED. Score: -0.1819 (Delta: 0.0068)
+
+[searchThen/s17] --- Stagnation at Score -0.0822 ---
+  [searchThen/s17] [Evolution] Targeting Chain 1 Layer 0 (Imp: 2.616e-04)...
+    [searchThen/s17] -> Mutating: RELU ===> SIN
+  [searchThen/s17] [Result] 'SIN' REJECTED. Score: -0.1543 (Delta: -0.0108)
+  [searchThen/s17] Instant Retry: Triggering evolution again...
+
+[searchThen/s17] --- Stagnation at Score -0.0822 ---
+  [searchThen/s17] [Evolution] Targeting Chain 1 Layer 0 (Imp: 2.616e-04)...
+    [searchThen/s17] -> Mutating: RELU ===> IDENTITY
+  [searchThen/s17] [Result] 'IDENTITY' REJECTED. Score: -0.1655 (Delta: -0.0111)
+  [searchThen/s17] Instant Retry: Triggering evolution again...
+
+[searchThen/s17] --- Stagnation at Score -0.0822 ---
+  [searchThen/s17] [Evolution] Targeting Chain 1 Layer 0 (Imp: 2.616e-04)...
+    [searchThen/s17] -> Mutating: RELU ===> GAUSSIAN
+  [searchThen/s17] [Result] 'GAUSSIAN' REJECTED. Score: -0.1712 (Delta: -0.0058)
+  [searchThen/s17] Instant Retry: Triggering evolution again...
+
+[searchThen/s17] --- Stagnation at Score -0.0822 ---
+  [searchThen/s17] [Evolution] Targeting Chain 1 Layer 0 (Imp: 2.616e-04)...
+    [searchThen/s17] -> Mutating: RELU ===> TANH
+  [searchThen/s17] [Result] 'TANH' ACCEPTED. Score: -0.1660 (Delta: 0.0052)
+[searchThen/s17] Epoch 4500: Val Loss 0.13658 | Temp 0.1250
+
+[searchThen/s17] --- Stagnation at Score -0.0822 ---
+  [searchThen/s17] [Evolution] Targeting Chain 1 Layer 0 (Imp: 2.605e-04)...
+    [searchThen/s17] -> Mutating: TANH ===> RELU
+  [searchThen/s17] [Result] 'RELU' REJECTED. Score: -0.1679 (Delta: -0.0317)
+  [searchThen/s17] Instant Retry: Triggering evolution again...
+
+[searchThen/s17] --- Stagnation at Score -0.0822 ---
+  [searchThen/s17] [Evolution] Targeting Chain 1 Layer 0 (Imp: 2.605e-04)...
+  [searchThen/s17] [Evolution] Targeting Chain 0 Layer 0 (Imp: 9.843e-04)...
+    [searchThen/s17] -> Mutating: TANH ===> GAUSSIAN
+  [searchThen/s17] [Result] 'GAUSSIAN' REJECTED. Score: -0.9194 (Delta: -0.7515)
+  [searchThen/s17] Instant Retry: Triggering evolution again...
+
+[searchThen/s17] --- Stagnation at Score -0.0822 ---
+  [searchThen/s17] [Evolution] Targeting Chain 1 Layer 0 (Imp: 2.605e-04)...
+  [searchThen/s17] [Evolution] Targeting Chain 0 Layer 0 (Imp: 9.843e-04)...
+    [searchThen/s17] -> Mutating: TANH ===> RELU
+  [searchThen/s17] [Result] 'RELU' ACCEPTED. Score: -0.6578 (Delta: 0.2616)
+
+[searchThen/s17] --- Stagnation at Score -0.0822 ---
+  [searchThen/s17] [Evolution] Targeting Chain 0 Layer 0 (Imp: 7.369e-04)...
+    [searchThen/s17] -> Mutating: RELU ===> TANH
+  [searchThen/s17] [Result] 'TANH' REJECTED. Score: -0.3496 (Delta: -0.0692)
+  [searchThen/s17] Instant Retry: Triggering evolution again...
+
+[searchThen/s17] --- Stagnation at Score -0.0822 ---
+  [searchThen/s17] [Evolution] Targeting Chain 0 Layer 0 (Imp: 7.369e-04)...
+    [searchThen/s17] -> Mutating: RELU ===> SQUARE
+  [searchThen/s17] [Result] 'SQUARE' REJECTED. Score: -0.3789 (Delta: -0.0292)
+  [searchThen/s17] Instant Retry: Triggering evolution again...
+
+[searchThen/s17] --- Stagnation at Score -0.0822 ---
+  [searchThen/s17] [Evolution] Targeting Chain 0 Layer 0 (Imp: 7.369e-04)...
+    [searchThen/s17] -> Mutating: RELU ===> SIN
+  [searchThen/s17] [Result] 'SIN' ACCEPTED. Score: -0.3289 (Delta: 0.0500)
+
+[searchThen/s17] --- Stagnation at Score -0.0822 ---
+  [searchThen/s17] [Evolution] Targeting Chain 0 Layer 0 (Imp: 9.081e-04)...
+    [searchThen/s17] -> Mutating: SIN ===> RELU
+  [searchThen/s17] [Result] 'RELU' REJECTED. Score: -0.3761 (Delta: -0.1278)
+  [searchThen/s17] Instant Retry: Triggering evolution again...
+
+[searchThen/s17] --- Stagnation at Score -0.0822 ---
+  [searchThen/s17] [Evolution] Targeting Chain 0 Layer 0 (Imp: 9.081e-04)...
+    [searchThen/s17] -> Mutating: SIN ===> IDENTITY
+[searchThen/s17] Epoch 5000: Val Loss 0.49482 | Temp 0.0833
+  [searchThen/s17] [Result] 'IDENTITY' ACCEPTED. Score: -0.3399 (Delta: 0.0362)
+
+[searchThen/s17] --- Stagnation at Score -0.0822 ---
+  [searchThen/s17] [Evolution] Targeting Chain 0 Layer 0 (Imp: 6.580e-04)...
+    [searchThen/s17] -> Mutating: IDENTITY ===> SIN
+  [searchThen/s17] [Result] 'SIN' REJECTED. Score: -0.2647 (Delta: -0.0143)
+  [searchThen/s17] Instant Retry: Triggering evolution again...
+
+[searchThen/s17] --- Stagnation at Score -0.0822 ---
+  [searchThen/s17] [Evolution] Targeting Chain 0 Layer 0 (Imp: 6.580e-04)...
+  [searchThen/s17] [Evolution] Targeting Chain 1 Layer 0 (Imp: 1.402e-03)...
+[searchThen/s17] No mutations possible or supported.
+[searchThen/s17] Restoring Best Ever State (Score: -0.0822)
+[searchThen/s18] Epoch 0: Val Loss 0.64495 | Temp 0.5000
+[searchThen/s18] Epoch 500: Val Loss 0.14090 | Temp 0.4583
+[searchThen/s18] Epoch 1000: Val Loss 0.13824 | Temp 0.4167
+[searchThen/s18] Epoch 1500: Val Loss 0.13769 | Temp 0.3750
+[searchThen/s18] Epoch 2000: Val Loss 0.13561 | Temp 0.3333
+
+[searchThen/s18] --- Stagnation at Score -0.1356 ---
+  [searchThen/s18] [Evolution] Targeting Chain 0 Layer 0 (Imp: 4.562e-04)...
+    [searchThen/s18] -> Mutating: RELU ===> IDENTITY
+  [searchThen/s18] [Result] 'IDENTITY' REJECTED. Score: -0.3842 (Delta: -0.2485)
+  [searchThen/s18] Instant Retry: Triggering evolution again...
+
+[searchThen/s18] --- Stagnation at Score -0.1356 ---
+  [searchThen/s18] [Evolution] Targeting Chain 0 Layer 0 (Imp: 4.562e-04)...
+    [searchThen/s18] -> Mutating: RELU ===> GAUSSIAN
+  [searchThen/s18] [Result] 'GAUSSIAN' REJECTED. Score: -0.4460 (Delta: -0.0618)
+  [searchThen/s18] Instant Retry: Triggering evolution again...
+
+[searchThen/s18] --- Stagnation at Score -0.1356 ---
+  [searchThen/s18] [Evolution] Targeting Chain 0 Layer 0 (Imp: 4.562e-04)...
+    [searchThen/s18] -> Mutating: RELU ===> TANH
+  [searchThen/s18] [Result] 'TANH' ACCEPTED. Score: -0.3846 (Delta: 0.0614)
+
+[searchThen/s18] --- Stagnation at Score -0.1356 ---
+  [searchThen/s18] [Evolution] Targeting Chain 0 Layer 0 (Imp: 4.724e-04)...
+    [searchThen/s18] -> Mutating: TANH ===> SIN
+  [searchThen/s18] [Result] 'SIN' REJECTED. Score: -0.1570 (Delta: -0.0119)
+  [searchThen/s18] Instant Retry: Triggering evolution again...
+
+[searchThen/s18] --- Stagnation at Score -0.1356 ---
+  [searchThen/s18] [Evolution] Targeting Chain 0 Layer 0 (Imp: 4.724e-04)...
+    [searchThen/s18] -> Mutating: TANH ===> SQUARE
+  [searchThen/s18] [Result] 'SQUARE' REJECTED. Score: -0.1842 (Delta: -0.0272)
+  [searchThen/s18] Instant Retry: Triggering evolution again...
+
+[searchThen/s18] --- Stagnation at Score -0.1356 ---
+  [searchThen/s18] [Evolution] Targeting Chain 0 Layer 0 (Imp: 4.724e-04)...
+    [searchThen/s18] -> Mutating: TANH ===> RELU
+  [searchThen/s18] [Result] 'RELU' ACCEPTED. Score: -0.1772 (Delta: 0.0070)
+[searchThen/s18] Epoch 2500: Val Loss 0.15279 | Temp 0.2917
+
+[searchThen/s18] --- Stagnation at Score -0.1356 ---
+  [searchThen/s18] [Evolution] Targeting Chain 0 Layer 0 (Imp: 3.192e-04)...
+    [searchThen/s18] -> Mutating: RELU ===> TANH
+  [searchThen/s18] [Result] 'TANH' REJECTED. Score: -0.1671 (Delta: -0.0241)
+  [searchThen/s18] Instant Retry: Triggering evolution again...
+
+[searchThen/s18] --- Stagnation at Score -0.1356 ---
+  [searchThen/s18] [Evolution] Targeting Chain 0 Layer 0 (Imp: 3.192e-04)...
+  [searchThen/s18] [Evolution] Targeting Chain 1 Layer 0 (Imp: 9.899e-04)...
+    [searchThen/s18] -> Mutating: TANH ===> SIN
+  [searchThen/s18] [Result] 'SIN' REJECTED. Score: -0.3755 (Delta: -0.2084)
+  [searchThen/s18] Instant Retry: Triggering evolution again...
+
+[searchThen/s18] --- Stagnation at Score -0.1356 ---
+  [searchThen/s18] [Evolution] Targeting Chain 0 Layer 0 (Imp: 3.192e-04)...
+  [searchThen/s18] [Evolution] Targeting Chain 1 Layer 0 (Imp: 9.899e-04)...
+    [searchThen/s18] -> Mutating: TANH ===> SQUARE
+  [searchThen/s18] [Result] 'SQUARE' REJECTED. Score: -0.6633 (Delta: -0.2878)
+  [searchThen/s18] Instant Retry: Triggering evolution again...
+
+[searchThen/s18] --- Stagnation at Score -0.1356 ---
+  [searchThen/s18] [Evolution] Targeting Chain 0 Layer 0 (Imp: 3.192e-04)...
+  [searchThen/s18] [Evolution] Targeting Chain 1 Layer 0 (Imp: 9.899e-04)...
+    [searchThen/s18] -> Mutating: TANH ===> GAUSSIAN
+  [searchThen/s18] [Result] 'GAUSSIAN' REJECTED. Score: -0.7058 (Delta: -0.0425)
+  [searchThen/s18] Instant Retry: Triggering evolution again...
+
+[searchThen/s18] --- Stagnation at Score -0.1356 ---
+  [searchThen/s18] [Evolution] Targeting Chain 0 Layer 0 (Imp: 3.192e-04)...
+  [searchThen/s18] [Evolution] Targeting Chain 1 Layer 0 (Imp: 9.899e-04)...
+    [searchThen/s18] -> Mutating: TANH ===> RELU
+  [searchThen/s18] [Result] 'RELU' REJECTED. Score: -0.7533 (Delta: -0.0475)
+  [searchThen/s18] Instant Retry: Triggering evolution again...
+
+[searchThen/s18] --- Stagnation at Score -0.1356 ---
+  [searchThen/s18] [Evolution] Targeting Chain 0 Layer 0 (Imp: 3.192e-04)...
+  [searchThen/s18] [Evolution] Targeting Chain 1 Layer 0 (Imp: 9.899e-04)...
+    [searchThen/s18] -> Mutating: TANH ===> IDENTITY
+  [searchThen/s18] [Result] 'IDENTITY' ACCEPTED. Score: -0.6134 (Delta: 0.1399)
+
+[searchThen/s18] --- Stagnation at Score -0.1356 ---
+  [searchThen/s18] [Evolution] Targeting Chain 1 Layer 0 (Imp: 5.400e-04)...
+    [searchThen/s18] -> Mutating: IDENTITY ===> TANH
+  [searchThen/s18] [Result] 'TANH' ACCEPTED. Score: -0.2991 (Delta: 0.0138)
+[searchThen/s18] Epoch 3000: Val Loss 0.28694 | Temp 0.2500
+
+[searchThen/s18] --- Stagnation at Score -0.1356 ---
+  [searchThen/s18] [Evolution] Targeting Chain 1 Layer 0 (Imp: 2.356e-04)...
+    [searchThen/s18] -> Mutating: TANH ===> IDENTITY
+  [searchThen/s18] [Result] 'IDENTITY' ACCEPTED. Score: -0.2806 (Delta: 0.0025)
+
+[searchThen/s18] --- Stagnation at Score -0.1356 ---
+  [searchThen/s18] [Evolution] Targeting Chain 1 Layer 0 (Imp: 6.369e-04)...
+    [searchThen/s18] -> Mutating: IDENTITY ===> TANH
+  [searchThen/s18] [Result] 'TANH' REJECTED. Score: -0.3217 (Delta: -0.0669)
+  [searchThen/s18] Instant Retry: Triggering evolution again...
+
+[searchThen/s18] --- Stagnation at Score -0.1356 ---
+  [searchThen/s18] [Evolution] Targeting Chain 1 Layer 0 (Imp: 6.369e-04)...
+  [searchThen/s18] [Evolution] Targeting Chain 0 Layer 0 (Imp: 1.659e-03)...
+[searchThen/s18] No mutations possible or supported.
+[searchThen/s18] Restoring Best Ever State (Score: -0.1356)
+[searchThen/s19] Epoch 0: Val Loss 1.64435 | Temp 0.5000
+[searchThen/s19] Epoch 500: Val Loss 0.21431 | Temp 0.4583
+[searchThen/s19] Epoch 1000: Val Loss 0.15517 | Temp 0.4167
+[searchThen/s19] Epoch 1500: Val Loss 0.14883 | Temp 0.3750
+[searchThen/s19] Epoch 2000: Val Loss 0.14690 | Temp 0.3333
+[searchThen/s19] Epoch 2500: Val Loss 0.14614 | Temp 0.2917
+[searchThen/s19] Epoch 3000: Val Loss 0.14580 | Temp 0.2500
+[searchThen/s19] Epoch 3500: Val Loss 0.14564 | Temp 0.2083
+[searchThen/s19] Epoch 4000: Val Loss 0.14557 | Temp 0.1667
+[searchThen/s19] Epoch 4500: Val Loss 0.14553 | Temp 0.1250
+[searchThen/s19] Epoch 5000: Val Loss 0.14552 | Temp 0.0833
+[searchThen/s19] Epoch 5500: Val Loss 0.14552 | Temp 0.0417
+[searchThen/s19] Restoring Best Ever State (Score: -0.1455)
+[searchThen/s20] Epoch 0: Val Loss 1.85535 | Temp 0.5000
+[searchThen/s20] Epoch 500: Val Loss 0.18847 | Temp 0.4583
+[searchThen/s20] Epoch 1000: Val Loss 0.18728 | Temp 0.4167
+[searchThen/s20] Epoch 1500: Val Loss 0.18632 | Temp 0.3750
+[searchThen/s20] Epoch 2000: Val Loss 0.18559 | Temp 0.3333
+[searchThen/s20] Epoch 2500: Val Loss 0.18505 | Temp 0.2917
+[searchThen/s20] Epoch 3000: Val Loss 0.18463 | Temp 0.2500
+[searchThen/s20] Epoch 3500: Val Loss 0.18429 | Temp 0.2083
+[searchThen/s20] Epoch 4000: Val Loss 0.18403 | Temp 0.1667
+[searchThen/s20] Epoch 4500: Val Loss 0.18381 | Temp 0.1250
+[searchThen/s20] Epoch 5000: Val Loss 0.18363 | Temp 0.0833
+[searchThen/s20] Epoch 5500: Val Loss 0.18343 | Temp 0.0417
+[searchThen/s20] Restoring Best Ever State (Score: -0.1833)
+[searchThen/s21] Epoch 0: Val Loss 1.27159 | Temp 0.5000
+[searchThen/s21] Epoch 500: Val Loss 0.10021 | Temp 0.4583
+[searchThen/s21] Epoch 1000: Val Loss 0.09773 | Temp 0.4167
+[searchThen/s21] Epoch 1500: Val Loss 0.09751 | Temp 0.3750
+[searchThen/s21] Epoch 2000: Val Loss 0.09749 | Temp 0.3333
+[searchThen/s21] Epoch 2500: Val Loss 0.09749 | Temp 0.2917
+
+[searchThen/s21] --- Stagnation at Score -0.0975 ---
+  [searchThen/s21] [Evolution] Targeting Chain 0 Layer 0 (Imp: 1.093e-04)...
+    [searchThen/s21] -> Mutating: RELU ===> IDENTITY
+  [searchThen/s21] [Result] 'IDENTITY' REJECTED. Score: -0.1370 (Delta: -0.0395)
+  [searchThen/s21] Instant Retry: Triggering evolution again...
+
+[searchThen/s21] --- Stagnation at Score -0.0975 ---
+  [searchThen/s21] [Evolution] Targeting Chain 0 Layer 0 (Imp: 1.093e-04)...
+    [searchThen/s21] -> Mutating: RELU ===> TANH
+  [searchThen/s21] [Result] 'TANH' REJECTED. Score: -0.1382 (Delta: -0.0013)
+  [searchThen/s21] Instant Retry: Triggering evolution again...
+
+[searchThen/s21] --- Stagnation at Score -0.0975 ---
+  [searchThen/s21] [Evolution] Targeting Chain 0 Layer 0 (Imp: 1.093e-04)...
+    [searchThen/s21] -> Mutating: RELU ===> SQUARE
+  [searchThen/s21] [Result] 'SQUARE' ACCEPTED. Score: -0.1174 (Delta: 0.0208)
+
+[searchThen/s21] --- Stagnation at Score -0.0425 ---
+  [searchThen/s21] [Evolution] Targeting Chain 0 Layer 0 (Imp: 1.651e-04)...
+    [searchThen/s21] -> Mutating: SQUARE ===> RELU
+[searchThen/s21] Epoch 3000: Val Loss 0.14088 | Temp 0.2500
+  [searchThen/s21] [Result] 'RELU' REJECTED. Score: -0.1321 (Delta: -0.0894)
+  [searchThen/s21] Instant Retry: Triggering evolution again...
+
+[searchThen/s21] --- Stagnation at Score -0.0425 ---
+  [searchThen/s21] [Evolution] Targeting Chain 0 Layer 0 (Imp: 1.651e-04)...
+    [searchThen/s21] -> Mutating: SQUARE ===> SIN
+  [searchThen/s21] [Result] 'SIN' REJECTED. Score: -0.1420 (Delta: -0.0099)
+  [searchThen/s21] Instant Retry: Triggering evolution again...
+
+[searchThen/s21] --- Stagnation at Score -0.0425 ---
+  [searchThen/s21] [Evolution] Targeting Chain 0 Layer 0 (Imp: 1.651e-04)...
+    [searchThen/s21] -> Mutating: SQUARE ===> GAUSSIAN
+  [searchThen/s21] [Result] 'GAUSSIAN' REJECTED. Score: -0.6249 (Delta: -0.4829)
+  [searchThen/s21] Instant Retry: Triggering evolution again...
+
+[searchThen/s21] --- Stagnation at Score -0.0425 ---
+  [searchThen/s21] [Evolution] Targeting Chain 0 Layer 0 (Imp: 1.651e-04)...
+  [searchThen/s21] [Evolution] Targeting Chain 1 Layer 0 (Imp: 3.081e-04)...
+    [searchThen/s21] -> Mutating: GAUSSIAN ===> RELU
+  [searchThen/s21] [Result] 'RELU' ACCEPTED. Score: -0.3524 (Delta: 0.2726)
+
+[searchThen/s21] --- Stagnation at Score -0.0425 ---
+  [searchThen/s21] [Evolution] Targeting Chain 0 Layer 0 (Imp: 6.326e-04)...
+  [searchThen/s21] [Evolution] Targeting Chain 1 Layer 0 (Imp: 8.752e-04)...
+    [searchThen/s21] -> Mutating: RELU ===> SQUARE
+  [searchThen/s21] [Result] 'SQUARE' REJECTED. Score: -0.3563 (Delta: -0.1634)
+  [searchThen/s21] Instant Retry: Triggering evolution again...
+
+[searchThen/s21] --- Stagnation at Score -0.0425 ---
+  [searchThen/s21] [Evolution] Targeting Chain 0 Layer 0 (Imp: 6.326e-04)...
+  [searchThen/s21] [Evolution] Targeting Chain 1 Layer 0 (Imp: 8.752e-04)...
+    [searchThen/s21] -> Mutating: RELU ===> IDENTITY
+  [searchThen/s21] [Result] 'IDENTITY' ACCEPTED. Score: -0.2598 (Delta: 0.0965)
+
+[searchThen/s21] --- Stagnation at Score -0.0425 ---
+  [searchThen/s21] [Evolution] Targeting Chain 0 Layer 0 (Imp: 6.512e-04)...
+  [searchThen/s21] [Evolution] Targeting Chain 1 Layer 0 (Imp: 8.298e-04)...
+    [searchThen/s21] -> Mutating: IDENTITY ===> RELU
+  [searchThen/s21] [Result] 'RELU' REJECTED. Score: -0.4498 (Delta: -0.2227)
+  [searchThen/s21] Instant Retry: Triggering evolution again...
+
+[searchThen/s21] --- Stagnation at Score -0.0425 ---
+  [searchThen/s21] [Evolution] Targeting Chain 0 Layer 0 (Imp: 6.512e-04)...
+  [searchThen/s21] [Evolution] Targeting Chain 1 Layer 0 (Imp: 8.298e-04)...
+    [searchThen/s21] -> Mutating: IDENTITY ===> GAUSSIAN
+  [searchThen/s21] [Result] 'GAUSSIAN' REJECTED. Score: -1.2199 (Delta: -0.7700)
+  [searchThen/s21] Instant Retry: Triggering evolution again...
+
+[searchThen/s21] --- Stagnation at Score -0.0425 ---
+  [searchThen/s21] [Evolution] Targeting Chain 0 Layer 0 (Imp: 6.512e-04)...
+  [searchThen/s21] [Evolution] Targeting Chain 1 Layer 0 (Imp: 8.298e-04)...
+    [searchThen/s21] -> Mutating: IDENTITY ===> SIN
+[searchThen/s21] Epoch 3500: Val Loss 0.62645 | Temp 0.2083
+  [searchThen/s21] [Result] 'SIN' ACCEPTED. Score: -0.2434 (Delta: 0.9765)
+
+[searchThen/s21] --- Stagnation at Score -0.0425 ---
+  [searchThen/s21] [Evolution] Targeting Chain 0 Layer 0 (Imp: 5.460e-04)...
+  [searchThen/s21] [Evolution] Targeting Chain 1 Layer 0 (Imp: 8.576e-04)...
+    [searchThen/s21] -> Mutating: SIN ===> TANH
+  [searchThen/s21] [Result] 'TANH' REJECTED. Score: -0.2902 (Delta: -0.0692)
+  [searchThen/s21] Instant Retry: Triggering evolution again...
+
+[searchThen/s21] --- Stagnation at Score -0.0425 ---
+  [searchThen/s21] [Evolution] Targeting Chain 0 Layer 0 (Imp: 5.460e-04)...
+  [searchThen/s21] [Evolution] Targeting Chain 1 Layer 0 (Imp: 8.576e-04)...
+    [searchThen/s21] -> Mutating: SIN ===> IDENTITY
+  [searchThen/s21] [Result] 'IDENTITY' ACCEPTED. Score: -0.2820 (Delta: 0.0082)
+
+[searchThen/s21] --- Stagnation at Score -0.0425 ---
+  [searchThen/s21] [Evolution] Targeting Chain 0 Layer 0 (Imp: 7.573e-04)...
+  [searchThen/s21] [Evolution] Targeting Chain 1 Layer 0 (Imp: 7.935e-04)...
+    [searchThen/s21] -> Mutating: IDENTITY ===> SIN
+  [searchThen/s21] [Result] 'SIN' REJECTED. Score: -0.2414 (Delta: -0.0142)
+  [searchThen/s21] Instant Retry: Triggering evolution again...
+
+[searchThen/s21] --- Stagnation at Score -0.0425 ---
+  [searchThen/s21] [Evolution] Targeting Chain 0 Layer 0 (Imp: 7.573e-04)...
+  [searchThen/s21] [Evolution] Targeting Chain 1 Layer 0 (Imp: 7.935e-04)...
+[searchThen/s21] No mutations possible or supported.
+[searchThen/s21] Restoring Best Ever State (Score: -0.0425)
+[searchThen/s22] Epoch 0: Val Loss 0.84115 | Temp 0.5000
+
+[searchThen/s22] --- Stagnation at Score -0.2875 ---
+  [searchThen/s22] [Evolution] Targeting Chain 0 Layer 0 (Imp: 5.621e-05)...
+    [searchThen/s22] -> Mutating: RELU ===> IDENTITY
+  [searchThen/s22] [Result] 'IDENTITY' REJECTED. Score: -0.2936 (Delta: -0.0057)
+  [searchThen/s22] Instant Retry: Triggering evolution again...
+
+[searchThen/s22] --- Stagnation at Score -0.2875 ---
+  [searchThen/s22] [Evolution] Targeting Chain 0 Layer 0 (Imp: 5.621e-05)...
+    [searchThen/s22] -> Mutating: RELU ===> SIN
+  [searchThen/s22] [Result] 'SIN' REJECTED. Score: -0.2946 (Delta: -0.0010)
+  [searchThen/s22] Instant Retry: Triggering evolution again...
+
+[searchThen/s22] --- Stagnation at Score -0.2875 ---
+  [searchThen/s22] [Evolution] Targeting Chain 0 Layer 0 (Imp: 5.621e-05)...
+    [searchThen/s22] -> Mutating: RELU ===> GAUSSIAN
+  [searchThen/s22] [Result] 'GAUSSIAN' REJECTED. Score: -0.3267 (Delta: -0.0321)
+  [searchThen/s22] Instant Retry: Triggering evolution again...
+
+[searchThen/s22] --- Stagnation at Score -0.2875 ---
+  [searchThen/s22] [Evolution] Targeting Chain 0 Layer 0 (Imp: 5.621e-05)...
+    [searchThen/s22] -> Mutating: RELU ===> TANH
+  [searchThen/s22] [Result] 'TANH' ACCEPTED. Score: -0.2948 (Delta: 0.0319)
+[searchThen/s22] Epoch 500: Val Loss 0.29240 | Temp 0.4583
+
+[searchThen/s22] --- Stagnation at Score -0.1339 ---
+  [searchThen/s22] [Evolution] Targeting Chain 0 Layer 0 (Imp: 1.293e-03)...
+    [searchThen/s22] -> Mutating: TANH ===> RELU
+  [searchThen/s22] [Result] 'RELU' REJECTED. Score: -1.2407 (Delta: -1.1066)
+  [searchThen/s22] Instant Retry: Triggering evolution again...
+
+[searchThen/s22] --- Stagnation at Score -0.1339 ---
+  [searchThen/s22] [Evolution] Targeting Chain 0 Layer 0 (Imp: 1.293e-03)...
+    [searchThen/s22] -> Mutating: TANH ===> SQUARE
+  [searchThen/s22] [Result] 'SQUARE' REJECTED. Score: -1.9409 (Delta: -0.7001)
+  [searchThen/s22] Instant Retry: Triggering evolution again...
+
+[searchThen/s22] --- Stagnation at Score -0.1339 ---
+  [searchThen/s22] [Evolution] Targeting Chain 0 Layer 0 (Imp: 1.293e-03)...
+  [searchThen/s22] [Evolution] Targeting Chain 1 Layer 0 (Imp: 1.481e-03)...
+    [searchThen/s22] -> Mutating: RELU ===> SIN
+  [searchThen/s22] [Result] 'SIN' ACCEPTED. Score: -0.4302 (Delta: 1.5107)
+[searchThen/s22] Epoch 1000: Val Loss 0.31627 | Temp 0.4167
+
+[searchThen/s22] --- Stagnation at Score -0.1339 ---
+  [searchThen/s22] [Evolution] Targeting Chain 1 Layer 0 (Imp: 1.468e-03)...
+    [searchThen/s22] -> Mutating: SIN ===> GAUSSIAN
+  [searchThen/s22] [Result] 'GAUSSIAN' REJECTED. Score: -1.5555 (Delta: -1.2758)
+  [searchThen/s22] Instant Retry: Triggering evolution again...
+
+[searchThen/s22] --- Stagnation at Score -0.1339 ---
+  [searchThen/s22] [Evolution] Targeting Chain 1 Layer 0 (Imp: 1.468e-03)...
+    [searchThen/s22] -> Mutating: SIN ===> RELU
+  [searchThen/s22] [Result] 'RELU' ACCEPTED. Score: -0.4144 (Delta: 1.1411)
+
+[searchThen/s22] --- Stagnation at Score -0.1339 ---
+  [searchThen/s22] [Evolution] Targeting Chain 1 Layer 0 (Imp: 9.047e-04)...
+    [searchThen/s22] -> Mutating: RELU ===> SQUARE
+  [searchThen/s22] [Result] 'SQUARE' REJECTED. Score: -0.5769 (Delta: -0.3821)
+  [searchThen/s22] Instant Retry: Triggering evolution again...
+
+[searchThen/s22] --- Stagnation at Score -0.1339 ---
+  [searchThen/s22] [Evolution] Targeting Chain 1 Layer 0 (Imp: 9.047e-04)...
+    [searchThen/s22] -> Mutating: RELU ===> IDENTITY
+  [searchThen/s22] [Result] 'IDENTITY' ACCEPTED. Score: -0.3839 (Delta: 0.1930)
+[searchThen/s22] Epoch 1500: Val Loss 0.27671 | Temp 0.3750
+
+[searchThen/s22] --- Stagnation at Score -0.1339 ---
+  [searchThen/s22] [Evolution] Targeting Chain 1 Layer 0 (Imp: 9.371e-04)...
+    [searchThen/s22] -> Mutating: IDENTITY ===> SIN
+  [searchThen/s22] [Result] 'SIN' REJECTED. Score: -0.3023 (Delta: -0.0283)
+  [searchThen/s22] Instant Retry: Triggering evolution again...
+
+[searchThen/s22] --- Stagnation at Score -0.1339 ---
+  [searchThen/s22] [Evolution] Targeting Chain 1 Layer 0 (Imp: 9.371e-04)...
+    [searchThen/s22] -> Mutating: IDENTITY ===> RELU
+  [searchThen/s22] [Result] 'RELU' REJECTED. Score: -0.3758 (Delta: -0.0735)
+  [searchThen/s22] Instant Retry: Triggering evolution again...
+
+[searchThen/s22] --- Stagnation at Score -0.1339 ---
+  [searchThen/s22] [Evolution] Targeting Chain 1 Layer 0 (Imp: 9.371e-04)...
+    [searchThen/s22] -> Mutating: IDENTITY ===> TANH
+  [searchThen/s22] [Result] 'TANH' REJECTED. Score: -0.3937 (Delta: -0.0179)
+  [searchThen/s22] Instant Retry: Triggering evolution again...
+
+[searchThen/s22] --- Stagnation at Score -0.1339 ---
+  [searchThen/s22] [Evolution] Targeting Chain 1 Layer 0 (Imp: 9.371e-04)...
+  [searchThen/s22] [Evolution] Targeting Chain 0 Layer 0 (Imp: 4.499e-03)...
+[searchThen/s22] No mutations possible or supported.
+[searchThen/s22] Restoring Best Ever State (Score: -0.1339)
+[searchThen/s23] Epoch 0: Val Loss 1.91798 | Temp 0.5000
+[searchThen/s23] Epoch 500: Val Loss 0.10228 | Temp 0.4583
+[searchThen/s23] Epoch 1000: Val Loss 0.08841 | Temp 0.4167
+[searchThen/s23] Epoch 1500: Val Loss 0.08463 | Temp 0.3750
+[searchThen/s23] Epoch 2000: Val Loss 0.08318 | Temp 0.3333
+[searchThen/s23] Epoch 2500: Val Loss 0.08254 | Temp 0.2917
+[searchThen/s23] Epoch 3000: Val Loss 0.08223 | Temp 0.2500
+[searchThen/s23] Epoch 3500: Val Loss 0.08209 | Temp 0.2083
+[searchThen/s23] Epoch 4000: Val Loss 0.08202 | Temp 0.1667
+
+[searchThen/s23] --- Stagnation at Score -0.0820 ---
+  [searchThen/s23] [Evolution] Targeting Chain 0 Layer 0 (Imp: 3.377e-04)...
+    [searchThen/s23] -> Mutating: SIN ===> RELU
+  [searchThen/s23] [Result] 'RELU' REJECTED. Score: -0.1862 (Delta: -0.1042)
+  [searchThen/s23] Instant Retry: Triggering evolution again...
+
+[searchThen/s23] --- Stagnation at Score -0.0820 ---
+  [searchThen/s23] [Evolution] Targeting Chain 0 Layer 0 (Imp: 3.377e-04)...
+    [searchThen/s23] -> Mutating: SIN ===> GAUSSIAN
+  [searchThen/s23] [Result] 'GAUSSIAN' REJECTED. Score: -0.5129 (Delta: -0.3267)
+  [searchThen/s23] Instant Retry: Triggering evolution again...
+
+[searchThen/s23] --- Stagnation at Score -0.0820 ---
+  [searchThen/s23] [Evolution] Targeting Chain 0 Layer 0 (Imp: 3.377e-04)...
+    [searchThen/s23] -> Mutating: SIN ===> IDENTITY
+  [searchThen/s23] [Result] 'IDENTITY' ACCEPTED. Score: -0.1569 (Delta: 0.3560)
+
+[searchThen/s23] --- Stagnation at Score -0.0820 ---
+  [searchThen/s23] [Evolution] Targeting Chain 0 Layer 0 (Imp: 4.367e-04)...
+    [searchThen/s23] -> Mutating: IDENTITY ===> TANH
+  [searchThen/s23] [Result] 'TANH' REJECTED. Score: -0.2569 (Delta: -0.1434)
+  [searchThen/s23] Instant Retry: Triggering evolution again...
+
+[searchThen/s23] --- Stagnation at Score -0.0820 ---
+  [searchThen/s23] [Evolution] Targeting Chain 0 Layer 0 (Imp: 4.367e-04)...
+    [searchThen/s23] -> Mutating: IDENTITY ===> SQUARE
+  [searchThen/s23] [Result] 'SQUARE' REJECTED. Score: -0.3414 (Delta: -0.0845)
+  [searchThen/s23] Instant Retry: Triggering evolution again...
+
+[searchThen/s23] --- Stagnation at Score -0.0820 ---
+  [searchThen/s23] [Evolution] Targeting Chain 0 Layer 0 (Imp: 4.367e-04)...
+    [searchThen/s23] -> Mutating: IDENTITY ===> SIN
+  [searchThen/s23] [Result] 'SIN' ACCEPTED. Score: -0.1272 (Delta: 0.2143)
+[searchThen/s23] Epoch 4500: Val Loss 0.12165 | Temp 0.1250
+
+[searchThen/s23] --- Stagnation at Score -0.0820 ---
+  [searchThen/s23] [Evolution] Targeting Chain 0 Layer 0 (Imp: 5.662e-04)...
+    [searchThen/s23] -> Mutating: SIN ===> IDENTITY
+  [searchThen/s23] [Result] 'IDENTITY' REJECTED. Score: -0.2305 (Delta: -0.1103)
+  [searchThen/s23] Instant Retry: Triggering evolution again...
+
+[searchThen/s23] --- Stagnation at Score -0.0820 ---
+  [searchThen/s23] [Evolution] Targeting Chain 0 Layer 0 (Imp: 5.662e-04)...
+  [searchThen/s23] [Evolution] Targeting Chain 1 Layer 0 (Imp: 1.331e-03)...
+    [searchThen/s23] -> Mutating: TANH ===> SQUARE
+  [searchThen/s23] [Result] 'SQUARE' REJECTED. Score: -0.5162 (Delta: -0.2857)
+  [searchThen/s23] Instant Retry: Triggering evolution again...
+
+[searchThen/s23] --- Stagnation at Score -0.0820 ---
+  [searchThen/s23] [Evolution] Targeting Chain 0 Layer 0 (Imp: 5.662e-04)...
+  [searchThen/s23] [Evolution] Targeting Chain 1 Layer 0 (Imp: 1.331e-03)...
+    [searchThen/s23] -> Mutating: TANH ===> RELU
+  [searchThen/s23] [Result] 'RELU' ACCEPTED. Score: -0.4665 (Delta: 0.0497)
+
+[searchThen/s23] --- Stagnation at Score -0.0820 ---
+  [searchThen/s23] [Evolution] Targeting Chain 1 Layer 0 (Imp: 6.472e-04)...
+    [searchThen/s23] -> Mutating: RELU ===> IDENTITY
+  [searchThen/s23] [Result] 'IDENTITY' REJECTED. Score: -0.3329 (Delta: -0.0277)
+  [searchThen/s23] Instant Retry: Triggering evolution again...
+
+[searchThen/s23] --- Stagnation at Score -0.0820 ---
+  [searchThen/s23] [Evolution] Targeting Chain 1 Layer 0 (Imp: 6.472e-04)...
+    [searchThen/s23] -> Mutating: RELU ===> TANH
+  [searchThen/s23] [Result] 'TANH' REJECTED. Score: -0.3339 (Delta: -0.0010)
+  [searchThen/s23] Instant Retry: Triggering evolution again...
+
+[searchThen/s23] --- Stagnation at Score -0.0820 ---
+  [searchThen/s23] [Evolution] Targeting Chain 1 Layer 0 (Imp: 6.472e-04)...
+    [searchThen/s23] -> Mutating: RELU ===> GAUSSIAN
+  [searchThen/s23] [Result] 'GAUSSIAN' REJECTED. Score: -0.4409 (Delta: -0.1070)
+  [searchThen/s23] Instant Retry: Triggering evolution again...
+
+[searchThen/s23] --- Stagnation at Score -0.0820 ---
+  [searchThen/s23] [Evolution] Targeting Chain 1 Layer 0 (Imp: 6.472e-04)...
+    [searchThen/s23] -> Mutating: RELU ===> SIN
+  [searchThen/s23] [Result] 'SIN' ACCEPTED. Score: -0.3234 (Delta: 0.1175)
+[searchThen/s23] Epoch 5000: Val Loss 0.29906 | Temp 0.0833
+
+[searchThen/s23] --- Stagnation at Score -0.0820 ---
+  [searchThen/s23] [Evolution] Targeting Chain 1 Layer 0 (Imp: 6.415e-04)...
+    [searchThen/s23] -> Mutating: SIN ===> RELU
+  [searchThen/s23] [Result] 'RELU' REJECTED. Score: -0.3621 (Delta: -0.0933)
+  [searchThen/s23] Instant Retry: Triggering evolution again...
+
+[searchThen/s23] --- Stagnation at Score -0.0820 ---
+  [searchThen/s23] [Evolution] Targeting Chain 1 Layer 0 (Imp: 6.415e-04)...
+  [searchThen/s23] [Evolution] Targeting Chain 0 Layer 0 (Imp: 1.061e-03)...
+[searchThen/s23] No mutations possible or supported.
+[searchThen/s23] Restoring Best Ever State (Score: -0.0820)
+[searchThen/s24] Epoch 0: Val Loss 0.79335 | Temp 0.5000
+[searchThen/s24] Epoch 500: Val Loss 0.19441 | Temp 0.4583
+[searchThen/s24] Epoch 1000: Val Loss 0.18942 | Temp 0.4167
+[searchThen/s24] Epoch 1500: Val Loss 0.18761 | Temp 0.3750
+[searchThen/s24] Epoch 2000: Val Loss 0.18666 | Temp 0.3333
+[searchThen/s24] Epoch 2500: Val Loss 0.18600 | Temp 0.2917
+
+[searchThen/s24] --- Stagnation at Score -0.1856 ---
+  [searchThen/s24] [Evolution] Targeting Chain 1 Layer 0 (Imp: 9.622e-04)...
+    [searchThen/s24] -> Mutating: RELU ===> SQUARE
+  [searchThen/s24] [Result] 'SQUARE' REJECTED. Score: -0.3903 (Delta: -0.2046)
+  [searchThen/s24] Instant Retry: Triggering evolution again...
+
+[searchThen/s24] --- Stagnation at Score -0.1856 ---
+  [searchThen/s24] [Evolution] Targeting Chain 1 Layer 0 (Imp: 9.622e-04)...
+    [searchThen/s24] -> Mutating: RELU ===> IDENTITY
+  [searchThen/s24] [Result] 'IDENTITY' ACCEPTED. Score: -0.3502 (Delta: 0.0402)
+
+[searchThen/s24] --- Stagnation at Score -0.1856 ---
+  [searchThen/s24] [Evolution] Targeting Chain 1 Layer 0 (Imp: 7.149e-04)...
+    [searchThen/s24] -> Mutating: IDENTITY ===> RELU
+  [searchThen/s24] [Result] 'RELU' REJECTED. Score: -0.5296 (Delta: -0.2979)
+  [searchThen/s24] Instant Retry: Triggering evolution again...
+
+[searchThen/s24] --- Stagnation at Score -0.1856 ---
+  [searchThen/s24] [Evolution] Targeting Chain 1 Layer 0 (Imp: 7.149e-04)...
+    [searchThen/s24] -> Mutating: IDENTITY ===> GAUSSIAN
+[searchThen/s24] Epoch 3000: Val Loss 3.16738 | Temp 0.2500
+  [searchThen/s24] [Result] 'GAUSSIAN' REJECTED. Score: -0.7836 (Delta: -0.2540)
+  [searchThen/s24] Instant Retry: Triggering evolution again...
+
+[searchThen/s24] --- Stagnation at Score -0.1856 ---
+  [searchThen/s24] [Evolution] Targeting Chain 1 Layer 0 (Imp: 7.149e-04)...
+    [searchThen/s24] -> Mutating: IDENTITY ===> SIN
+  [searchThen/s24] [Result] 'SIN' ACCEPTED. Score: -0.2438 (Delta: 0.5398)
+
+[searchThen/s24] --- Stagnation at Score -0.1856 ---
+  [searchThen/s24] [Evolution] Targeting Chain 1 Layer 0 (Imp: 7.883e-04)...
+    [searchThen/s24] -> Mutating: SIN ===> IDENTITY
+  [searchThen/s24] [Result] 'IDENTITY' REJECTED. Score: -0.3026 (Delta: -0.0753)
+  [searchThen/s24] Instant Retry: Triggering evolution again...
+
+[searchThen/s24] --- Stagnation at Score -0.1856 ---
+  [searchThen/s24] [Evolution] Targeting Chain 1 Layer 0 (Imp: 7.883e-04)...
+    [searchThen/s24] -> Mutating: SIN ===> TANH
+  [searchThen/s24] [Result] 'TANH' ACCEPTED. Score: -0.2904 (Delta: 0.0122)
+
+[searchThen/s24] --- Stagnation at Score -0.1856 ---
+  [searchThen/s24] [Evolution] Targeting Chain 1 Layer 0 (Imp: 6.746e-04)...
+    [searchThen/s24] -> Mutating: TANH ===> SIN
+  [searchThen/s24] [Result] 'SIN' REJECTED. Score: -0.2500 (Delta: -0.0276)
+  [searchThen/s24] Instant Retry: Triggering evolution again...
+
+[searchThen/s24] --- Stagnation at Score -0.1856 ---
+  [searchThen/s24] [Evolution] Targeting Chain 1 Layer 0 (Imp: 6.746e-04)...
+  [searchThen/s24] [Evolution] Targeting Chain 0 Layer 0 (Imp: 2.626e-03)...
+    [searchThen/s24] -> Mutating: GAUSSIAN ===> SIN
+  [searchThen/s24] [Result] 'SIN' REJECTED. Score: -0.3550 (Delta: -0.1050)
+  [searchThen/s24] Instant Retry: Triggering evolution again...
+
+[searchThen/s24] --- Stagnation at Score -0.1856 ---
+  [searchThen/s24] [Evolution] Targeting Chain 1 Layer 0 (Imp: 6.746e-04)...
+  [searchThen/s24] [Evolution] Targeting Chain 0 Layer 0 (Imp: 2.626e-03)...
+    [searchThen/s24] -> Mutating: GAUSSIAN ===> IDENTITY
+  [searchThen/s24] [Result] 'IDENTITY' REJECTED. Score: -0.5037 (Delta: -0.1487)
+  [searchThen/s24] Instant Retry: Triggering evolution again...
+
+[searchThen/s24] --- Stagnation at Score -0.1856 ---
+  [searchThen/s24] [Evolution] Targeting Chain 1 Layer 0 (Imp: 6.746e-04)...
+  [searchThen/s24] [Evolution] Targeting Chain 0 Layer 0 (Imp: 2.626e-03)...
+    [searchThen/s24] -> Mutating: GAUSSIAN ===> SQUARE
+[searchThen/s24] Epoch 3500: Val Loss 1.53582 | Temp 0.2083
+  [searchThen/s24] [Result] 'SQUARE' REJECTED. Score: -0.8599 (Delta: -0.3562)
+  [searchThen/s24] Instant Retry: Triggering evolution again...
+
+[searchThen/s24] --- Stagnation at Score -0.1856 ---
+  [searchThen/s24] [Evolution] Targeting Chain 1 Layer 0 (Imp: 6.746e-04)...
+  [searchThen/s24] [Evolution] Targeting Chain 0 Layer 0 (Imp: 2.626e-03)...
+    [searchThen/s24] -> Mutating: GAUSSIAN ===> TANH
+  [searchThen/s24] [Result] 'TANH' ACCEPTED. Score: -0.5219 (Delta: 0.3380)
+
+[searchThen/s24] --- Stagnation at Score -0.1856 ---
+  [searchThen/s24] [Evolution] Targeting Chain 0 Layer 0 (Imp: 1.193e-03)...
+    [searchThen/s24] -> Mutating: TANH ===> GAUSSIAN
+  [searchThen/s24] [Result] 'GAUSSIAN' REJECTED. Score: -0.5181 (Delta: -0.1935)
+  [searchThen/s24] Instant Retry: Triggering evolution again...
+
+[searchThen/s24] --- Stagnation at Score -0.1856 ---
+  [searchThen/s24] [Evolution] Targeting Chain 0 Layer 0 (Imp: 1.193e-03)...
+    [searchThen/s24] -> Mutating: TANH ===> RELU
+  [searchThen/s24] [Result] 'RELU' ACCEPTED. Score: -0.3538 (Delta: 0.1643)
+
+[searchThen/s24] --- Stagnation at Score -0.1856 ---
+  [searchThen/s24] [Evolution] Targeting Chain 0 Layer 0 (Imp: 7.773e-04)...
+    [searchThen/s24] -> Mutating: RELU ===> TANH
+  [searchThen/s24] [Result] 'TANH' REJECTED. Score: -0.3299 (Delta: -0.0072)
+  [searchThen/s24] Instant Retry: Triggering evolution again...
+
+[searchThen/s24] --- Stagnation at Score -0.1856 ---
+  [searchThen/s24] [Evolution] Targeting Chain 0 Layer 0 (Imp: 7.773e-04)...
+  [searchThen/s24] [Evolution] Targeting Chain 1 Layer 0 (Imp: 1.548e-03)...
+[searchThen/s24] No mutations possible or supported.
+[searchThen/s24] Restoring Best Ever State (Score: -0.1856)
+[searchThen/s25] Epoch 0: Val Loss 1.89664 | Temp 0.5000
+[searchThen/s25] Epoch 500: Val Loss 0.16496 | Temp 0.4583
+[searchThen/s25] Epoch 1000: Val Loss 0.15366 | Temp 0.4167
+[searchThen/s25] Epoch 1500: Val Loss 0.15120 | Temp 0.3750
+[searchThen/s25] Epoch 2000: Val Loss 0.14897 | Temp 0.3333
+[searchThen/s25] Epoch 2500: Val Loss 0.14678 | Temp 0.2917
+[searchThen/s25] Epoch 3000: Val Loss 0.14511 | Temp 0.2500
+[searchThen/s25] Epoch 3500: Val Loss 0.14407 | Temp 0.2083
+[searchThen/s25] Epoch 4000: Val Loss 0.14351 | Temp 0.1667
+[searchThen/s25] Epoch 4500: Val Loss 0.14324 | Temp 0.1250
+[searchThen/s25] Epoch 5000: Val Loss 0.14314 | Temp 0.0833
+[searchThen/s25] Epoch 5500: Val Loss 0.14310 | Temp 0.0417
+[searchThen/s25] Restoring Best Ever State (Score: -0.1431)
+[searchThen/s26] Epoch 0: Val Loss 1.25405 | Temp 0.5000
+
+[searchThen/s26] --- Stagnation at Score -0.2778 ---
+  [searchThen/s26] [Evolution] Targeting Chain 1 Layer 0 (Imp: 5.110e-05)...
+    [searchThen/s26] -> Mutating: RELU ===> IDENTITY
+[searchThen/s26] Epoch 500: Val Loss 0.25102 | Temp 0.4583
+  [searchThen/s26] [Result] 'IDENTITY' ACCEPTED. Score: -0.2512 (Delta: 0.0268)
+
+[searchThen/s26] --- Stagnation at Score -0.2509 ---
+  [searchThen/s26] [Evolution] Targeting Chain 1 Layer 0 (Imp: 2.149e-03)...
+    [searchThen/s26] -> Mutating: IDENTITY ===> RELU
+  [searchThen/s26] [Result] 'RELU' REJECTED. Score: -1.9757 (Delta: -1.7235)
+  [searchThen/s26] Instant Retry: Triggering evolution again...
+
+[searchThen/s26] --- Stagnation at Score -0.2509 ---
+  [searchThen/s26] [Evolution] Targeting Chain 1 Layer 0 (Imp: 2.149e-03)...
+    [searchThen/s26] -> Mutating: IDENTITY ===> TANH
+  [searchThen/s26] [Result] 'TANH' ACCEPTED. Score: -1.2084 (Delta: 0.7673)
+
+[searchThen/s26] --- Stagnation at Score -0.2509 ---
+  [searchThen/s26] [Evolution] Targeting Chain 1 Layer 0 (Imp: 1.064e-03)...
+    [searchThen/s26] -> Mutating: TANH ===> GAUSSIAN
+  [searchThen/s26] [Result] 'GAUSSIAN' REJECTED. Score: -0.8169 (Delta: -0.5247)
+  [searchThen/s26] Instant Retry: Triggering evolution again...
+
+[searchThen/s26] --- Stagnation at Score -0.2509 ---
+  [searchThen/s26] [Evolution] Targeting Chain 1 Layer 0 (Imp: 1.064e-03)...
+    [searchThen/s26] -> Mutating: TANH ===> IDENTITY
+  [searchThen/s26] [Result] 'IDENTITY' ACCEPTED. Score: -0.3264 (Delta: 0.4906)
+[searchThen/s26] Epoch 1000: Val Loss 0.26634 | Temp 0.4167
+
+[searchThen/s26] --- Stagnation at Score -0.2509 ---
+  [searchThen/s26] [Evolution] Targeting Chain 1 Layer 0 (Imp: 3.584e-04)...
+    [searchThen/s26] -> Mutating: IDENTITY ===> SQUARE
+  [searchThen/s26] [Result] 'SQUARE' REJECTED. Score: -0.2945 (Delta: -0.0292)
+  [searchThen/s26] Instant Retry: Triggering evolution again...
+
+[searchThen/s26] --- Stagnation at Score -0.2509 ---
+  [searchThen/s26] [Evolution] Targeting Chain 1 Layer 0 (Imp: 3.584e-04)...
+    [searchThen/s26] -> Mutating: IDENTITY ===> SIN
+  [searchThen/s26] [Result] 'SIN' ACCEPTED. Score: -0.2711 (Delta: 0.0233)
+
+[searchThen/s26] --- Stagnation at Score -0.2509 ---
+  [searchThen/s26] [Evolution] Targeting Chain 1 Layer 0 (Imp: 4.298e-04)...
+    [searchThen/s26] -> Mutating: SIN ===> IDENTITY
+  [searchThen/s26] [Result] 'IDENTITY' REJECTED. Score: -0.2709 (Delta: -0.0080)
+  [searchThen/s26] Instant Retry: Triggering evolution again...
+
+[searchThen/s26] --- Stagnation at Score -0.2509 ---
+  [searchThen/s26] [Evolution] Targeting Chain 1 Layer 0 (Imp: 4.298e-04)...
+    [searchThen/s26] -> Mutating: SIN ===> TANH
+  [searchThen/s26] [Result] 'TANH' REJECTED. Score: -0.2717 (Delta: -0.0008)
+  [searchThen/s26] Instant Retry: Triggering evolution again...
+
+[searchThen/s26] --- Stagnation at Score -0.2509 ---
+  [searchThen/s26] [Evolution] Targeting Chain 1 Layer 0 (Imp: 4.298e-04)...
+  [searchThen/s26] [Evolution] Targeting Chain 0 Layer 0 (Imp: 1.785e-03)...
+    [searchThen/s26] -> Mutating: RELU ===> IDENTITY
+  [searchThen/s26] [Result] 'IDENTITY' REJECTED. Score: -0.3709 (Delta: -0.0992)
+  [searchThen/s26] Instant Retry: Triggering evolution again...
+
+[searchThen/s26] --- Stagnation at Score -0.2509 ---
+  [searchThen/s26] [Evolution] Targeting Chain 1 Layer 0 (Imp: 4.298e-04)...
+  [searchThen/s26] [Evolution] Targeting Chain 0 Layer 0 (Imp: 1.785e-03)...
+    [searchThen/s26] -> Mutating: RELU ===> TANH
+  [searchThen/s26] [Result] 'TANH' REJECTED. Score: -0.3727 (Delta: -0.0018)
+  [searchThen/s26] Instant Retry: Triggering evolution again...
+
+[searchThen/s26] --- Stagnation at Score -0.2509 ---
+  [searchThen/s26] [Evolution] Targeting Chain 1 Layer 0 (Imp: 4.298e-04)...
+  [searchThen/s26] [Evolution] Targeting Chain 0 Layer 0 (Imp: 1.785e-03)...
+    [searchThen/s26] -> Mutating: RELU ===> SQUARE
+  [searchThen/s26] [Result] 'SQUARE' REJECTED. Score: -0.3820 (Delta: -0.0093)
+  [searchThen/s26] Instant Retry: Triggering evolution again...
+
+[searchThen/s26] --- Stagnation at Score -0.2509 ---
+  [searchThen/s26] [Evolution] Targeting Chain 1 Layer 0 (Imp: 4.298e-04)...
+  [searchThen/s26] [Evolution] Targeting Chain 0 Layer 0 (Imp: 1.785e-03)...
+    [searchThen/s26] -> Mutating: RELU ===> GAUSSIAN
+  [searchThen/s26] [Result] 'GAUSSIAN' ACCEPTED. Score: -0.3489 (Delta: 0.0331)
+[searchThen/s26] Epoch 1500: Val Loss 0.22419 | Temp 0.3750
+
+[searchThen/s26] --- Stagnation at Score -0.2242 ---
+  [searchThen/s26] [Evolution] Targeting Chain 1 Layer 0 (Imp: 7.692e-04)...
+  [searchThen/s26] [Evolution] Targeting Chain 0 Layer 0 (Imp: 2.080e-03)...
+    [searchThen/s26] -> Mutating: GAUSSIAN ===> RELU
+  [searchThen/s26] [Result] 'RELU' REJECTED. Score: -0.3835 (Delta: -0.1575)
+  [searchThen/s26] Instant Retry: Triggering evolution again...
+
+[searchThen/s26] --- Stagnation at Score -0.2242 ---
+  [searchThen/s26] [Evolution] Targeting Chain 1 Layer 0 (Imp: 7.692e-04)...
+  [searchThen/s26] [Evolution] Targeting Chain 0 Layer 0 (Imp: 2.080e-03)...
+    [searchThen/s26] -> Mutating: GAUSSIAN ===> SIN
+  [searchThen/s26] [Result] 'SIN' ACCEPTED. Score: -0.3489 (Delta: 0.0346)
+
+[searchThen/s26] --- Stagnation at Score -0.2242 ---
+  [searchThen/s26] [Evolution] Targeting Chain 0 Layer 0 (Imp: 1.146e-03)...
+    [searchThen/s26] -> Mutating: SIN ===> GAUSSIAN
+  [searchThen/s26] [Result] 'GAUSSIAN' REJECTED. Score: -0.3832 (Delta: -0.1479)
+  [searchThen/s26] Instant Retry: Triggering evolution again...
+
+[searchThen/s26] --- Stagnation at Score -0.2242 ---
+  [searchThen/s26] [Evolution] Targeting Chain 0 Layer 0 (Imp: 1.146e-03)...
+  [searchThen/s26] [Evolution] Targeting Chain 1 Layer 0 (Imp: 1.348e-03)...
+[searchThen/s26] No mutations possible or supported.
+[searchThen/s26] Restoring Best Ever State (Score: -0.2242)
+[searchThen/s27] Epoch 0: Val Loss 1.02535 | Temp 0.5000
+[searchThen/s27] Epoch 500: Val Loss 0.04288 | Temp 0.4583
+
+[searchThen/s27] --- Stagnation at Score -0.0427 ---
+  [searchThen/s27] [Evolution] Targeting Chain 0 Layer 0 (Imp: 3.365e-04)...
+    [searchThen/s27] -> Mutating: GAUSSIAN ===> SQUARE
+  [searchThen/s27] [Result] 'SQUARE' REJECTED. Score: -0.3932 (Delta: -0.3503)
+  [searchThen/s27] Instant Retry: Triggering evolution again...
+
+[searchThen/s27] --- Stagnation at Score -0.0427 ---
+  [searchThen/s27] [Evolution] Targeting Chain 0 Layer 0 (Imp: 3.365e-04)...
+    [searchThen/s27] -> Mutating: GAUSSIAN ===> SIN
+  [searchThen/s27] [Result] 'SIN' ACCEPTED. Score: -0.2265 (Delta: 0.1667)
+
+[searchThen/s27] --- Stagnation at Score -0.0427 ---
+  [searchThen/s27] [Evolution] Targeting Chain 0 Layer 0 (Imp: 9.204e-04)...
+    [searchThen/s27] -> Mutating: SIN ===> RELU
+  [searchThen/s27] [Result] 'RELU' REJECTED. Score: -0.3049 (Delta: -0.0860)
+  [searchThen/s27] Instant Retry: Triggering evolution again...
+
+[searchThen/s27] --- Stagnation at Score -0.0427 ---
+  [searchThen/s27] [Evolution] Targeting Chain 0 Layer 0 (Imp: 9.204e-04)...
+    [searchThen/s27] -> Mutating: SIN ===> GAUSSIAN
+  [searchThen/s27] [Result] 'GAUSSIAN' REJECTED. Score: -0.7112 (Delta: -0.4063)
+  [searchThen/s27] Instant Retry: Triggering evolution again...
+
+[searchThen/s27] --- Stagnation at Score -0.0427 ---
+  [searchThen/s27] [Evolution] Targeting Chain 0 Layer 0 (Imp: 9.204e-04)...
+    [searchThen/s27] -> Mutating: SIN ===> IDENTITY
+[searchThen/s27] Epoch 1000: Val Loss 0.50006 | Temp 0.4167
+  [searchThen/s27] [Result] 'IDENTITY' ACCEPTED. Score: -0.3526 (Delta: 0.3586)
+
+[searchThen/s27] --- Stagnation at Score -0.0427 ---
+  [searchThen/s27] [Evolution] Targeting Chain 0 Layer 0 (Imp: 7.537e-04)...
+    [searchThen/s27] -> Mutating: IDENTITY ===> SIN
+  [searchThen/s27] [Result] 'SIN' REJECTED. Score: -0.2347 (Delta: -0.0058)
+  [searchThen/s27] Instant Retry: Triggering evolution again...
+
+[searchThen/s27] --- Stagnation at Score -0.0427 ---
+  [searchThen/s27] [Evolution] Targeting Chain 0 Layer 0 (Imp: 7.537e-04)...
+    [searchThen/s27] -> Mutating: IDENTITY ===> TANH
+  [searchThen/s27] [Result] 'TANH' REJECTED. Score: -0.3093 (Delta: -0.0746)
+  [searchThen/s27] Instant Retry: Triggering evolution again...
+
+[searchThen/s27] --- Stagnation at Score -0.0427 ---
+  [searchThen/s27] [Evolution] Targeting Chain 0 Layer 0 (Imp: 7.537e-04)...
+  [searchThen/s27] [Evolution] Targeting Chain 1 Layer 0 (Imp: 1.837e-03)...
+    [searchThen/s27] -> Mutating: SIN ===> TANH
+  [searchThen/s27] [Result] 'TANH' REJECTED. Score: -0.3860 (Delta: -0.0767)
+  [searchThen/s27] Instant Retry: Triggering evolution again...
+
+[searchThen/s27] --- Stagnation at Score -0.0427 ---
+  [searchThen/s27] [Evolution] Targeting Chain 0 Layer 0 (Imp: 7.537e-04)...
+  [searchThen/s27] [Evolution] Targeting Chain 1 Layer 0 (Imp: 1.837e-03)...
+    [searchThen/s27] -> Mutating: SIN ===> RELU
+  [searchThen/s27] [Result] 'RELU' REJECTED. Score: -0.6879 (Delta: -0.3019)
+  [searchThen/s27] Instant Retry: Triggering evolution again...
+
+[searchThen/s27] --- Stagnation at Score -0.0427 ---
+  [searchThen/s27] [Evolution] Targeting Chain 0 Layer 0 (Imp: 7.537e-04)...
+  [searchThen/s27] [Evolution] Targeting Chain 1 Layer 0 (Imp: 1.837e-03)...
+    [searchThen/s27] -> Mutating: SIN ===> IDENTITY
+  [searchThen/s27] [Result] 'IDENTITY' ACCEPTED. Score: -0.3838 (Delta: 0.3041)
+
+[searchThen/s27] --- Stagnation at Score -0.0427 ---
+  [searchThen/s27] [Evolution] Targeting Chain 1 Layer 0 (Imp: 7.075e-04)...
+    [searchThen/s27] -> Mutating: IDENTITY ===> SIN
+  [searchThen/s27] [Result] 'SIN' REJECTED. Score: -0.3360 (Delta: -0.0081)
+  [searchThen/s27] Instant Retry: Triggering evolution again...
+
+[searchThen/s27] --- Stagnation at Score -0.0427 ---
+  [searchThen/s27] [Evolution] Targeting Chain 1 Layer 0 (Imp: 7.075e-04)...
+    [searchThen/s27] -> Mutating: IDENTITY ===> SQUARE
+[searchThen/s27] Epoch 1500: Val Loss 0.32802 | Temp 0.3750
+  [searchThen/s27] [Result] 'SQUARE' ACCEPTED. Score: -0.3283 (Delta: 0.0078)
+
+[searchThen/s27] --- Stagnation at Score -0.0427 ---
+  [searchThen/s27] [Evolution] Targeting Chain 1 Layer 0 (Imp: 3.680e-04)...
+    [searchThen/s27] -> Mutating: SQUARE ===> GAUSSIAN
+  [searchThen/s27] [Result] 'GAUSSIAN' REJECTED. Score: -0.7842 (Delta: -0.5571)
+  [searchThen/s27] Instant Retry: Triggering evolution again...
+
+[searchThen/s27] --- Stagnation at Score -0.0427 ---
+  [searchThen/s27] [Evolution] Targeting Chain 1 Layer 0 (Imp: 3.680e-04)...
+    [searchThen/s27] -> Mutating: SQUARE ===> IDENTITY
+  [searchThen/s27] [Result] 'IDENTITY' ACCEPTED. Score: -0.3276 (Delta: 0.4566)
+
+[searchThen/s27] --- Stagnation at Score -0.0427 ---
+  [searchThen/s27] [Evolution] Targeting Chain 1 Layer 0 (Imp: 2.121e-04)...
+    [searchThen/s27] -> Mutating: IDENTITY ===> SQUARE
+  [searchThen/s27] [Result] 'SQUARE' ACCEPTED. Score: -0.3066 (Delta: 0.0213)
+[searchThen/s27] Epoch 2000: Val Loss 0.22714 | Temp 0.3333
+
+[searchThen/s27] --- Stagnation at Score -0.0427 ---
+  [searchThen/s27] [Evolution] Targeting Chain 1 Layer 0 (Imp: 4.141e-04)...
+    [searchThen/s27] -> Mutating: SQUARE ===> IDENTITY
+  [searchThen/s27] [Result] 'IDENTITY' REJECTED. Score: -0.3287 (Delta: -0.1016)
+  [searchThen/s27] Instant Retry: Triggering evolution again...
+
+[searchThen/s27] --- Stagnation at Score -0.0427 ---
+  [searchThen/s27] [Evolution] Targeting Chain 1 Layer 0 (Imp: 4.141e-04)...
+  [searchThen/s27] [Evolution] Targeting Chain 0 Layer 0 (Imp: 1.164e-03)...
+[searchThen/s27] No mutations possible or supported.
+[searchThen/s27] Restoring Best Ever State (Score: -0.0427)
+search-then-restart8    3/28        8.166e-02     8.067e-16  exact op-set 3/28, then restarts
+
+============================================================================================
+ WHAT THE SEARCH ACTUALLY SELECTED
+============================================================================================
+    4/28  gaussian, sin
+    4/28  relu, tanh
+    3/28  sin, square  <-- GROUND TRUTH
+    2/28  gaussian, gaussian
+    2/28  tanh, tanh
+    2/28  relu, sin
+    2/28  gaussian, tanh
+    2/28  sin, sin
+
+  ground-truth op-set: 11% of seeds   vs 6% by chance
+
+============================================================================================
+ READING IT
+============================================================================================
+  (run both the 'gai' and 'restart' arms for the comparison)

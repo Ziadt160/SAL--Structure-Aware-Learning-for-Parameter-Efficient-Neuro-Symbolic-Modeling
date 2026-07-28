@@ -1,0 +1,39 @@
+__pycache__/
+*.py[cod]
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+
+# Virtual envs
+venv/
+.venv/
+env/
+
+# Datasets -- torchvision downloads MNIST on demand; the E. coli CSV is 67 MB
+# and should be fetched rather than tracked.
+data/MNIST/
+benchmarks/data/
+data/*.csv
+
+# Run outputs
+results/*.json
+*.log
+runs/
+checkpoints/
+*.pt
+*.pth
+
+# ...but DO track the raw experiment logs. Every number in README.md and
+# CHANGES.md traces back to one of these, and they are the only record of runs
+# that take hours to reproduce. They were originally written to /tmp, which on
+# Windows resolves to AppData/Local/Temp and is cleared by Disk Cleanup.
+!results/logs/
+!results/logs/*.log
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

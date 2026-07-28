@@ -1,0 +1,22 @@
+====================================================================================================
+ DOES THE SEARCH EARN ITS KEEP AS THE OPERATOR SPACE GROWS?
+ teacher-generated targets; 4 seeds; 24000 epochs per arm; restarts k=8
+====================================================================================================
+nodes     space arm       recovery   median test  op-set exact
+----------------------------------------------------------------------------------------------------
+    4     1,296 oracle      0/4       4.864e-03        4/4
+----------------------------------------------------------------------------------------------------
+
+====================================================================================================
+ READING IT
+====================================================================================================
+  'oracle' is a FEASIBILITY GATE. If it is not near 100% at a given
+  size, nothing at that size is recoverable for reasons unrelated to
+  search, and the search/random cells there say nothing.
+
+
+  Compare the search-to-random gap ACROSS sizes, not within one.
+  Growing gap  -> real selection power, concentrated where
+                  enumeration is infeasible (the method's claim).
+  Flat/shrinking -> no selection power that survives scale; at small
+                  sizes enumerate instead.
