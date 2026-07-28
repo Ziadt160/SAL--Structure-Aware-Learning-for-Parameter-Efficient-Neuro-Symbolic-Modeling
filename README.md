@@ -131,6 +131,28 @@ So the scope of the claim is:
 > tuned MLP by ~2x on systems whose structure matches the operator basis, and
 > loses by ~3x where no such structure exists.
 
+**Two caveats on that 2x, both found by re-examining it rather than by a
+reviewer.**
+
+*It is not epoch-matched.* Arms are matched on RESTARTS, not on training
+epochs: the exhaustive search consumes **36,950** epochs against the MLP
+baseline's **16,000**. So the honest reading is "2x better for 2.3x the
+compute", which is a weaker claim than the table looks. An epoch-matched
+rerun is the fair comparison and has not been done.
+
+*The ranking statistic is biased toward the operator that happens to be
+correct here.* The exhaustive search sorts candidate assignments by the
+MINIMUM validation loss over the screening budget — a min-over-N estimator
+that flatters high-variance operators, which is the same bias this repo
+already documents for restarts. On Lorenz the right answer is `square`, one
+of the highest-variance operators in the basis. `SearchConfig.train_score`
+now selects `'best'` (original) or `'final'` (unbiased); re-running with
+`'final'` tests whether the win is the method or the estimator.
+
+The 2.02x itself reproduces cleanly — an independent 5-seed rerun gives
+median 5.8972e-04 against 1.1925e-03, and seed separation still holds. The
+question is what it is measuring, not whether it repeats.
+
 ### Three findings that decide whether it works
 
 - **Enumerate, do not hill-climb.** Greedy coordinate descent loses on *both*

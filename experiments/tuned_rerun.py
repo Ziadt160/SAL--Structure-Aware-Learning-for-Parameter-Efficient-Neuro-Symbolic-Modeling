@@ -63,6 +63,14 @@ def main():
     ap.add_argument('--epochs', type=int, default=800)
     ap.add_argument('--n', type=int, default=4500)
     ap.add_argument('--composites', action='store_true')
+    ap.add_argument('--train-score', default='best', choices=['best', 'final'],
+                    help="How a candidate is scored inside the search. 'best' "
+                         "(original) takes the MINIMUM val loss over the "
+                         "training budget, which is a min-over-N statistic that "
+                         "flatters high-variance operators -- and on Lorenz the "
+                         "correct answer (square) is one of the high-variance "
+                         "ones. 'final' scores the end of the budget instead. "
+                         "If the win survives 'final', it is not the estimator.")
     ap.add_argument('--restarts', type=int, default=5,
                     help='final-training restarts, applied to EVERY arm')
     args = ap.parse_args()
@@ -113,6 +121,7 @@ def main():
                     max_op_sweeps=2, use_composites=args.composites,
                     exhaustive_refine_composites=args.composites,
                     exhaustive_screen_epochs=150, exhaustive_verify_top=5,
+                    train_score=args.train_score,
                     final_restarts=args.restarts,
                     topology_rounds=0, allow_growth=False, allow_pruning=False,
                     compress=False, verbose=False)
