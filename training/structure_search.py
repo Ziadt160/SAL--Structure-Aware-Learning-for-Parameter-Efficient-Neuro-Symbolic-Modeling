@@ -72,6 +72,12 @@ class SearchConfig:
     #                 small models (an MLP -- num_chains=1 -- is 6**depth).
     search_mode: str = 'greedy'
     exhaustive_max_configs: int = 512
+    # 'best' = min val loss over the training budget (original); 'final' = the
+    # loss at the end. 'best' is a min-over-N ranking statistic on the epoch
+    # axis and flatters high-variance operators -- see _train. Default kept for
+    # continuity with every measurement already taken.
+    train_score: str = 'best'
+
     exhaustive_screen_epochs: int = 60
     exhaustive_verify_top: int = 8
     exhaustive_refine_composites: bool = True
@@ -360,10 +366,28 @@ class StructureSearch:
 
     def _train(self, model: nn.Module, epochs: int, lr: float,
                params: Optional[List[nn.Parameter]] = None) -> float:
-        """Train for a fixed number of full-batch steps; return best val loss.
+        """Train for a fixed number of full-batch steps; return a val score.
 
         Fixed budget, not early stopping: candidates must be compared under
         identical conditions or the comparison encodes the stopping rule.
+
+        `cfg.train_score` decides WHICH score, and it is a ranking-bias knob,
+        not a cosmetic one:
+
+          'best'  (default, original) -- the minimum val loss seen across the
+                  epochs. This is a min-over-N statistic on the epoch axis, the
+                  same family this project already identified as harmful on the
+                  restart axis ("min-over-restarts is a biased ranking statistic
+                  that flatters high-variance operators"). It is what the
+                  exhaustive screen ranks 6**n assignments by, so any operator
+                  whose loss oscillates gets N chances at a lucky minimum --
+                  and `square`/`gaussian` oscillate most.
+          'final' -- the val loss at the end of the budget. Unbiased with
+                  respect to variance, but noisier for a short budget.
+
+        Kept at 'best' by default because changing it silently would invalidate
+        every number already measured. Flip it to 'final' to test whether a
+        result survives without the bias.
         """
         if epochs <= 0:
             return self.val_loss(model)
@@ -390,7 +414,7 @@ class StructureSearch:
             v = self.val_loss(model)
             if v < best:
                 best = v
-        return best
+        return best if getattr(self.cfg, 'train_score', 'best') == 'best' else v
 
     def _better(self, new: float, ref: float) -> bool:
         """Is `new` a real improvement over `ref`? Sign-safe relative test."""

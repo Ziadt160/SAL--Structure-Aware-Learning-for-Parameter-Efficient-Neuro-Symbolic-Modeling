@@ -626,6 +626,61 @@ paths that look active and are not.
   the model already chosen on validation, so the headline comparison has no test
   leakage; the other three `eval()` sites in `trainer.py` were already correct.
 
+### Second pass: the search path
+
+- **The exhaustive search ranks candidates by a MIN-OVER-EPOCHS statistic.**
+  `_train` returns the *minimum* validation loss seen across its budget, and
+  that value is what `exhaustive_operator_search` sorts `6**n` assignments by.
+  This is the same estimator family the project already documents as harmful on
+  the restart axis — `probe_reduce`'s own comment says min "systematically
+  flatters high-variance operators". The epoch axis was never considered.
+
+  It matters for the headline positive result, not just in principle: on Lorenz
+  the correct answer is `square`, and `square`/`gaussian` are the operators
+  whose loss oscillates most. A bias toward high-variance candidates points at
+  the right answer there **for the wrong reason**, so part of the 2.02x win may
+  be the estimator rather than the method.
+
+  Now selectable via `SearchConfig.train_score` (`'best'` = original, `'final'`
+  = end-of-budget, unbiased w.r.t. variance). Default unchanged, because
+  flipping it silently would invalidate every number already measured. The test
+  that matters: re-run Lorenz with `train_score='final'`. If the win survives it
+  is real; if it vanishes, it was the bias.
+
+- **Importance-guided selection searches half the network.** Measured over 36
+  evolution events on a 6-node model: importance is not degenerate (max/min
+  ratio ~4.1, never all-zero), but proposals concentrate — **78% went to one
+  node and only 3 of 6 nodes were ever targeted.** Random selection at least
+  covers every node, which is consistent with the measured finding that
+  importance ranking performs no better than random.
+
+- **`_neutral_state` uses a Xavier draw** for probe initialisation, while the
+  mutation path uses `U(-0.05, 0.05)` — and the narrow draw measured
+  dramatically better for recovering `sin` (6/16 against 0/16, p = 0.018). The
+  two code paths disagree about something that was measured. Untested in the
+  probe; a plausible and cheap improvement to `structure_search` recovery.
+
+- **`evolve_structure(rng=...)` is never passed by the trainer**, so the
+  explicit-generator plumbing is dead and mutation draws come from module-level
+  `random`. Not a correctness bug (that generator is seeded) but the parameter
+  does not do what its presence implies.
+
+- **Verified correct, now pinned by tests:** after a mutation or revert, the
+  optimiser owns *exactly* the model's live tensors and a step still moves them.
+  This was the highest-risk path in the file — `_revert` and the homotopy branch
+  both replace `model.chains` with a `deepcopy`, creating new parameter tensors,
+  and a stale optimiser would have turned training into a silent no-op with no
+  error and no NaN. Checked by tensor identity, both mutation modes.
+
+- **`structure_search` touches the test split in exactly two places**:
+  construction and `finalise`. No leakage anywhere in the phase search.
+
+- **Operator parsing is sound.** Separator precedence is correctly ordered
+  (`_plus_` before `_x_` before `_of_`); associativity does not matter because
+  all three operations are associative; `X_x_X` is skipped only because
+  `square_of_X` already covers it; `to_torch` and `to_sympy` apply soft-clipping
+  at identical positions.
+
 ## Still to do
 
 Code hygiene:

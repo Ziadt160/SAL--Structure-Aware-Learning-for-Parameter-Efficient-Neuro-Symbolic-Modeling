@@ -508,6 +508,55 @@ def test_fit_with_restarts_splits_budget_and_keeps_best():
         check('restarts=0 rejected', True)
 
 
+def test_optimizer_owns_the_models_real_tensors():
+    """After a mutation or a revert, Adam must step the model's ACTUAL tensors.
+
+    `_revert` and the homotopy path both replace `model.chains` with a
+    `deepcopy`, which creates entirely new parameter tensors. If the optimizer
+    were not rebound afterwards it would keep stepping the orphaned ones and
+    training would silently become a no-op -- no error, no NaN, just a model
+    that stops learning. This checks tensor IDENTITY, not equality, and then
+    confirms a real step still moves the weights.
+    """
+    print("\noptimizer owns the model's tensors")
+    from training.trainer import GAIOptimizer
+    X = np.random.uniform(-1, 1, (150, 2)).astype(np.float32)
+    y = (np.sin(math.pi * X[:, :1]) + X[:, 1:] ** 2).astype(np.float32)
+
+    for mode in ('reset', 'homotopy'):
+        seed_everything(11)
+        m = MatrixGGLEN(input_dim=2, output_dim=1, hidden_dim=4, num_chains=2,
+                        chain_depth=2, rng=random.Random(11))
+        opt = GAIOptimizer(m, loss_fn=torch.nn.MSELoss(), lr=0.01,
+                           mutation_mode=mode)
+
+        def owned():
+            mp = {id(p) for p in opt.model.parameters()}
+            op = {id(p) for g in opt.optimizer.param_groups for p in g['params']}
+            return mp, op
+
+        opt._trigger_evolution(-1.0, 'chk')
+        mp, op = owned()
+        check(f'[{mode}] optimizer owns exactly the model params after mutation',
+              mp == op, f'stale {len(op - mp)}, missing {len(mp - op)}')
+
+        opt._revert('chk')
+        mp, op = owned()
+        check(f'[{mode}] optimizer owns exactly the model params after revert',
+              mp == op, f'stale {len(op - mp)}, missing {len(mp - op)}')
+
+        before = [p.detach().clone() for p in opt.model.parameters()]
+        opt.model.train()
+        opt.optimizer.zero_grad()
+        torch.nn.MSELoss()(opt.model(torch.as_tensor(X)),
+                           torch.as_tensor(y)).backward()
+        opt.optimizer.step()
+        moved = sum(1 for a, b in zip(before, opt.model.parameters())
+                    if not torch.equal(a, b))
+        check(f'[{mode}] a step still moves the weights after revert',
+              moved == len(before), f'{moved}/{len(before)} tensors changed')
+
+
 def test_optimizer_honours_lr():
     """GAIOptimizer must not silently reset lr to 0.001 after a mutation."""
     print("\nGAIOptimizer learning rate")
@@ -545,6 +594,7 @@ def main():
                test_reset_flag_is_live_only_in_reset_mode,
                test_mutation_log_epoch_contract,
                test_validation_is_measured_in_eval_mode,
+               test_optimizer_owns_the_models_real_tensors,
                test_fit_with_restarts_splits_budget_and_keeps_best,
                test_optimizer_honours_lr):
         try:
