@@ -10,18 +10,20 @@ pandas>=2.0
 matplotlib>=3.7
 torchvision>=0.15
 
-# experiments/baseline_comparison.py, benchmarks/compare_moe.py
+# experiments/baseline_comparison.py
 xgboost>=2.0
 seaborn>=0.12
 
-# app.py -- Streamlit dashboard
+# OPTIONAL -- none of the below is needed to run the experiments or the tests.
+# app.py + training/visualization/dashboard.py (Streamlit dashboard)
 streamlit>=1.30
 plotly>=5.18
 
 # benchmarks/generate_report.py
 fpdf2>=2.7
 
-# benchmarks/nas_comparison_mnist.py only. Heavy and version-sensitive;
-# install separately if you need the DARTS/ENAS comparison.
+# Was needed by legacy/nas_comparison_mnist.py, which no longer runs (see
+# legacy/README.md). Heavy and version-sensitive; install separately if you
+# ever restore the DARTS/ENAS comparison.
 #   nni>=3.0
 #   pytorch-lightning>=2.0

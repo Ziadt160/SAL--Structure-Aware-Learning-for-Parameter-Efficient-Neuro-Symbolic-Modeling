@@ -1,0 +1,19 @@
+Strategy,Chains,Dropout,Energy MSE,Status
+importance,2,0.0,,Failed
+importance,2,0.05,,Failed
+importance,2,0.1,,Failed
+importance,4,0.0,,Failed
+importance,4,0.05,,Failed
+importance,4,0.1,,Failed
+importance,6,0.0,,Failed
+importance,6,0.05,,Failed
+importance,6,0.1,,Failed
+random,2,0.0,,Failed
+random,2,0.05,,Failed
+random,2,0.1,,Failed
+random,4,0.0,,Failed
+random,4,0.05,,Failed
+random,4,0.1,,Failed
+random,6,0.0,,Failed
+random,6,0.05,,Failed
+random,6,0.1,,Failed

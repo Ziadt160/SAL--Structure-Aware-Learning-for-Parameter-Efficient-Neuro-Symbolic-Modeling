@@ -1,23 +1,64 @@
-# Structure-Aware Learning: searching over per-layer activation operators
+# Structure-Aware Learning
+
+**Is it worth searching over per-layer activation functions? A controlled study
+that answers "sometimes" — and says precisely when.**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-ee4c2c.svg)](https://pytorch.org/get-started/locally/)
+[![Tests](https://img.shields.io/badge/invariants-62%20passing-brightgreen.svg)](tests/test_invariants.py)
+
+---
+
+> ### In one screen
+>
+> Instead of fixing `relu` everywhere, let **every layer choose its own operator**
+> from `{identity, tanh, relu, sin, gaussian, square}` and their compositions.
+> The motivation is real: on a smooth periodic target, the same MLP reaches
+> `4.93e-05` with `tanh` and `3.48e-04` with `relu` — a **7x** swing from the
+> activation alone.
+>
+> Two search algorithms were built and measured against matched-budget controls.
+>
+> | | verdict |
+> |---|---|
+> | **Exhaustive per-layer search** | **Works, narrowly.** 2.02x over a parameter-matched MLP on Lorenz derivatives, with complete seed separation, recovering the mathematically correct structure. Loses ~3x where no operator structure exists. |
+> | **Simulated-annealing mutation loop** | **Does not work.** Operator selection is statistically indistinguishable from random assignment — five measurements across three independent experiments, every one a null. |
+> | **The ceiling** | **100%.** Given the correct operators, the same budget recovers the exact symbolic structure at machine precision on 28/28 seeds. Selection is the entire bottleneck. |
+>
+> Three bugs were found **in the measuring apparatus itself**, each of which had
+> inflated the evidence that the search was working — including a mutation
+> counter that was detecting Adam loss spikes (16 false events per 1 real one).
+> Two changes the author had previously presented as fixes were withdrawn after
+> measurement. See [CHANGES.md](CHANGES.md).
+
+## Quickstart
+
+```bash
+pip install -r requirements.txt
+python tests/test_invariants.py
+```
+
+62 invariants covering operator semantics, symbolic-export fidelity
+(torch vs SymPy agree to 1e-9), function-preserving topology growth, and the
+optimiser's accept/revert contract.
+
+Reproduce the headline control — search vs restarts vs an oracle that is handed
+the correct operators, all on an identical 6000-epoch budget:
+
+```bash
+python experiments/restart_baseline.py --seeds 28 --epochs 6000 --k 8
+```
 
 ## What this is
 
 A neural model whose **per-layer activation operator is a searchable variable**,
-optimised alongside the weights. Instead of fixing `relu` everywhere, each layer
-selects an operator from a basis (`identity`, `tanh`, `relu`, `sin`, `gaussian`,
-`square`) and their compositions, chosen by validation loss.
+optimised alongside the weights. Each layer selects an operator from a basis and
+their compositions, chosen by validation loss.
 
-The premise is sound: on a smooth periodic target, a two-hidden-layer MLP of
-identical size reaches `4.93e-05` with `tanh` and `3.48e-04` with `relu` — a
-**7x** difference from the activation choice alone. If that choice matters that
-much, it is worth optimising.
-
-Whether *this* code optimises it is a separate question, and the answer is
-mixed. Read the summary before the details.
+The premise is sound — see the 7x swing above. Whether *this* code exploits it
+is a separate question, and the answer is mixed. Read the summary before the
+details.
 
 ## Summary
 
@@ -33,8 +74,8 @@ structure to find. *Caveat: 3 seeds. See "Known costs".*
 
 **`training/trainer.py` — the `GAIOptimizer` mutation loop (simulated annealing,
 importance-guided). Does not work.** Its operator selection is statistically
-indistinguishable from picking operators at random, across four independent
-tests:
+indistinguishable from picking operators at random. Five measurements across
+three independent experiments, every one a null:
 
 | test | search | control | p |
 |---|---|---|---|
@@ -326,16 +367,44 @@ Does composition pay off where the target contains products?
 python experiments/lorenz_composites.py --seeds 3
 ```
 
+## How the measurements are designed
+
+The negative results here are only worth anything if the controls are right, so
+the design is stated explicitly rather than left implicit.
+
+- **Matched budgets.** Every arm in a comparison gets the same number of
+  gradient steps. The restart study gives all three arms exactly 6000 — one long
+  run for the search, `8 x 750` for the restart arms.
+- **An oracle arm establishes the ceiling.** Handing the method the correct
+  operators separates "this problem is hard" from "this search is bad". It is
+  also a feasibility gate: when the oracle fails, the other arms at that setting
+  are uninformative and are reported as such rather than read as evidence.
+- **Chance baselines, computed not assumed.** Random-operator arms are run, and
+  the expected hit rate is derived beforehand — e.g. `2/36` unordered at 2 nodes.
+  Null predictions were registered *before* the cells finished.
+- **Selection on validation, never test.** The test split is read once, for the
+  model already chosen. Best-of-K on test is the leakage that made an earlier
+  result in this project look far better than it was.
+- **Paired seeds.** Arms share seeds and initial weights, so a comparison is not
+  confounded by initialisation luck. Absolute rates need far more seeds than
+  paired comparisons do — the same quantity read 38% at 8 seeds and 11% at 28.
+- **Significance stated, including when it fails.** Fisher exact / binomial
+  tests accompany the claims. Several differences that look decisive are not:
+  `3/8 vs 0/8` is p = 0.20, and it is reported that way.
+- **Instrumented, not inferred.** Structural events are read from an event log
+  in the optimiser. Recovering them from the loss curve — the original approach
+  — counted Adam spikes as mutations at 16 false positives per real one.
+
 ## Repository layout
 
 ```tree
 models/            operator library, searchable node, chain ensembles
-training/          structure_search.py (the algorithm), trainer.py (GAIOptimizer)
-experiments/       the measurements above
-results/logs/      raw stdout of every run behind the numbers in this README
+training/          structure_search.py (exhaustive search), trainer.py (GAIOptimizer)
+experiments/       every measurement quoted above
+results/logs/      raw stdout of every run behind those numbers
 theory/            what the method does and where it breaks
-tests/             correctness invariants
-use_cases/         domain scripts (see Status below)
+tests/             62 correctness invariants
+legacy/            written against a deleted API; does not run (see legacy/README.md)
 ```
 
 Every figure quoted here traces to a log in `results/logs/` — they are tracked
@@ -363,7 +432,7 @@ you intend to compare**, or pass `seed_everything(seed, threads=N)`.
 ## Status
 
 Working and measured: `models/`, `training/`, `tests/`, and the `experiments/`
-scripts referenced above. `python tests/test_invariants.py` — **61 invariants**,
+scripts referenced above. `python tests/test_invariants.py` — **62 invariants**,
 all passing.
 
 **One experiment is incomplete.** `experiments/scaling_regime.py` finished 5 of
@@ -371,18 +440,20 @@ all passing.
 the single command that completes it, and for the pre-registered null prediction
 that cell is testing.
 
-**Not working:** 13 files import modules absent from this repository
-(`gai_unified`, `modules.core`, `legacy.gai_final_boss`, `gai_moe`, `gai`),
-including `benchmarks/run_benchmark.py`. They are written against a deleted API
-and need restoring or removing.
+**Quarantined:** 13 scripts written against an API that no longer exists have
+been moved to [`legacy/`](legacy/README.md). They raise `ImportError` and are
+kept only for provenance — nothing in this README depends on them. Every
+remaining `.py` file parses and imports cleanly.
 
-The previous version of this README carried a results table (Lorenz 4.5e-4 MSE,
-256-bit parity solved, double pendulum 1300x better than RNNs, E. coli 96.5% vs
-88.2%) that the committed artifacts do not support and in one case contradict:
+**A prior claim was withdrawn, not restated.** An earlier version of this README
+carried a results table (Lorenz 4.5e-4 MSE, 256-bit parity solved, double
+pendulum 1300x better than RNNs, E. coli 96.5% vs 88.2%) that the committed
+artifacts do not support and in one case directly contradict:
 `results/comparative_benchmark.png` shows XGBoost at ~95% accuracy against this
-model at ~87% with zero precision and zero recall — a collapse to majority-class
-prediction. Those claims have been removed rather than restated. The table above
-is what has been measured on held-out data.
+model at ~87%, with zero precision and zero recall — a collapse to
+majority-class prediction. Those numbers are gone. Everything quoted now comes
+from a held-out split read exactly once, with the raw log committed under
+`results/logs/`.
 
 ## Details
 

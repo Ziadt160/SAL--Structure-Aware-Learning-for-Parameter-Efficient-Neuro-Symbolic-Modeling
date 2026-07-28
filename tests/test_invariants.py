@@ -474,21 +474,27 @@ def test_fit_with_restarts_splits_budget_and_keeps_best():
     X = np.random.randn(80, 2).astype(np.float32)
     y = np.sin(np.pi * X[:, :1]) + X[:, 1:] ** 2
 
-    seen_ids = []
+    # Count factory CALLS and record the seeds it was handed. Comparing id()
+    # values here would be flaky: CPython recycles ids once an object is freed,
+    # and each restart's model is garbage-collected before the next is built, so
+    # two genuinely distinct models can share an id.
+    calls = {'n': 0, 'seeds': []}
 
     def factory(s):
-        m = MatrixGGLEN(input_dim=2, output_dim=1, hidden_dim=1, num_chains=2,
-                        chain_depth=1, rng=random.Random(s))
-        seen_ids.append(id(m))
-        return m
+        calls['n'] += 1
+        calls['seeds'].append(s)
+        return MatrixGGLEN(input_dim=2, output_dim=1, hidden_dim=1, num_chains=2,
+                           chain_depth=1, rng=random.Random(s))
 
     best, info = fit_with_restarts(factory, X, y, X, y, epochs=120, restarts=4,
                                    seed0=0, name='rtest', lr=0.01,
                                    patience=10_000, loss_fn=torch.nn.MSELoss())
     check('budget is split, not multiplied',
           info['epochs_per_restart'] == 30, f"{info['epochs_per_restart']} epochs")
-    check('every restart got a fresh model',
-          len(set(seen_ids)) == 4, f'{len(set(seen_ids))} distinct models')
+    check('every restart built a fresh model from the factory',
+          calls['n'] == 4, f"factory called {calls['n']} times")
+    check('each restart got a distinct seed',
+          len(set(calls['seeds'])) == 4, f"seeds {calls['seeds']}")
     check('all restarts ran', len(info['runs']) == 4)
     vals = [r['val'] for r in info['runs']]
     check('returns the best-on-validation run',
